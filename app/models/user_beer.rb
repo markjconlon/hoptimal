@@ -1,0 +1,2 @@
+class UserBeer < ApplicationRecord
+end
