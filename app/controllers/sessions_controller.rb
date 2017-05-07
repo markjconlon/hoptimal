@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       puts "WORKED"
       session[:user_id] = user.id
-      redirect_to beers_path, notice: "Logged in!"
+      redirect_to user_path("current"), notice: "Logged in!"
     else
       flash.now[:alert] = "Invalid username or password"
       render "new"
