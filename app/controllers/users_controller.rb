@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @user_recent_4 = @user.most_recent_4(current_user)
+    # @based_on_preference = @user.random_by_preference(current_user)
   end
 
   def edit
