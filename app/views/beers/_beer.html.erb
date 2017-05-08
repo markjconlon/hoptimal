@@ -1,0 +1,7 @@
+
+  <div class="all-beers-list">
+    <h1><%= beer.name %></h1>
+    <h2><%= beer.category.category_type %></h2>
+    <p><%= beer.varietal %>, <%= beer.origin %>, <%= beer.brewery %>, <%= beer.description %>. <%= beer.style %>, <%= beer.tasting_note %></p>
+    <%= link_to "#{beer.name}", beer_path(beer) %>
+  </div>

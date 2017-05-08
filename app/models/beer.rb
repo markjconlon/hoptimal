@@ -3,4 +3,6 @@ class Beer < ApplicationRecord
   has_many :user_beers
   belongs_to :category
   has_many :users, through: :user_beers
+
+  paginates_per 10
 end
