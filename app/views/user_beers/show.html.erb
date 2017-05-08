@@ -1,3 +1,8 @@
+<h2>My Beers</h2>
 <% @user_beers.each do |ub| %>
   <p><%= ub.beer.name %></p>
+  <p><%= ub.beer.category.category_type %></p>
+  <p>Rating: <%= ub.rating %></p>
+  <p>Note: <%= ub.note %></p>
+  <img src="<%= ub.beer.image_thumb_url %>"></br>
 <% end %>
