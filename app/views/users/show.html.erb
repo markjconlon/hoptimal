@@ -9,3 +9,10 @@
 <div>
   <p>suggestions based on previous selections</p>
 </div>
+
+<div class="">
+  <h2>Most Recent Beers</h2>
+  <% @user_recent_4.each do |ub| %>
+    <p><%= ub.beer.name %></p>
+  <% end %>
+</div>

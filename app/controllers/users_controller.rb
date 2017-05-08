@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @user_recent_4 = UserBeer.where(user_id: current_user).order(:created_at).last(2)
   end
 
   def edit
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
     @user = current_user
 
     if @user.update_attributes(user_params)
-      redirect_to user_path
+      redirect_to user_path("current")
     else
       render :edit
     end
