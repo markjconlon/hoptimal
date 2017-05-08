@@ -33,7 +33,7 @@
 
   <div class="form-group">
     <%= f.label :preference %>
-    <%= f.text_field :preference %>
+    <%= f.select(:preference, @category_preference) %>
   </div>
 
   <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
