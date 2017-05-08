@@ -19,7 +19,11 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @user_recent_4 = UserBeer.where(user_id: current_user).order(:created_at).last(2)
+    @user_recent_4 = @user.most_recent_4(current_user)
+    @category_type = {}
+    Category.all.each do |category|
+      @category_type[category.id] = category.category_type 
+    end
   end
 
   def edit

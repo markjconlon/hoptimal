@@ -14,5 +14,8 @@
   <h2>Most Recent Beers</h2>
   <% @user_recent_4.each do |ub| %>
     <p><%= ub.beer.name %></p>
+    <p><%= @category_type[ub.beer.category_id] %></p>
+    <p><%= ub.beer.varietal %></p>
+    <img src="<%= ub.beer.image_thumb_url %>"></br>
   <% end %>
 </div>
