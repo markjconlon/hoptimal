@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+
+    @category_preference= []
+    Category.all.each do |category|
+      @category_preference << [category.category_type]
+    end
   end
 
   def create
@@ -25,6 +30,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    @category_preference = []
+    Category.all.each do |category|
+      @category_preference << [category.category_type]
+    end
   end
 
   def update
