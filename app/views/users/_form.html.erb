@@ -1,6 +1,20 @@
 <div class="form">
 <%= form_for @user do |f| %>
 
+<% if @user.errors.any? %>
+<div class="error_explanation">
+  <h2>
+<%= pluralize(@user.errors.count,
+"Error")%>
+  </h2>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  </ul>
+<% end %>
+</div>
+<% end %>
+
   <div class="form-group">
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
@@ -31,9 +45,10 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :preference %>
-    <%= f.select(:preference, @category_preference) %>
+
+<div class="form-group">
+    <%= f.label :category_id, "Preference" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :category_type, include_blank: "Please Select a Preference") %>
   </div>
 
   <%= f.submit "Submit", class: "btn btn-default btn-primary" %>

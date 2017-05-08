@@ -1,8 +1,17 @@
 class User < ApplicationRecord
   has_secure_password
 
+  belongs_to :category
   has_many :user_beers
   has_many :beers, through: :user_beers
+
+
+validates :username, presence: true, uniqueness: true
+ validates :first_name, presence: true
+ validates :last_name, presence: true
+ validates :email, presence: true, uniqueness: true
+ validates :password, presence: true
+
 
   def only_ids(had_before)
     beer_ids = []
@@ -16,7 +25,6 @@ class User < ApplicationRecord
     had_before = current_user.user_beers.all
     had_before_ids = only_ids(had_before)
 
-    category_id = (Category.find_by(category_type: current_user.preference)).id
     suggestions = []
 
     all_beers_of_type = Beer.where(category_id: category_id)
