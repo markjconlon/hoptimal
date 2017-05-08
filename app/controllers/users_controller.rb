@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @user_recent_4 = @user.most_recent_4(current_user)
+    # @based_on_preference = @user.random_by_preference(current_user)
   end
 
   def edit
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
     @user = current_user
 
     if @user.update_attributes(user_params)
-      redirect_to user_path
+      redirect_to user_path("current")
     else
       render :edit
     end
