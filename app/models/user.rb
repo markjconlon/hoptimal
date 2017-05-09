@@ -6,11 +6,11 @@ class User < ApplicationRecord
   has_many :beers, through: :user_beers
 
 
-validates :username, presence: true, uniqueness: true
- validates :first_name, presence: true
- validates :last_name, presence: true
- validates :email, presence: true, uniqueness: true
- validates :password, presence: true
+  validates :username, presence: true, uniqueness: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
 
 
   def only_ids(had_before)
@@ -46,6 +46,11 @@ validates :username, presence: true, uniqueness: true
       suggestions << first_result
     end
     return suggestions
+  end
+
+  def random_by_previous(current_user)
+    rating_3_or_above = UserBeer.where(user_id: current_user, rating: nil)
+    return Beer.where(id: (rating_3_or_above.last).beer_id)
   end
 
   def most_recent_4(current_user)

@@ -3,6 +3,7 @@
 </div>
 
 <div>
+  <h2> Based on Preference </h2>
   <% if @based_on_preference == nil %>
     <p>You have cleared this category, please try another?</p>
   <% else %>
@@ -14,6 +15,11 @@
 </div>
 
 <div>
+  <h2>Based On Previous</h2>
+  <% @based_on_previous.each do |beer| %>
+    <p><%= beer.name %></p>
+    <img src="<%= beer.image_thumb_url %>">
+  <% end %>
   <p>suggestions based on previous selections</p>
 </div>
 
