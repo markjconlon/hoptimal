@@ -16,10 +16,8 @@
 
 <div>
   <h2>Based On Previous</h2>
-  <% @based_on_previous.each do |beer| %>
-    <p><%= beer.name %></p>
-    <img src="<%= beer.image_thumb_url %>">
-  <% end %>
+    <p><%= @based_on_previous.name %></p>
+    <img src="<%= @based_on_previous.image_thumb_url %>">
   <p>suggestions based on previous selections</p>
 </div>
 
