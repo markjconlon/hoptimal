@@ -5,13 +5,11 @@ class User < ApplicationRecord
   has_many :user_beers
   has_many :beers, through: :user_beers
 
-
   validates :username, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
-
 
   def only_ids(had_before)
     beer_ids = []
@@ -21,20 +19,22 @@ class User < ApplicationRecord
     beer_ids
   end
 
-  def random_by_preference(current_user)
+  def collection_to_sample_from(current_user, all_beers_of_type)
     had_before = current_user.user_beers.all
     had_before_ids = only_ids(had_before)
-
-    suggestions = []
-
-    all_beers_of_type = Beer.where(category_id: category_id)
-
     not_had_before = []
     all_beers_of_type.each do |beer|
       if !(had_before_ids.include?(beer.id))
         not_had_before << beer
       end
     end
+
+    return not_had_before
+  end
+
+  def random_by_preference(current_user)
+    all_beers_of_type = Beer.where(category_id: category_id)
+    not_had_before = collection_to_sample_from(current_user, all_beers_of_type)
 
     return not_had_before.sample
   end
@@ -44,18 +44,9 @@ class User < ApplicationRecord
     beer_id_for_category = rating_3_or_above.sample.beer_id
     category_to_pull_from = Beer.find(beer_id_for_category).category_id
 
-    had_before = current_user.user_beers.all
-    had_before_ids = only_ids(had_before)
-
     all_beers_of_type = Beer.where(category_id: category_to_pull_from)
 
-    not_had_before = []
-    all_beers_of_type.each do |beer|
-      if !(had_before_ids.include?(beer.id))
-        not_had_before << beer
-      end
-    end
-
+    not_had_before = collection_to_sample_from(current_user, all_beers_of_type)
     return not_had_before.sample
   end
 

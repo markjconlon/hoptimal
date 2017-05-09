@@ -14,8 +14,12 @@
 
 <div>
   <h2>Based On Previous</h2>
-    <p><%= @based_on_previous.name %></p>
-    <img src="<%= @based_on_previous.image_thumb_url %>">
+    <% if @based_on_previous == nil %>
+      <p> This section requires you to have added beers with a rating of 3 or above. <p>
+    <% else %>
+      <p><%= @based_on_previous.name %></p>
+      <img src="<%= @based_on_previous.image_thumb_url %>">
+    <% end %>
 </div>
 
 <div class="">
