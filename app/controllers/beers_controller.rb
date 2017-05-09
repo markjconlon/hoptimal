@@ -12,6 +12,7 @@ class BeersController < ApplicationController
 
   def show
     @beer = Beer.find(params[:id])
+    @user_beer = @beer.user_beers.new
   end
 
   def search

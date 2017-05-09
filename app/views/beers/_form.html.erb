@@ -1,0 +1,28 @@
+<div class="form">
+<%= form_for [@beer, @user_beer] do |f|%>
+
+  <div>
+    <%= hidden_field_tag(:user_id, current_user.id) %>
+  </div>
+
+  <div>
+    <%= hidden_field_tag(:beer_id, @beer.id) %>
+  </div>
+
+  <div>
+    <%= radio_button_tag(:rating, "1") %>
+    <%= radio_button_tag(:rating, "2") %>
+    <%= radio_button_tag(:rating, "3") %>
+    <%= radio_button_tag(:rating, "4") %>
+    <%= radio_button_tag(:rating, "5") %>
+  </div>
+
+  <div>
+    <%= text_area_tag(:note) %>
+  </div>
+
+  <div>
+    <%= submit_tag("Add To 'My List'") %>
+  </div>
+<% end %>
+</div>
