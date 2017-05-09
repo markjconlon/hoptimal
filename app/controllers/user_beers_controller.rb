@@ -5,9 +5,13 @@ class UserBeersController < ApplicationController
 
   def create
     beer = Beer.find(params[:beer_id])
+    note = params[:note]
+    rating = params[:rating]
     @user_beer = UserBeer.new
     @user_beer.beer = beer
     @user_beer.user = current_user
+    @user_beer.note = note
+    @user_beer.rating = rating
 
     if @user_beer.save
       redirect_to beers_path
@@ -16,9 +20,5 @@ class UserBeersController < ApplicationController
     end
   end
 
-  private
 
-  def user_beer_params
-    params.require(:user_beer).permit(:user_id, :beer_id, :rating, :note)
-  end
 end
