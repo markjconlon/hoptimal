@@ -3,18 +3,23 @@
 </div>
 
 <div>
+  <h2> Based on Preference </h2>
   <% if @based_on_preference == nil %>
     <p>You have cleared this category, please try another?</p>
   <% else %>
-    <% @based_on_preference.each do |beer| %>
-    <p><%= beer.name %></p>
-    <img src="<%= beer.image_thumb_url %>"></br>
-    <% end %>
+    <p><%= @based_on_preference.name %></p>
+    <img src="<%= @based_on_preference.image_thumb_url %>"></br>
   <% end %>
 </div>
 
 <div>
-  <p>suggestions based on previous selections</p>
+  <h2>Based On Previous</h2>
+    <% if @based_on_previous == nil %>
+      <p> This section requires you to have added beers with a rating of 3 or above. <p>
+    <% else %>
+      <p><%= @based_on_previous.name %></p>
+      <img src="<%= @based_on_previous.image_thumb_url %>">
+    <% end %>
 </div>
 
 <div class="">
