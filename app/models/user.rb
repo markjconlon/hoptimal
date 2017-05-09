@@ -36,16 +36,7 @@ class User < ApplicationRecord
       end
     end
 
-    if not_had_before.count >= 2
-      first_result = not_had_before.sample
-      suggestions << first_result
-      second_result = not_had_before.sample
-      suggestions << second_result
-    elsif not_had_before.count == 1
-      first_result = not_had_before.sample
-      suggestions << first_result
-    end
-    return suggestions
+    return not_had_before.sample
   end
 
   def random_by_previous(current_user)

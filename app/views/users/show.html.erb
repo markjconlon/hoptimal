@@ -7,10 +7,8 @@
   <% if @based_on_preference == nil %>
     <p>You have cleared this category, please try another?</p>
   <% else %>
-    <% @based_on_preference.each do |beer| %>
-    <p><%= beer.name %></p>
-    <img src="<%= beer.image_thumb_url %>"></br>
-    <% end %>
+    <p><%= @based_on_preference.name %></p>
+    <img src="<%= @based_on_preference.image_thumb_url %>"></br>
   <% end %>
 </div>
 
