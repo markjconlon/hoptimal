@@ -40,7 +40,7 @@ class User < ApplicationRecord
   end
 
   def random_by_previous(current_user)
-    rating_3_or_above = UserBeer.where(user_id: current_user, rating: nil)
+    rating_3_or_above = UserBeer.where(user_id: current_user, rating: 3)
     beer_id_for_category = rating_3_or_above.sample.beer_id
     category_to_pull_from = Beer.find(beer_id_for_category).category_id
 
