@@ -5,4 +5,6 @@ class Beer < ApplicationRecord
   has_many :users, through: :user_beers
 
   paginates_per 10
+
+  accepts_nested_attributes_for :user_beers
 end
