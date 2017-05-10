@@ -1,4 +1,7 @@
 <%= link_to "Back to Beers", beers_path %>
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
 <h1><%= @beer.name %></h1>
 <img src="<%= @beer.image_thumb_url %>" alt="<%= @beer.name %> Photo">
 
