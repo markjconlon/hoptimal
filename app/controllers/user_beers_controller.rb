@@ -13,11 +13,24 @@ class UserBeersController < ApplicationController
     @user_beer.note = note
     @user_beer.rating = rating
 
-    if @user_beer.save
-      redirect_to beers_path
-    else
-      render :show
+    beer_list = UserBeer.where(user_id: current_user.id)
+    beer_list_ids = []
+    beer_list.each do |beer|
+      beer_list_ids << beer.beer_id
     end
+
+    if beer_list_ids.include?(beer.id)
+      flash[:alert] = 'Looks like you have already recorded this beer in My Beers'
+      redirect_to beer_path(beer.id)
+    else
+      if @user_beer.save
+        redirect_to beers_path
+      else
+        # breaks here however we are not checking for validations
+        render :show
+      end
+    end
+
   end
 
 
