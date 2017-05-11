@@ -1,13 +1,9 @@
-<div class="form">
-<%= form_for [@beer, @user_beer] do |f|%>
+<h2><%= @beer.name %></h2>
+<img src="<%=@beer.image_thumb_url%>" >
 
-  <div>
-    <%= hidden_field_tag(:user_id, current_user.id) %>
-  </div>
-
-  <div>
-    <%= hidden_field_tag(:beer_id, @beer.id) %>
-  </div>
+<%= form_for @user_beer do |f| %>
+  <%= hidden_field_tag(:user_id, current_user.id) %>
+  <%= hidden_field_tag(:beer_id, @user_beer.beer_id) %>
 
   <div>
     <p>Rating:</p>
@@ -27,9 +23,8 @@
     <%= f.label :note %>
     <%= f.text_area :note %>
   </div>
-
   <div>
-    <%= submit_tag("Add To 'My List'") %>
+    <%= submit_tag("Update in 'My List'") %>
   </div>
+
 <% end %>
-</div>

@@ -1,5 +1,9 @@
-<h1>Based on you're previous selections, you should try:</h1>
-
-<div class="suggestions">
-    YOOn Drink
+<div>
+  <h1>Based on you're previous selections, you should try:</h1>
+    <% if @based_on_previous == nil %>
+      <p> This section requires you to have added beers with a rating of 3 or above. <p>
+    <% else %>
+      <p><%= @based_on_previous.name %></p>
+      <img src="<%= @based_on_previous.image_thumb_url %>">
+    <% end %>
 </div>

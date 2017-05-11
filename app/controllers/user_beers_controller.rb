@@ -25,13 +25,35 @@ class UserBeersController < ApplicationController
     else
       if @user_beer.save
         redirect_to beers_path
-      else
-        # breaks here however we are not checking for validations
-        render :show
       end
     end
 
   end
 
+  def edit
+    @user_beer = UserBeer.find(params[:id])
+    @beer = Beer.find(@user_beer.beer_id)
+  end
+
+  def update
+    @user_beer = UserBeer.find(params[:id])
+    if @user_beer.update_attributes(user_beer_params)
+      redirect_to beers_path
+    else
+      render :show
+    end
+  end
+
+  def destroy
+    @user_beer = UserBeer.find(params[:id])
+    @user_beer.destroy
+    redirect_to user_beers_show_path
+  end
+
+private
+
+ def user_beer_params
+   params.permit(:rating, :note)
+ end
 
 end

@@ -1,33 +1,15 @@
-<div>
-  <p>trophies go here</p>
-</div>
+<%= render 'trophy' %>
+<%= render 'random' %>
+<%= render 'preferences' %>
+<%= render 'suggestions' %>
 
-<div>
-  <h2> Based on Preference </h2>
-  <% if @based_on_preference == nil %>
-    <p>You have cleared this category, please try another?</p>
-  <% else %>
-    <p><%= @based_on_preference.name %></p>
-    <img src="<%= @based_on_preference.image_thumb_url %>"></br>
-  <% end %>
-</div>
-
-<div>
-  <h2>Based On Previous</h2>
-    <% if @based_on_previous == nil %>
-      <p> This section requires you to have added beers with a rating of 3 or above. <p>
-    <% else %>
-      <p><%= @based_on_previous.name %></p>
-      <img src="<%= @based_on_previous.image_thumb_url %>">
-    <% end %>
-</div>
 
 <div class="">
   <h2>Most Recent Beers</h2>
   <% @user_recent_4.each do |ub| %>
-    <p><%= ub.beer.name %></p>
-    <p><%= ub.beer.category.category_type %></p>
-    <p><%= ub.beer.varietal %></p>
-    <img src="<%= ub.beer.image_thumb_url %>"></br>
+  <p><%= ub.beer.name %></p>
+  <p><%= ub.beer.category.category_type %></p>
+  <p><%= ub.beer.varietal %></p>
+  <img src="<%= ub.beer.image_thumb_url %>"></br>
   <% end %>
 </div>
