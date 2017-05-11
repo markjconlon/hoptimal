@@ -1,5 +1,12 @@
-<h2>Feeling Lucky? Here's one on the house:</h2>
+<div class="">
+  <h2>Feeling Lucky? Here's one on the house:</h2>
+  <img src="<%= @random_selection.image_thumb_url %>" alt=""><br>
+  <p>
+  <%= @random_selection.name %>
+ </p>
 
+ 
+ <!-- need to create a link for individual beer page -->
+   <!-- <%= link_to "#{@random_selection.name}", beers_path(:id) %> -->
 
-
- <button type="submit" name="button" id='button'>Buttondc</button>
+</div>

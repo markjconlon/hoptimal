@@ -1,36 +1,9 @@
-<div>
-  <p>trophies go here</p>
-</div>
 
-<div>
-  <h2> Based on Preference </h2>
-  <% if @based_on_preference == nil %>
-    <p>You have cleared this category, please try another?</p>
-  <% else %>
-    <p><%= @based_on_preference.name %></p>
-    <img src="<%= @based_on_preference.image_thumb_url %>"></br>
-  <% end %>
-</div>
+<%= render 'trophy' %>
+<%= render 'random' %>
+<%= render 'preference' %>
+<%= render 'suggestion' %>
 
-<div>
-  <h2>Based On Previous</h2>
-    <% if @based_on_previous == nil %>
-      <p> This section requires you to have added beers with a rating of 3 or above. <p>
-    <% else %>
-      <p><%= @based_on_previous.name %></p>
-      <img src="<%= @based_on_previous.image_thumb_url %>">
-    <% end %>
-</div>
-
-
-<div class="">
-  <h2>Random Beer</h2>
-  <img src="<%= @random_selection.image_thumb_url %>" alt=""><br>
-  <p>
-  <%= @random_selection.name %>
- </p>
-   <%= link_to "#{@random_selection.name}" %>
-</div>
 
 <div class="">
   <h2>Most Recent Beers</h2>
