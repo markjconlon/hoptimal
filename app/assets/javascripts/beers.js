@@ -15,10 +15,19 @@ $(function(){
     })
   });
 
+// displays beer name text when mouse moves over the specific div
   $('.all-beers-list').mouseover(function() {
-    $(this).find('div.beers-list-text').removeClass("display-none");
+    $(this).find('div.beers-list-text').animate({
+      opacity: 1,
+    });
   }).mouseleave(function() {
-    $(this).find('div.beers-list-text').addClass("display-none");
+    $(this).find('div.beers-list-text').animate({
+      opacity: 0,
+    });
+  });
+
+  $('.all-beers-list').on('vmouseover', function() {
+    $(this).find('div.beers-list-text').removeClass("display-none");
   })
 
 })
