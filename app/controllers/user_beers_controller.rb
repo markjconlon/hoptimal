@@ -25,9 +25,6 @@ class UserBeersController < ApplicationController
     else
       if @user_beer.save
         redirect_to beers_path
-      else
-        # breaks here however we are not checking for validations
-        render :show
       end
     end
 
@@ -46,6 +43,13 @@ class UserBeersController < ApplicationController
       render :show
     end
   end
+
+  def destroy
+    @user_beer = UserBeer.find(params[:id])
+    @user_beer.destroy
+    redirect_to user_beers_show_path
+  end
+
 private
 
  def user_beer_params
