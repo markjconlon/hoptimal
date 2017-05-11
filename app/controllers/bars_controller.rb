@@ -5,14 +5,13 @@ class BarsController < ApplicationController
 
   def create
     @bar = Bar.new(bar_params)
-    byebug
     if @bar.save
       redirect_to beers_path
     end
   end
 
   def show
-
+    @bar = Bar.find(params[:id])
   end
 
   private
