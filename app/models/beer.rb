@@ -4,7 +4,7 @@ class Beer < ApplicationRecord
   belongs_to :category
   has_many :users, through: :user_beers
 
-  paginates_per 10
+  paginates_per 12
 
   accepts_nested_attributes_for :user_beers
 end

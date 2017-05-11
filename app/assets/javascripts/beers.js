@@ -14,4 +14,11 @@ $(function(){
       $("#search-beers").html(data);
     })
   });
+
+  $('.all-beers-list').mouseover(function() {
+    $(this).find('div.beers-list-text').removeClass("display-none");
+  }).mouseleave(function() {
+    $(this).find('div.beers-list-text').addClass("display-none");
+  })
+
 })
