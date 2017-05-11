@@ -30,6 +30,8 @@ class UsersController < ApplicationController
     @preference = (Category.find(current_user.category_id)).category_type
 
     @random_selection = @user.random_selection(current_user)
+
+
   end
 
   def edit
