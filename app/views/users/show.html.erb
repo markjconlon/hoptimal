@@ -22,12 +22,22 @@
     <% end %>
 </div>
 
+
+<div class="">
+  <h2>Random Beer</h2>
+  <img src="<%= @random_selection.image_thumb_url %>" alt=""><br>
+  <p>
+  <%= @random_selection.name %>
+ </p>
+   <%= link_to "#{@random_selection.name}" %>
+</div>
+
 <div class="">
   <h2>Most Recent Beers</h2>
   <% @user_recent_4.each do |ub| %>
-    <p><%= ub.beer.name %></p>
-    <p><%= ub.beer.category.category_type %></p>
-    <p><%= ub.beer.varietal %></p>
-    <img src="<%= ub.beer.image_thumb_url %>"></br>
+  <p><%= ub.beer.name %></p>
+  <p><%= ub.beer.category.category_type %></p>
+  <p><%= ub.beer.varietal %></p>
+  <img src="<%= ub.beer.image_thumb_url %>"></br>
   <% end %>
 </div>

@@ -1,0 +1,17 @@
+<h1>
+  Based on your preference of "<%= current_user.category_id %>", here are some suggestions you should try:
+</h1>
+
+<div>
+
+  <% if @based_on_preference == nil %>
+    <p>You have cleared this category, please try another?</p>
+  <% else %>
+  <div class="based_on_preference">
+    <% @based_on_preference.each do |beer| %>
+    <img src="<%= beer.image_thumb_url %>"></br>
+    <p><%= beer.name %></p>
+    <% end %>
+  </div>
+  <% end %>
+</div>

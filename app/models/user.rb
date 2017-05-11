@@ -57,4 +57,15 @@ class User < ApplicationRecord
   def most_recent_4(current_user)
     UserBeer.where(user_id: current_user).order(:created_at).last(4)
   end
+
+  
+  def random_selection(current_user)
+    arr = []
+    UserBeer.all.each{|x| arr << x.beer_id}
+    arr1 = []
+    Beer.all.each{|x| arr1 << x.id}
+    random = arr1 - arr
+    random.count
+    Beer.find(random.sample)
+  end
 end
