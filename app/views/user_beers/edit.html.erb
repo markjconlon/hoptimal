@@ -6,11 +6,12 @@
   <%= hidden_field_tag(:beer_id, @user_beer.beer_id) %>
 
   <div>
-    <%= radio_button_tag(:rating, "1") %>
-    <%= radio_button_tag(:rating, "2") %>
-    <%= radio_button_tag(:rating, "3") %>
-    <%= radio_button_tag(:rating, "4") %>
-    <%= radio_button_tag(:rating, "5") %>
+    <%= f.label :rating %>
+    <%= f.radio_button :rating, 1 %>
+    <%= f.radio_button :rating, 2 %>
+    <%= f.radio_button :rating, 3 %>
+    <%= f.radio_button :rating, 4 %>
+    <%= f.radio_button :rating, 5 %>
   </div>
 
   <div>
