@@ -1,0 +1,23 @@
+<h2><%= @beer.name %></h2>
+<img src="<%=@beer.image_thumb_url%>" >
+
+<%= form_for @user_beer do |f| %>
+  <%= hidden_field_tag(:user_id, current_user.id) %>
+  <%= hidden_field_tag(:beer_id, @user_beer.beer_id) %>
+
+  <div>
+    <%= radio_button_tag(:rating, "1") %>
+    <%= radio_button_tag(:rating, "2") %>
+    <%= radio_button_tag(:rating, "3") %>
+    <%= radio_button_tag(:rating, "4") %>
+    <%= radio_button_tag(:rating, "5") %>
+  </div>
+
+  <div>
+    <%= text_area_tag(:note) %>
+  </div>
+  <div>
+    <%= submit_tag("Update in 'My List'") %>
+  </div>
+
+<% end %>

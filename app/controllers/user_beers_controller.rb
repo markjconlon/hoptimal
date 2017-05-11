@@ -33,5 +33,23 @@ class UserBeersController < ApplicationController
 
   end
 
+  def edit
+    @user_beer = UserBeer.find(params[:id])
+    @beer = Beer.find(@user_beer.beer_id)
+  end
+
+  def update
+    @user_beer = UserBeer.find(params[:id])
+    if @user_beer.update_attributes(user_beer_params)
+      redirect_to beers_path
+    else
+      render :show
+    end
+  end
+private
+
+ def user_beer_params
+   params.permit(:rating, :note)
+ end
 
 end
