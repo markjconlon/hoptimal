@@ -78,7 +78,20 @@
     end
   end
 
+  def give_placeholder(image_thumb_url)
+    @all_beer_types.each do |image_thumb|
+      if image_thumb_url == nil
+        return "http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg"
+      else
+        return image_thumb_url
+      end
+    end
+  end
+
 beer_list.each do |beer|
   id_number = give_category_id(beer[:tertiary_category])
+  beer[:image_thumb_url] = give_placeholder(beer[:image_thumb_url])
   Beer.create(name: beer[:name], category_id: id_number, varietal: beer[:varietal], origin: beer[:origin], brewery: beer[:brewery], description: beer[:description], style: beer[:style], tasting_note: beer[:tasting_note], image_url: beer[:image_url], image_thumb_url: beer[:image_thumb_url])
 end
+
+User.create(first_name: 'a', last_name: 'a', username: 'a', email: 'a', password: 'a', password_confirmation: 'a')
