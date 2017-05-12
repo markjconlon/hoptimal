@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function(){
 
   $("#search-field").on('keyup', function(e){
     $.ajax({
@@ -26,8 +26,12 @@ $(function(){
     });
   });
 
-  $('.all-beers-list').on('vmouseover', function() {
-    $(this).find('div.beers-list-text').removeClass("display-none");
-  })
+  // $('.all-beers-list').on('vmouseover', function() {
+  //   $(this).find('div.beers-list-text').animate({
+  //     opacity: 1,
+  //   }).on('vmousecancel', function() {
+  //     $(this).find('div.beers-list-text').attr("class", "display-none")
+  //   })
+  // })
 
 })
