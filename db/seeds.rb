@@ -109,7 +109,18 @@ end
   {name: "The Drake Hotel", address: "1150 Queen St W, Toronto, ON M6J 1J3", latitude: 43.6432048, longitude: -79.4246377},
   {name: "Gladstone Hotel", address: "1214 Queen St W, Toronto, ON M6J 1J6", latitude: 43.6427733, longitude: -79.4269164},
   {name: "Betty's", address: " 240 King St E, Toronto, ON M5A 1K1", latitude: 43.6516554, longitude: -79.3676058},
-  {name: "The Ballroom Bowl", address: "145 John St, Toronto, ON M5V 2E4", latitude: 43.6489696, longitude: -79.3905108}]
+  {name: "The Ballroom Bowl", address: "145 John St, Toronto, ON M5V 2E4", latitude: 43.6489696, longitude: -79.3905108},
+  {name: "Real Sports Bar & Grill", address: " 15 York St, Toronto, ON M5J 2X2", latitude: 43.6429439, longitude: -79.3803575},
+  {name: "The Loose Moose", address: "146 Front St W, Toronto, ON M5J 1G2", latitude: 43.6452325, longitude: -79.383897},
+  {name: "C'est What?", address: " 67 Front St E, Toronto, ON M5E 1B5", latitude: 43.6482483, longitude: -79.3733593},
+  {name: "Sin & Redemption", address: "136 McCaul St, Toronto, ON M5T 1W2", latitude: 43.6547012, longitude: -79.3917222},
+  {name: "Duke's Refresher", address: "382 Yonge St #8, Toronto, ON M5B 1S8", latitude: 43.659257, longitude: -79.3828256},
+  {name: "Birreria Volo", address: " 612 College St, Toronto, ON M6G 1B4", latitude: 43.6551924, longitude: -79.4146178},
+  {name: "Bar Hop Brewco", address: "137 Peter St, Toronto, ON M5V 2H3", latitude: 43.6489195, longitude: -79.3932235},
+  {name: "The Village Idiot", address: "126 McCaul St, Toronto, ON M5T 1W2", latitude: 43.6544462, longitude: -79.391616},
+  {name: "REDS Midtown Tavern", address: "382 Yonge St #6, Toronto, ON M5B 1S8", latitude: 43.659257, longitude: -79.3828256}]
+
+
 
 @bar_list.each do |bar|
   Bar.create(name: bar[:name], address: bar[:address], latitude: bar[:latitude], longitude: bar[:longitude])
@@ -135,4 +146,3 @@ i = 0
   BarBeer.create(bar_id: bar, beer_id: @beer_id[i+4])
   i+=6
 end
-
