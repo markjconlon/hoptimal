@@ -1,3 +1,102 @@
 // Place all the styles related to the beers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#hoptimal-logo {
+  width: 40px;
+  margin: 5px 20px;
+}
+
+.nav-item {
+  padding: 0 25px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  background-color: #d1d1d1;
+  width: 100%;
+  height: 100px;
+  text-transform: uppercase;
+}
+
+.main-content {
+  position: relative;
+  top: 110px;
+}
+
+div.all-beers-list img {
+  width: 100%;
+}
+
+.display-show {
+  display:inline;
+}
+
+.display-none {
+  opacity: 0;
+}
+#search-beers {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.all-beers-list {
+    display: inline-block;
+    min-width: 240px;
+    width: calc(25%);
+    text-align: center;
+    // border: 2px solid black;
+    margin: 2px;
+    // margin-left: 5%;
+    position: relative;
+    height: 600px;
+}
+
+.beers-list-text > h2 {
+  display: inline;
+  background-color: rgba(130, 130, 130, 0.9);
+  width: 100%;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  float: left;
+  position: relative;
+  bottom: 250px;
+  padding: 25px 0;
+  border-radius: 8px;
+}
+
+
+@media only screen and (max-device-width: 480px) {
+  .all-beers-list {
+    display: inline-block;
+    width: calc(50% - 6px);
+
+  }
+
+}
+
+@media only screen and (max-device-width: 320px) {
+  .all-beers-list {
+    display: inline-block;
+    width: 75%;
+    height: 75%;
+    margin: 0 auto;
+  }
+
+  .beers-list-text {
+    z-index: 5;
+    position: absolute;
+    bottom: 125px;
+    text-align: center;
+    float: left;
+    line-height: 100%;
+    font-size: 2em;
+    width: 100%;
+  }
+
+
+
+}

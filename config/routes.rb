@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'beers#index'
   get 'user_beers/show'
   resources :user_beers, only: [:edit, :update, :destroy]
 

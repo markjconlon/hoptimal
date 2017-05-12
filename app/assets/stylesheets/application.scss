@@ -11,5 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "beers";
+ @import "sessions";
+ @import "user_beers";
+ @import "users";

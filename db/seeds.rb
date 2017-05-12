@@ -78,10 +78,22 @@
     end
   end
 
+  def give_placeholder(image_thumb_url)
+    @all_beer_types.each do |image_thumb|
+      if image_thumb_url == nil
+        return "http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg"
+      else
+        return image_thumb_url
+      end
+    end
+  end
+
 beer_list.each do |beer|
   id_number = give_category_id(beer[:tertiary_category])
+  beer[:image_thumb_url] = give_placeholder(beer[:image_thumb_url])
   Beer.create(name: beer[:name], category_id: id_number, varietal: beer[:varietal], origin: beer[:origin], brewery: beer[:brewery], description: beer[:description], style: beer[:style], tasting_note: beer[:tasting_note], image_url: beer[:image_url], image_thumb_url: beer[:image_thumb_url])
 end
+
 
 @bar_list = [{name: "Bandit Brewery", address: "2125 Dundas St W, Toronto, ON M6R 1X1", latitude: 43.6525744, longitude: -79.4493798},
   {name: "Old School", address: "800 Dundas St W, Toronto, ON M6J 1V1", latitude: 43.6519932, longitude: -79.4083517},
@@ -123,3 +135,4 @@ i = 0
   BarBeer.create(bar_id: bar, beer_id: @beer_id[i+4])
   i+=6
 end
+

@@ -6,19 +6,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Include the jQuery Mobile library -->
+    <!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+
+
   </head>
 
   <body>
 
     <nav class = "navbar navbar-default">
+      <a href="<%= root_path %>">
+        <%= image_tag("hoptimalLogo.png", :id => "hoptimal-logo", :alt => "Hoptimal Logo - Mobile") %>
+      </a>
     <% if current_user %>
-      Signed in as <%= link_to current_user.username, user_path("current") %> | <%=link_to "Edit", edit_user_path("current") %> | <%= link_to "Log out", session_path("current"), :method => :delete %>
-      | <%= link_to "View Beers", beers_path %> | <%= link_to "My Beers", user_beers_show_path %>
+      Signed in as <%= link_to current_user.username, user_path("current"), :class => "nav-item" %> | <%=link_to "Edit", edit_user_path("current"), :class => "nav-item" %> | <%= link_to "Log out", session_path("current"), :method => :delete, :class => "nav-item" %>
+      | <%= link_to "View Beers", beers_path, :class => "nav-item" %> | <%= link_to "My Beers", user_beers_show_path, :class => "nav-item" %>
     <% else %>
-      <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+      <%= link_to "Log in", new_session_path, :class => "nav-item" %> or <%= link_to "Sign up", new_user_path, :class => "nav-item" %>
     <% end %>
   </nav>
-
-    <%= yield %>
+    <main class="main-content">
+      <%= yield %>
+    </main>
   </body>
 </html>
