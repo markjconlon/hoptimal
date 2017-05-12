@@ -102,3 +102,5 @@ end
 @bar_list.each do |bar|
   Bar.create(name: bar[:name], address: bar[:address], latitude: bar[:latitude], longitude: bar[:longitude])
 end
+
+bar = [{name: "Bandit Brewery"}, ]
