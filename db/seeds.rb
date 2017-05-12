@@ -118,8 +118,9 @@ end
   {name: "Birreria Volo", address: " 612 College St, Toronto, ON M6G 1B4", latitude: 43.6551924, longitude: -79.4146178},
   {name: "Bar Hop Brewco", address: "137 Peter St, Toronto, ON M5V 2H3", latitude: 43.6489195, longitude: -79.3932235},
   {name: "The Village Idiot", address: "126 McCaul St, Toronto, ON M5T 1W2", latitude: 43.6544462, longitude: -79.391616},
-  {name: "REDS Midtown Tavern", address: "382 Yonge St #6, Toronto, ON M5B 1S8", latitude: 43.659257, longitude: -79.3828256}]
-
+  {name: "REDS Midtown Tavern", address: "382 Yonge St #6, Toronto, ON M5B 1S8", latitude: 43.659257, longitude: -79.3828256},
+  {name: "The Only Cafe", address: "972 Danforth Ave, Toronto, ON M4J 1M1", latitude: 43.6804685, longitude: -79.337862},
+  {name: "Stout Irish Pub ", address: "221 Carlton St, Toronto, ON M5A 2L2", latitude: 43.6637964, longitude: -79.3689038}]
 
 
 @bar_list.each do |bar|
