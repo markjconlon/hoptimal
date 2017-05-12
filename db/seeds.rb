@@ -103,4 +103,23 @@ end
   Bar.create(name: bar[:name], address: bar[:address], latitude: bar[:latitude], longitude: bar[:longitude])
 end
 
-bar = [{name: "Bandit Brewery"}, ]
+@bars = Bar.all
+@bars_id = []
+@bars.each do |bar|
+  @bars_id << bar.id
+end
+
+@beers = Beer.all
+@beer_id = []
+@beers.each do |beer|
+  @beer_id << beer.id
+end
+i = 0
+@bars_id.each do |bar|
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+0])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+1])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+2])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+3])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+4])
+  i+=6
+end
