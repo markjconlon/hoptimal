@@ -94,4 +94,4 @@ beer_list.each do |beer|
   Beer.create(name: beer[:name], category_id: id_number, varietal: beer[:varietal], origin: beer[:origin], brewery: beer[:brewery], description: beer[:description], style: beer[:style], tasting_note: beer[:tasting_note], image_url: beer[:image_url], image_thumb_url: beer[:image_thumb_url])
 end
 
-User.create(first_name: 'a', last_name: 'a', username: 'a', email: 'a', password: 'a', password_confirmation: 'a')
+User.create(first_name: 'a', last_name: 'a', username: 'a', email: 'a', password: 'a', password_confirmation: 'a', preference: 'Amber Lager')

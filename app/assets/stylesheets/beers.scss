@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #hoptimal-logo {
-  width: 60px;
+  width: 40px;
   margin: 5px 20px;
 }
 
@@ -16,12 +16,13 @@
   z-index: 100;
   background-color: #d1d1d1;
   width: 100%;
-  height: 140px;
+  height: 100px;
+  text-transform: uppercase;
 }
 
 .main-content {
   position: relative;
-  top: 150px;
+  top: 110px;
 }
 
 div.all-beers-list img {
@@ -55,15 +56,16 @@ div.all-beers-list img {
 
 .beers-list-text > h2 {
   display: inline;
-  background-color: #828282;
+  background-color: rgba(130, 130, 130, 0.9);
   width: 100%;
   color: white;
   font-size: 2em;
   text-align: center;
   float: left;
   position: relative;
-  bottom: 325px;
+  bottom: 250px;
   padding: 25px 0;
+  border-radius: 8px;
 }
 
 
