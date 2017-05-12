@@ -6,9 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- Include the jQuery Mobile library -->
-    <!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   </head>
 
@@ -19,10 +17,27 @@
         <%= image_tag("hoptimalLogo.png", :id => "hoptimal-logo", :alt => "Hoptimal Logo - Mobile") %>
       </a>
     <% if current_user %>
-      Signed in as <%= link_to current_user.username, user_path("current"), :class => "nav-item" %> | <%=link_to "Edit", edit_user_path("current"), :class => "nav-item" %> | <%= link_to "Log out", session_path("current"), :method => :delete, :class => "nav-item" %>
-      | <%= link_to "View Beers", beers_path, :class => "nav-item" %> | <%= link_to "My Beers", user_beers_show_path, :class => "nav-item" %>
+      <div class="logged-in-nav">
+        <div class="nav-left">
+          <i class="fa fa-list"></i>
+          <%= link_to "View Beers", beers_path, :class => "nav-item" %>
+          <i class="fa fa-list-ol"></i>
+          <%= link_to "My Beers", user_beers_show_path, :class => "nav-item" %>
+        </div>
+        <div class="nav-right">
+          <i class="fa fa-user"></i>
+          <%= link_to current_user.username, user_path("current"), :class => "nav-item" %>
+          <i class="fa fa-sign-out"></i>
+          <%= link_to "Log out", session_path("current"), :method => :delete, :class => "nav-item" %>
+        </div>
+      </div>
     <% else %>
-      <%= link_to "Log in", new_session_path, :class => "nav-item" %> or <%= link_to "Sign up", new_user_path, :class => "nav-item" %>
+      <div class="logged-out-nav">
+        <i class="fa fa-sign-in"></i>
+        <%= link_to "Log in", new_session_path, :class => "nav-item" %>
+        <i class="fa fa-user-plus"></i>
+        <%= link_to "Sign up", new_user_path, :class => "nav-item" %>
+      </div>
     <% end %>
   </nav>
     <main class="main-content">
