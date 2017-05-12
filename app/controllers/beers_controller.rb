@@ -13,6 +13,13 @@ class BeersController < ApplicationController
   def show
     @beer = Beer.find(params[:id])
     @user_beer = @beer.user_beers.new
+    @bars= []
+    @bar_where_beer_is_found = @beer.bar_beers
+    @bar_where_beer_is_found.each do |bar|
+      @bars << Bar.find(bar.bar_id)
+    end
+    # @bar = @beer.bar_beers.each do |bar|
+    #   <%= link_to "#{(Bar.find(bar.bar_id)).name}", bar_path %>
   end
 
   def search
