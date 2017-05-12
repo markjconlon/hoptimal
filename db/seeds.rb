@@ -94,4 +94,45 @@ beer_list.each do |beer|
   Beer.create(name: beer[:name], category_id: id_number, varietal: beer[:varietal], origin: beer[:origin], brewery: beer[:brewery], description: beer[:description], style: beer[:style], tasting_note: beer[:tasting_note], image_url: beer[:image_url], image_thumb_url: beer[:image_thumb_url])
 end
 
-User.create(first_name: 'a', last_name: 'a', username: 'a', email: 'a', password: 'a', password_confirmation: 'a', preference: 'Amber Lager')
+
+@bar_list = [{name: "Bandit Brewery", address: "2125 Dundas St W, Toronto, ON M6R 1X1", latitude: 43.6525744, longitude: -79.4493798},
+  {name: "Old School", address: "800 Dundas St W, Toronto, ON M6J 1V1", latitude: 43.6519932, longitude: -79.4083517},
+  {name: "Montauk Bar", address: "765 Dundas St W, Toronto, ON M6J 1T9", latitude: 43.6519802, longitude: -79.406845},
+  {name: "Studio Bar", address: "824 Dundas St W, Toronto, ON M6J 1V3", latitude: 43.6517367, longitude: -79.409256},
+  {name: "Grace O'Malley's", address: "14 Duncan St, Toronto, ON M5H 3G8", latitude: 43.6476863, longitude: -79.3885854},
+  {name: "Get Well", address: "1181 Dundas St W, Toronto, ON M6H 1Y3", latitude: 43.6504864, longitude: -79.4422176},
+  {name: "Carbon Bar", address: " 99 Queen St E, Toronto, ON M5C 1S1", latitude: 43.6531746, longitude: -79.3747884},
+  {name: "The Bier Markt", address: "600 King St W, Toronto, ON M5V 1M3", latitude: 43.6448594, longitude: -79.4000053},
+  {name: "Handlebar", address: "159 Augusta Ave, Toronto, ON M5T 2L4", latitude: 43.6529089, longitude: -79.4010388},
+  {name: "Fring's", address: "455 King St W, Toronto, ON M5V 1K4", latitude: 43.6450012, longitude: -79.3960233},
+  {name: "Portland Variety", address: "587 King St W, Toronto, ON M5V 1M5", latitude: 43.6441878, longitude: -79.4001593},
+  {name: "The Drake Hotel", address: "1150 Queen St W, Toronto, ON M6J 1J3", latitude: 43.6432048, longitude: -79.4246377},
+  {name: "Gladstone Hotel", address: "1214 Queen St W, Toronto, ON M6J 1J6", latitude: 43.6427733, longitude: -79.4269164},
+  {name: "Betty's", address: " 240 King St E, Toronto, ON M5A 1K1", latitude: 43.6516554, longitude: -79.3676058},
+  {name: "The Ballroom Bowl", address: "145 John St, Toronto, ON M5V 2E4", latitude: 43.6489696, longitude: -79.3905108}]
+
+@bar_list.each do |bar|
+  Bar.create(name: bar[:name], address: bar[:address], latitude: bar[:latitude], longitude: bar[:longitude])
+end
+
+@bars = Bar.all
+@bars_id = []
+@bars.each do |bar|
+  @bars_id << bar.id
+end
+
+@beers = Beer.all
+@beer_id = []
+@beers.each do |beer|
+  @beer_id << beer.id
+end
+i = 0
+@bars_id.each do |bar|
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+0])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+1])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+2])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+3])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+4])
+  i+=6
+end
+

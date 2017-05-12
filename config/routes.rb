@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post 'beers/search' => 'beers#search'
 
   resources :sessions, only: [:new, :create, :destroy]
+
+  resources :bars
 end
