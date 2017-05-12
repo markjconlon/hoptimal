@@ -13,3 +13,70 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ // nav.navbar.navbar-default {
+ //     width: 100%;
+ //     position: fixed;
+ //     top: 0%;
+ //   }
+ *,
+ *:before,
+ *:after {
+   box-sizing: inherit;
+ }
+ body{
+   background-color: #edfff0;
+ }
+
+ div {
+     text-align: center;
+ }
+
+ footer {
+     text-align: center;
+     background-color: black;
+     height: 50px;
+     color: white;
+     bottom: 0px;
+     width: 100%;
+     height: 10%;
+     margin-top: 10%;
+ }
+
+ .recent_beer {
+   width: 85%;
+   text-align: center;
+   margin-left: 8%;
+   margin-right: auto;
+ }
+
+ .beer_consumed {
+   width: 44%;
+   display: inline-block;
+   margin-right: 2%;
+   border-style: solid;
+   margin-bottom: 3%;
+   display: inline-flex;
+ }
+ .trophy {
+     width: 90%;
+ }
+
+ .random {
+     width: 90%;
+ }
+
+   .preferences {
+  width: 80%;
+  margin-left: 8%;
+ }
+
+ .beer_info {
+     width: 50%;
+     position: relative;
+     vertical-align: middle;
+ }
+
+ a#beer_image {
+     width: 50%;
+ }

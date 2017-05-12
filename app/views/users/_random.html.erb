@@ -1,17 +1,21 @@
 <div class="">
-  <h2>Feeling Lucky? Here's one on the house:</h2>
-  <img src="<%= @random_selection.image_thumb_url %>" alt=""><br>
-  <p>
-  <%= @random_selection.name %>
- </p>
+  <h2>
+    Feeling Lucky? Here's one on the house!
+  </h2>
 
- <!-- need to create a link for individual beer page -->
+  <img src="<%= @random_selection.image_thumb_url %>" alt=""><br>
+
+  <p>
+    <!-- need to create a link for individual beer page -->
+    <%= link_to "Add #{@random_selection.name} to 'My Beers'", beer_path(@random_selection.id) %>
+</p>
+
    <!-- <%= link_to "#{@random_selection.name}", beers_path(:id) %> -->
 
 </div>
 
-
 <div>
+  <%= link_to "Add #{@random_selection.name } to 'My Beers'", beer_path(@based_on_preference.id) %>
   <h2>
     Feeling Lucky? Here's one on the house:
   </h2>
@@ -20,7 +24,7 @@
   </div>
   <p id="random_beer_container">
   </p>
-  <button type="submit" name="button" id="randomize_button">
+  <button type="button" id="randomize_button">
     Try Another:
   </button>
 </div>

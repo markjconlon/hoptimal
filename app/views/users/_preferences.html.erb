@@ -1,13 +1,28 @@
-<h1>
-  Based on your preference of "<%= @preference %>", here are some suggestions you should try:
-</h1>
-
 <div>
-  <h2> Based on Preference </h2>
+  <h1>
+    Based on your preference of "<%= @preference %>", here are some suggestions you should try:
+  </h1>
   <% if @based_on_preference == nil %>
     <p>You have cleared this category, please try another?</p>
   <% else %>
-    <p><%= @based_on_preference.name %></p>
-    <img src="<%= @based_on_preference.image_thumb_url %>"></br>
+
+  <div class="beer_consumed">
+    <a href="#" id="beer_image">
+      <div class="beer_img">
+          <img src="<%= @based_on_preference.image_thumb_url %>">
+      </div>
+    </a>
+
+  <div class="beer_info">
+    <h2>
+      <%= @based_on_preference.name %>
+    </h2>
+    <br>
+      <%= link_to"Add to 'My Beers'", beer_path(@based_on_preference.id) %>
+
+      <%= button_to("Try Another") %>
+    </div>
+  </div>
+
   <% end %>
 </div>

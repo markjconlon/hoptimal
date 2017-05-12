@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :beers, only: [:index, :show] do
     resources :user_beers, only: [:new, :create]
   end
+
   post 'beers/search' => 'beers#search'
 
   resources :sessions, only: [:new, :create, :destroy]
