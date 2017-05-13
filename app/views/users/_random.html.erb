@@ -1,12 +1,13 @@
-<div class="">
-  <h2>Feeling Lucky? Here's one on the house:</h2>
-  <img src="<%= @random_selection.image_thumb_url %>" alt=""><br>
-  <p>
-  <%= @random_selection.name %>
- </p>
+<div>
+  <h2 id="random_beer_notification">
+    Feeling Lucky? Here's one on the house!
+  </h2>
+  <div id="random_beer_container">
 
- 
- <!-- need to create a link for individual beer page -->
-   <!-- <%= link_to "#{@random_selection.name}", beers_path(:id) %> -->
+  <div id="random_beer_info"></div>
+
+  <button type="button" id="randomize_button">Random Beer</button>
+</div>
+
 
 </div>
