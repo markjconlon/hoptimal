@@ -23,7 +23,6 @@ class UserBeersController < ApplicationController
       flash[:alert] = 'Looks like you have already recorded this beer in My Beers'
       redirect_to beer_path(beer.id)
     else
-      byebug
       if @user_beer.save
         redirect_to beers_path
       end
