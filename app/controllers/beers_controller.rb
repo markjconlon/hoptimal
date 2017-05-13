@@ -11,21 +11,27 @@ class BeersController < ApplicationController
       end
     end
   end
-
-  def show
+  
+   def show
     @beer = Beer.find(params[:id])
     @user_beer = @beer.user_beers.new
-    respond_to do |format|
+     respond_to do |format|
       format.html
       format.json do
         render json: @Beer, except: %i(created_at updated_at)
       end
+    end 
+     
+    @bars= []
+    @bar_where_beer_is_found = @beer.bar_beers
+    @bar_where_beer_is_found.each do |bar|
+      @bars << Bar.find(bar.bar_id)
     end
+    # @bar = @beer.bar_beers.each do |bar|
+    #   <%= link_to "#{(Bar.find(bar.bar_id)).name}", bar_path %>
   end
 
-  def random
-    render json: Beer.all.sample
-  end
+
 
   def random_by_preference
     @user = current_user
