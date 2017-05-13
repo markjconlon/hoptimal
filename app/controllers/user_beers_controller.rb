@@ -5,8 +5,8 @@ class UserBeersController < ApplicationController
 
   def create
     beer = Beer.find(params[:beer_id])
-    note = params[:note]
-    rating = params[:rating]
+    note = params[:user_beer][:note]
+    rating = params[:user_beer][:rating]
     @user_beer = UserBeer.new
     @user_beer.beer = beer
     @user_beer.user = current_user
@@ -23,6 +23,7 @@ class UserBeersController < ApplicationController
       flash[:alert] = 'Looks like you have already recorded this beer in My Beers'
       redirect_to beer_path(beer.id)
     else
+      byebug
       if @user_beer.save
         redirect_to beers_path
       end
