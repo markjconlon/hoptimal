@@ -33,24 +33,24 @@ class User < ApplicationRecord
 
   def random_by_previous(current_user)
     rating_3_or_above = UserBeer.where(user_id: current_user.id, rating: [3, 4, 5])
+    beer_id_for_category = rating_3_or_above.sample.beer_id
+    category_to_pull_from = Beer.find(beer_id_for_category).category_id
+    all_beers_of_type = Beer.where(category_id: category_to_pull_from)
+    not_had_before = collection_to_sample_from(current_user, all_beers_of_type)
     if rating_3_or_above.count == 0
       return nil
     else
-      beer_id_for_category = rating_3_or_above.sample.beer_id
-      category_to_pull_from = Beer.find(beer_id_for_category).category_id
+      # If nothing can be returned either because they havent rated anything above 3 or the category
+      # selected has been cleared, we return a random beer they haven't had
+      if not_had_before.sample == nil
+        random_selection
+      else
+        return not_had_before.sample
+      end
     end
-    # Now have to check if they have cleared the category chosen in category_to_pull_from
-    # category_cleared? = (UserBeer.where(user_id: current_user.id)
-    # if condition
-    #
-    # else
-    #
-    # end
 
-    all_beers_of_type = Beer.where(category_id: category_to_pull_from)
 
-    not_had_before = collection_to_sample_from(current_user, all_beers_of_type)
-    return not_had_before.sample
+
   end
 
   def most_recent_4(current_user)
@@ -67,7 +67,6 @@ class User < ApplicationRecord
     # random = arr1 - arr
     # random.count
     # Beer.find(random.sample)
-
     (Beer.all - beers).sample
   end
 end
