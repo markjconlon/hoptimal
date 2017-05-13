@@ -5,8 +5,8 @@ class UserBeersController < ApplicationController
 
   def create
     beer = Beer.find(params[:beer_id])
-    note = params[:note]
-    rating = params[:rating]
+    note = params[:user_beer][:note]
+    rating = params[:user_beer][:rating]
     @user_beer = UserBeer.new
     @user_beer.beer = beer
     @user_beer.user = current_user
