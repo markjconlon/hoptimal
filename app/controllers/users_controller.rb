@@ -29,13 +29,13 @@ class UsersController < ApplicationController
     @based_on_previous = @user.random_by_previous(current_user)
     @preference = (Category.find(current_user.category_id)).category_type
 
-    @random_selection = @user.random_selection(current_user)
+    @random_selection = @user.random_selection
 
     respond_to do |format|
       format.html
 
       format.json do
-        render json: @user, except: %i(created_at updated_at)
+      render json: @user.beers.all, except: %i(created_at updated_at)
       end
     end
   end
@@ -57,6 +57,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
 
   private
   def user_params

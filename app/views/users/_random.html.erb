@@ -1,30 +1,13 @@
-<div class="">
-  <h2>
+<div>
+  <h2 id="random_beer_notification">
     Feeling Lucky? Here's one on the house!
   </h2>
+  <div id="random_beer_container">
 
-  <img src="<%= @random_selection.image_thumb_url %>" alt=""><br>
+  <div id="random_beer_info"></div>
 
-  <p>
-    <!-- need to create a link for individual beer page -->
-    <%= link_to "Add #{@random_selection.name} to 'My Beers'", beer_path(@random_selection.id) %>
-</p>
-
-   <!-- <%= link_to "#{@random_selection.name}", beers_path(:id) %> -->
-
+  <button type="button" id="randomize_button">Random Beer</button>
 </div>
 
-<div>
-  <%= link_to "Add #{@random_selection.name } to 'My Beers'", beer_path(@based_on_preference.id) %>
-  <h2>
-    Feeling Lucky? Here's one on the house:
-  </h2>
-  <div id="random_beer_photo">
 
-  </div>
-  <p id="random_beer_container">
-  </p>
-  <button type="button" id="randomize_button">
-    Try Another:
-  </button>
 </div>

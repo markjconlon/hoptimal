@@ -6,23 +6,21 @@
     <p>You have cleared this category, please try another?</p>
   <% else %>
 
-  <div class="beer_consumed">
-    <a href="#" id="beer_image">
-      <div class="beer_img">
-          <img src="<%= @based_on_preference.image_thumb_url %>">
+  <div id="preference_beer_container">
+      <div id="preference_beer_info">
+        <img src="<%= @based_on_preference.image_thumb_url %>">
+        <p>
+        <%= @based_on_preference.name %>
+        </p>
+        <p>
+        <%= link_to"Add to 'My Beers'", beer_path(@based_on_preference.id) %>
+      </p>
       </div>
-    </a>
 
-  <div class="beer_info">
-    <h2>
-      <%= @based_on_preference.name %>
-    </h2>
-    <br>
-      <%= link_to"Add to 'My Beers'", beer_path(@based_on_preference.id) %>
-
-      <%= button_to("Try Another") %>
-    </div>
+      <h2 id="preference_beer_notification">
+        Dont like the choice? No Problem, here's Another
+      </h2>
+      <button type="button" id="preference_button">Try Another!</button>
   </div>
-
   <% end %>
 </div>

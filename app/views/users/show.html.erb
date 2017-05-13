@@ -15,41 +15,5 @@
 </div>
 
 <div class="recent_beer">
-  <h2>
-    Most Recent Beers
-  </h2>
-
-  <h3>
-    <%= link_to "View Beers", beers_path %>
-  </h3>
-
-<% @user_recent_4.each do |ub| %>
-  <div class="beer_consumed">
-    <a href="#" id="beer_image">
-      <div class="beer_img">
-        <img src="<%= ub.beer.image_thumb_url %>"></br>
-      </div>
-    </a>
-
-      <div class="beer_info">
-        <h2>
-          <%= ub.beer.name %>
-        </h2>
-
-        <p>
-          <%= ub.beer.category.category_type %>
-        </p>
-
-        <p>
-          Rating: <%= ub.rating %>
-        </p>
-
-        <a href="/user_beers/<%=ub.id%>/edit">
-          EDIT MY BEER
-        </a>
-
-      </p>
-      </div>
-</div>
-  <% end %>
+<%= render 'recent' %>
 </div>

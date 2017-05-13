@@ -6,14 +6,32 @@ class BeersController < ApplicationController
     # @beers_all = @beers.order(:name).page params[:page]
     respond_to do |format|
       format.html
-      format.js
+      format.json do
+        render json: @Beer, except: %i(created_at updated_at)
+      end
     end
   end
 
   def show
     @beer = Beer.find(params[:id])
     @user_beer = @beer.user_beers.new
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: @Beer, except: %i(created_at updated_at)
+      end
+    end
   end
+
+  def random
+    render json: Beer.all.sample
+  end
+
+  def random_by_preference
+    @user = current_user
+    render json: Beer.all.where(category_id: (current_user.category_id)).sample
+  end
+
 
   def search
     @q = Beer.ransack(params[:q])
