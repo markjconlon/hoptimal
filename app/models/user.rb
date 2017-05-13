@@ -58,14 +58,17 @@ class User < ApplicationRecord
     UserBeer.where(user_id: current_user).order(:created_at).last(4)
   end
 
-  
-  def random_selection(current_user)
-    arr = []
-    UserBeer.all.each{|x| arr << x.beer_id}
-    arr1 = []
-    Beer.all.each{|x| arr1 << x.id}
-    random = arr1 - arr
-    random.count
-    Beer.find(random.sample)
+
+  def random_selection
+    #refactored to work more efficiently
+    # arr = []
+    # UserBeer.all.each{|x| arr << x.beer_id}
+    # arr1 = []
+    # Beer.all.each{|x| arr1 << x.id}
+    # random = arr1 - arr
+    # random.count
+    # Beer.find(random.sample)
+
+    (Beer.all - beers).sample
   end
 end
