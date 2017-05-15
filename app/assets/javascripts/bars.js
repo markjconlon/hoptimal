@@ -6,7 +6,7 @@ var currentLng = 0;
 $(document).ready(function(){
   var barLat = $('.temp_information').data('lat');
   var barLng = $('.temp_information').data('lng');
-  var longLat =
+  
   $("#directions").on('click', function(e){
     $('#map').html("");
     function getLocation() {
