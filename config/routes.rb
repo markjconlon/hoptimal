@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   # random beers route added to allow for json requests for un had random beers
   get '/beers/random' => 'beers#random'
+  # link added to allow for json request for random beer by suggestion :STRECTHER GOAL 
+  get '/beers/suggestion' => 'beers#suggestion'
 
 
   resources :user_beers, only: [:edit, :update, :destroy]

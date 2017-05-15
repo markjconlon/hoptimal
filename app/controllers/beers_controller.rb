@@ -36,11 +36,17 @@ class BeersController < ApplicationController
   end
 
 
-
   def random_by_preference
     @user = current_user
     render json: Beer.all.where(category_id: (current_user.category_id)).sample
   end
+
+# will work to try an create an ajx request to reload suggestion off of previous selections
+  # def suggestion
+  #   @user = current_user
+  #
+  #   render json: UserBeer.all
+  # end
 
 
   def search

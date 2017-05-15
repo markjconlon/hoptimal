@@ -6,7 +6,7 @@
       <p><%= @based_on_previous.name %></p>
       <img src="<%= @based_on_previous.image_thumb_url %>">
       <div>
-        <%= submit_tag("Add To 'My List'") %>
+        <%= link_to 'Add to "My Beers"', beer_path(@based_on_previous.id)%>
       </div>
 
       <div>
