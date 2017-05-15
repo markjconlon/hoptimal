@@ -1,60 +1,51 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-var currentLat = 0;
-var currentLng = 0;
 
 $(document).ready(function(){
   var barLat = $('.temp_information').data('lat');
   var barLng = $('.temp_information').data('lng');
-  
+
   $("#directions").on('click', function(e){
     $('#map').html("");
-    function getLocation() {
+    function getLocation(callBack) {
         if (navigator.geolocation) {
-            return navigator.geolocation.getCurrentPosition(showPosition);
+            navigator.geolocation.getCurrentPosition(callBack);
         } else {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
+    $('#map').append(function(){
+        getLocation(initMap);
+        function initMap(position) {
+          var bar = {lat: barLat, lng: barLng};
+          var current = {lat: position.coords.latitude, lng: position.coords.longitude};
 
-    function showPosition(position) {
-        currentLat = position.coords.latitude;
-        currentLng = position.coords.longitude;
-        console.log(currentLat);
-        console.log(currentLng);
-    }
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: bar,
+            scrollwheel: false,
+            zoom: 16
+          });
 
-    $('#map').append(initMap)
-      function initMap() {
-        var longLat = getLocation();
-        var bar = {lat: barLat, lng: barLng};
-        var current = {lat: currentLat, lng: currentLng};
+          var directionsDisplay = new google.maps.DirectionsRenderer({
+            map: map
+          });
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: bar,
-          scrollwheel: false,
-          zoom: 16
-        });
+          // Set destination, origin and travel mode.
+          var request = {
+            destination: bar,
+            origin: current,
+            travelMode: 'WALKING'
+          };
 
-        var directionsDisplay = new google.maps.DirectionsRenderer({
-          map: map
-        });
-
-        // Set destination, origin and travel mode.
-        var request = {
-          destination: bar,
-          origin: current,
-          travelMode: 'WALKING'
-        };
-
-        // Pass the directions request to the directions service.
-        var directionsService = new google.maps.DirectionsService();
-        directionsService.route(request, function(response, status) {
-          if (status == 'OK') {
-            // Display the route on the map.
-            directionsDisplay.setDirections(response);
-          }
-        });
-    };
+          // Pass the directions request to the directions service.
+          var directionsService = new google.maps.DirectionsService();
+          directionsService.route(request, function(response, status) {
+            if (status == 'OK') {
+              // Display the route on the map.
+              directionsDisplay.setDirections(response);
+            }
+          });
+      };
+    });
   });
 });
