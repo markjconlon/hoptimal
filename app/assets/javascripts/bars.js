@@ -1,9 +1,12 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-var currentLat = 0;
-var currentLng = 0;
+let currentLat = 0;
+let currentLng = 0;
 
 $(document).ready(function(){
+  var barLat = $('.temp_information').data('lat');
+  var barLng = $('.temp_information').data('lng');
+  var longLat =
   $("#directions").on('click', function(e){
     $('#map').html("");
     function getLocation() {
@@ -17,11 +20,14 @@ $(document).ready(function(){
     function showPosition(position) {
         currentLat = position.coords.latitude;
         currentLng = position.coords.longitude;
+        console.log(currentLat);
+        console.log(currentLng);
     }
-    $('#map').append(initMap())
+    debugger
+    $('#map').append(initMap)
       function initMap() {
         var longLat = getLocation();
-        var bar = {lat: parseInt(`$(@bar.latitude)`), lng: parseInt(`$(@bar.longitude)`)};
+        var bar = {lat: barLat, lng: barLng};
         var current = {lat: currentLat, lng: currentLng};
 
         var map = new google.maps.Map(document.getElementById('map'), {
