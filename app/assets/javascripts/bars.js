@@ -1,7 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-let currentLat = 0;
-let currentLng = 0;
+var currentLat = 0;
+var currentLng = 0;
 
 $(document).ready(function(){
   var barLat = $('.temp_information').data('lat');
@@ -23,7 +23,7 @@ $(document).ready(function(){
         console.log(currentLat);
         console.log(currentLng);
     }
-    debugger
+
     $('#map').append(initMap)
       function initMap() {
         var longLat = getLocation();
