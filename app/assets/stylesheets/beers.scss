@@ -1,7 +1,7 @@
 // Place all the styles related to the beers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+$nav-bar-grey: #d1d1d1;
 
 * { font-family: 'gilroy-light'; }
 
@@ -18,7 +18,7 @@
   position: fixed;
   top: 0px;
   z-index: 100;
-  background-color: #d1d1d1;
+  background-color: $nav-bar-grey;
   width: 100%;
   height: 100px;
   text-transform: uppercase;
@@ -104,6 +104,96 @@ div.all-beers-list img {
   border-radius: 8px;
 }
 
+.toggle-nav {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+@media only screen and (max-device-width: 640px) {
+  a.toggle-nav {
+    display: inline-block;
+    font-size: 5em;
+    padding-left: 10px;
+    line-height: 140px;
+    color: black;
+    position: absolute;
+    right: 40px;
+  }
+
+  img#hoptimal-logo {
+    position: absolute;
+  }
+
+  .active {
+    display: none;
+  }
+
+  div.logged-in-nav i {
+    display: none;
+  }
+
+  div.logged-in-nav a {
+    display: block;
+    height: 50px;
+    width: 100%;
+  }
+
+  .logged-in-nav {
+    background-color: $nav-bar-grey;
+    text-align: right;
+    top: 139px;
+    padding-bottom:30px;
+  }
+
+  div.logged-out-nav i {
+    display: none;
+  }
+
+  div.logged-out-nav a {
+    display: block;
+    height: 50px;
+    width: 100%;
+  }
+
+  .logged-out-nav {
+    background-color: $nav-bar-grey;
+    text-align: right;
+    top: 139px;
+    padding-bottom:30px;
+  }
+
+  div.nav-left {
+    float: right;
+    right: 20px;
+  }
+
+  div.nav-right {
+    right: 20px;
+    top: 0;
+    float: right;
+    clear: both;
+  }
+
+  a.nav-item {
+    top: 0;
+    right: 0;
+    position:static;
+  }
+
+
+}
+
 
 @media only screen and (max-device-width: 480px) {
   .display-none {
@@ -147,6 +237,10 @@ div.all-beers-list img {
     line-height: 100%;
     font-size: 2em;
     width: 100%;
+  }
+
+  .toggle-nav {
+    line-height: 100%;
   }
 
 

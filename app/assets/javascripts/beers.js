@@ -44,4 +44,11 @@ $(document).ready(function(){
   //   })
   // })
 
+  $('.toggle-nav').on("click", function(e) {
+    $(this).toggleClass('active');
+    $('.logged-in-nav').toggleClass('active');
+    $('.logged-out-nav').toggleClass('active');
+    e.preventDefault();
+  });
+
 })
