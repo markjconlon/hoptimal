@@ -3,7 +3,6 @@ class BeersController < ApplicationController
   def index
     @q = Beer.ransack(params[:q])
     @beers = @q.result(distinct: true).page params[:page]
-    # @beers_all = @beers.order(:name).page params[:page]
     respond_to do |format|
       format.html
       format.json do
@@ -46,7 +45,7 @@ class BeersController < ApplicationController
   #   render json: UserBeer.all
   # end
 
-
+# Function using ransack (search) gem to get results based on data input by user
   def search
     @q = Beer.ransack(params[:q])
     @beers = @q.result(distinct: true).page params[:page]
