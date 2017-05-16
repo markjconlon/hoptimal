@@ -15,6 +15,7 @@ $nav-bar-grey: #d1d1d1;
 }
 
 .navbar {
+  box-sizing: content-box;
   position: fixed;
   top: 0px;
   z-index: 100;
@@ -109,8 +110,6 @@ div.all-beers-list img {
   display: none;
 }
 
-
-
 a {
   text-decoration: none;
 }
@@ -127,8 +126,18 @@ a:hover {
   text-decoration: none;
 }
 
+.pagination {
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+}
+
 
 @media only screen and (max-device-width: 769px) {
+  .active {
+    display: none;
+  }
+
   a.toggle-nav {
     display: inline-block;
     font-size: 5em;
@@ -144,7 +153,7 @@ a:hover {
   }
 
   .active {
-    display: none;
+    display: hidden;
   }
 
   div.logged-in-nav i {
@@ -152,16 +161,22 @@ a:hover {
   }
 
   div.logged-in-nav a {
-    display: block;
-    height: 50px;
+
+    color: black;
+    display: inline-block;
+    line-height: 50px;
     width: 100%;
+    border-top: 2px solid white;
+    margin-right: 0;
   }
 
   .logged-in-nav {
+    box-sizing: border-box;
+    width: 100%;
     background-color: $nav-bar-grey;
     text-align: right;
     top: 99px;
-    padding-bottom:30px;
+    // padding-bottom:30px;
   }
 
   div.logged-out-nav i {
@@ -169,28 +184,35 @@ a:hover {
   }
 
   div.logged-out-nav a {
-    display: block;
-    height: 50px;
+    color: black;
+    display: inline-block;
+    line-height: 50px;
     width: 100%;
+    border-top: 2px solid white;
+    margin-right: 0;
   }
 
   .logged-out-nav {
+    box-sizing: border-box;
     background-color: $nav-bar-grey;
     text-align: right;
     top: 99px;
-    padding-bottom:30px;
+    // padding-bottom:30px;
   }
 
   div.nav-left {
     float: right;
-    right: 20px;
+    padding: 0 20px;
+    width: 100%;
   }
 
   div.nav-right {
-    right: 20px;
+    padding: 0 20px;
     top: 0;
+    right: 0;
     float: right;
     clear: both;
+    width: 100%;
   }
 
   a.nav-item {
