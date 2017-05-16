@@ -33,14 +33,12 @@ $(function(){
 
       // random button and notification header
       $("#random_beer_notification").text("Doesn't meet your tastes? Feel free to try another!")
-      $("#random_beer_container").height(450)
+      $("#random_beer_container")
 
     }).fail(function(){
       console.log("request not completed");
       $('<img>').attr('src',"https://cdn.dribbble.com/users/221092/screenshots/2331669/beer_dribbble.jpg").prependTo("#random_beer_photo")
       $('<div>').html('Failed').prependTo("#random_beer_container");
-
-
     }).always(function(){
       console.log(".ajax request completed");
 
@@ -79,6 +77,30 @@ $(function(){
     })
   });
 
+  // back to top function added
+var btt = $('.back-to-top')
 
+  btt.on('click', function(e){
+    $('html, body').animate({
+      scrollTop: 0
+    }, 500);
+    e.preventDefault();
+  });
+
+  $(window).on('scroll', function (){
+    var self = $(this),
+    height = self.height(),
+    top = self.scrollTop();
+    // console.log(height);
+    // console.log(top);
+    if (top > height) {
+      if (!btt.is(':visible')) {
+        btt.fadeIn();
+      }
+      else {
+        btt.hide();
+      }
+    }
+  })
 
 }) // this is the end
