@@ -18,8 +18,6 @@ class BeersController < ApplicationController
     @bar_where_beer_is_found.each do |bar|
       @bars << Bar.find(bar.bar_id)
     end
-    # @bar = @beer.bar_beers.each do |bar|
-    #   <%= link_to "#{(Bar.find(bar.bar_id)).name}", bar_path %>
   end
 
   def search
