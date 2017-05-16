@@ -1,3 +1,285 @@
 // Place all the styles related to the beers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$nav-bar-grey: #d1d1d1;
+
+* { font-family: 'gilroy-light'; }
+
+#hoptimal-logo {
+  width: 40px;
+  margin: 5px 20px;
+}
+
+.nav-item {
+  padding: 0 25px;
+}
+
+.navbar {
+  box-sizing: content-box;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  background-color: $nav-bar-grey;
+  width: 100%;
+  height: 100px;
+  text-transform: uppercase;
+}
+
+.logged-in-nav, .logged-out-nav {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.nav-right {
+  position: relative;
+  float: right;
+  right: 60px;
+  display: inline-block;
+}
+.nav-left {
+  position: relative;
+  float: left;
+  display: inline-block;
+}
+
+i.fa {
+  font-size: 2.5em;
+  line-height: 100px;
+  position: relative;
+  top: 17px;
+}
+
+a.nav-item {
+  line-height: 100px;
+  position: relative;
+  top: 17px;
+  right: 15px;
+}
+
+.main-content {
+  position: relative;
+  top: 110px;
+}
+
+div.all-beers-list img {
+  width: 100%;
+}
+
+.display-show {
+  display:inline;
+}
+
+.display-none {
+  opacity: 0;
+}
+
+#search-beers {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.all-beers-list {
+    display: inline-block;
+    min-width: 240px;
+    width: calc(25%);
+    text-align: center;
+    // border: 2px solid black;
+    margin: 2px;
+    // margin-left: 5%;
+    position: relative;
+    
+    min-height: 400px;
+}
+
+.beers-list-text > h2 {
+  display: inline;
+  background-color: rgba(130, 130, 130, 0.9);
+  width: 100%;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  float: left;
+  position: relative;
+  bottom: 250px;
+  padding: 25px 0;
+  border-radius: 8px;
+}
+
+.toggle-nav {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.pagination {
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+
+@media only screen and (max-device-width: 769px) {
+  .active {
+    display: none;
+  }
+
+  a.toggle-nav {
+    display: inline-block;
+    font-size: 5em;
+    padding-left: 10px;
+    line-height: 100px;
+    color: black;
+    position: absolute;
+    right: 40px;
+  }
+
+  img#hoptimal-logo {
+    position: absolute;
+  }
+
+  div.logged-in-nav i {
+    display: none;
+  }
+
+  div.logged-in-nav a {
+
+    color: black;
+    display: inline-block;
+    line-height: 50px;
+    width: 100%;
+    border-top: 2px solid white;
+    margin-right: 0;
+  }
+
+  .logged-in-nav {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: $nav-bar-grey;
+    text-align: right;
+    top: 99px;
+    // padding-bottom:30px;
+  }
+
+  div.logged-out-nav i {
+    display: none;
+  }
+
+  div.logged-out-nav a {
+    color: black;
+    display: inline-block;
+    line-height: 50px;
+    width: 100%;
+    border-top: 2px solid white;
+    margin-right: 0;
+  }
+
+  .logged-out-nav {
+    box-sizing: border-box;
+    background-color: $nav-bar-grey;
+    text-align: right;
+    top: 99px;
+    // padding-bottom:30px;
+  }
+
+  div.nav-left {
+    float: right;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  div.nav-right {
+    padding: 0 20px;
+    top: 0;
+    right: 0;
+    float: right;
+    clear: both;
+    width: 100%;
+  }
+
+  a.nav-item {
+    top: 0;
+    right: 0;
+    position:static;
+  }
+
+
+}
+
+
+@media only screen and (max-device-width: 480px) {
+  a.toggle-nav {
+    line-height: 140px;
+  }
+
+  .logged-in-nav, .logged-out-nav {
+    top: 139px;
+  }
+
+  .display-none {
+    opacity: 0.9;
+  }
+
+  .all-beers-list {
+    display: inline-block;
+    width: calc(50% - 6px);
+    height: 600px;
+  }
+
+  #hoptimal-logo {
+    width: 60px;
+  }
+
+  .navbar {
+    height: 140px;
+  }
+
+  .main-content {
+    top: 150px;
+  }
+}
+
+@media only screen and (max-device-width: 321px) {
+
+  .all-beers-list {
+    display: inline-block;
+    width: 75%;
+    height: 75%;
+    margin: 0 auto;
+  }
+
+  .beers-list-text {
+    z-index: 5;
+    position: absolute;
+    bottom: 125px;
+    text-align: center;
+    float: left;
+    line-height: 100%;
+    font-size: 2em;
+    width: 100%;
+  }
+
+  .toggle-nav {
+    line-height: 100%;
+  }
+
+
+
+}

@@ -36,7 +36,7 @@
   'Taster Pack',
   'Traditional Cider',
   'Wheat & Rye',
-  'none' ]
+  'Undefined' ]
 
   @all_beer_types.each do |category|
     Category.create(category_type: category)
@@ -78,7 +78,103 @@
     end
   end
 
+  def give_placeholder(image_thumb_url)
+    @all_beer_types.each do |image_thumb|
+      if image_thumb_url == nil
+        return "http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg"
+      else
+        return image_thumb_url
+      end
+    end
+  end
+
 beer_list.each do |beer|
   id_number = give_category_id(beer[:tertiary_category])
+  beer[:image_thumb_url] = give_placeholder(beer[:image_thumb_url])
   Beer.create(name: beer[:name], category_id: id_number, varietal: beer[:varietal], origin: beer[:origin], brewery: beer[:brewery], description: beer[:description], style: beer[:style], tasting_note: beer[:tasting_note], image_url: beer[:image_url], image_thumb_url: beer[:image_thumb_url])
+end
+
+
+@bar_list = [{name: "Bandit Brewery", address: "2125 Dundas St W, Toronto, ON M6R 1X1", latitude: 43.6525744, longitude: -79.4493798},
+  {name: "Old School", address: "800 Dundas St W, Toronto, ON M6J 1V1", latitude: 43.6519932, longitude: -79.4083517},
+  {name: "Montauk Bar", address: "765 Dundas St W, Toronto, ON M6J 1T9", latitude: 43.6519802, longitude: -79.406845},
+  {name: "Studio Bar", address: "824 Dundas St W, Toronto, ON M6J 1V3", latitude: 43.6517367, longitude: -79.409256},
+  {name: "Grace O'Malley's", address: "14 Duncan St, Toronto, ON M5H 3G8", latitude: 43.6476863, longitude: -79.3885854},
+  {name: "Get Well", address: "1181 Dundas St W, Toronto, ON M6H 1Y3", latitude: 43.6504864, longitude: -79.4422176},
+  {name: "Carbon Bar", address: " 99 Queen St E, Toronto, ON M5C 1S1", latitude: 43.6531746, longitude: -79.3747884},
+  {name: "The Bier Markt", address: "600 King St W, Toronto, ON M5V 1M3", latitude: 43.6448594, longitude: -79.4000053},
+  {name: "Handlebar", address: "159 Augusta Ave, Toronto, ON M5T 2L4", latitude: 43.6529089, longitude: -79.4010388},
+  {name: "Fring's", address: "455 King St W, Toronto, ON M5V 1K4", latitude: 43.6450012, longitude: -79.3960233},
+  {name: "Portland Variety", address: "587 King St W, Toronto, ON M5V 1M5", latitude: 43.6441878, longitude: -79.4001593},
+  {name: "The Drake Hotel", address: "1150 Queen St W, Toronto, ON M6J 1J3", latitude: 43.6432048, longitude: -79.4246377},
+  {name: "Gladstone Hotel", address: "1214 Queen St W, Toronto, ON M6J 1J6", latitude: 43.6427733, longitude: -79.4269164},
+  {name: "Betty's", address: " 240 King St E, Toronto, ON M5A 1K1", latitude: 43.6516554, longitude: -79.3676058},
+  {name: "The Ballroom Bowl", address: "145 John St, Toronto, ON M5V 2E4", latitude: 43.6489696, longitude: -79.3905108},
+  {name: "Real Sports Bar & Grill", address: " 15 York St, Toronto, ON M5J 2X2", latitude: 43.6429439, longitude: -79.3803575},
+  {name: "The Loose Moose", address: "146 Front St W, Toronto, ON M5J 1G2", latitude: 43.6452325, longitude: -79.383897},
+  {name: "C'est What?", address: " 67 Front St E, Toronto, ON M5E 1B5", latitude: 43.6482483, longitude: -79.3733593},
+  {name: "Sin & Redemption", address: "136 McCaul St, Toronto, ON M5T 1W2", latitude: 43.6547012, longitude: -79.3917222},
+  {name: "Duke's Refresher", address: "382 Yonge St #8, Toronto, ON M5B 1S8", latitude: 43.659257, longitude: -79.3828256},
+  {name: "Birreria Volo", address: " 612 College St, Toronto, ON M6G 1B4", latitude: 43.6551924, longitude: -79.4146178},
+  {name: "Bar Hop Brewco", address: "137 Peter St, Toronto, ON M5V 2H3", latitude: 43.6489195, longitude: -79.3932235},
+  {name: "The Village Idiot", address: "126 McCaul St, Toronto, ON M5T 1W2", latitude: 43.6544462, longitude: -79.391616},
+  {name: "REDS Midtown Tavern", address: "382 Yonge St #6, Toronto, ON M5B 1S8", latitude: 43.659257, longitude: -79.3828256},
+  {name: "The Only Cafe", address: "972 Danforth Ave, Toronto, ON M4J 1M1", latitude: 43.6804685, longitude: -79.337862},
+  {name: "Stout Irish Pub ", address: "221 Carlton St, Toronto, ON M5A 2L2", latitude: 43.6637964, longitude: -79.3689038}]
+
+
+@bar_list.each do |bar|
+  Bar.create(name: bar[:name], address: bar[:address], latitude: bar[:latitude], longitude: bar[:longitude])
+end
+
+@bars = Bar.all
+@bars_id = []
+@bars.each do |bar|
+  @bars_id << bar.id
+end
+
+@beers = Beer.all
+@beer_id = []
+@beers.each do |beer|
+  @beer_id << beer.id
+end
+i = 0
+@bars_id.each do |bar|
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+0])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+1])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+2])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+3])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+4])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+5])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+6])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+7])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+8])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+9])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+10])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+11])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+12])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+13])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+14])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+15])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+16])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+17])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+18])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+19])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+20])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+21])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+22])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+23])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+24])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+25])
+  i+=12
+end
+
+array_first = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+array_last = [305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320]
+
+array_first.each do |num|
+  BarBeer.create(bar_id: 13, beer_id: num)
+end
+array_last.each do |num|
+  BarBeer.create(bar_id: 16, beer_id: num)
 end

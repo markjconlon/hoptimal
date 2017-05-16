@@ -29,7 +29,7 @@ $(function(){
 
       // beer info & add to list link
       $('<p>').fadeIn('slow').html(data.name).appendTo("#random_beer_info");
-      $('<a>').fadeIn('slow').attr("href","/user_beers/id:").text('Add to list').appendTo("#random_beer_info");
+      $('<a>').fadeIn('slow').attr("href","/beers/"+`${data.id}`).text('Add to list').appendTo("#random_beer_info");
 
       // random button and notification header
       $("#random_beer_notification").text("Doesn't meet your tastes? Feel free to try another!")
@@ -65,6 +65,7 @@ $(function(){
       $('<img>').attr('src', data.image_thumb_url).fadeIn('slow').appendTo('#preference_beer_info')
       }
       $('<p>').html(data.name).fadeIn('slow').appendTo('#preference_beer_info')
+      $('<a>').fadeIn('slow').attr("href","/beers/"+`${data.id}`).text('Add to list').appendTo("#preference_beer_info");
 
     }).fail(function(){
       console.log(".ajax request failed");
@@ -102,5 +103,7 @@ var btt = $('.back-to-top')
       }
     }
   })
+
+
 
 }) // this is the end

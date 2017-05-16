@@ -1,0 +1,13 @@
+// Place all the styles related to the Bars controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* { font-family: 'gilroy-light'; }
+#map {
+ height: 400px;
+ width: 100%;
+}
+
+.main-content{
+  position: absolute;
+  top:20px;
+}

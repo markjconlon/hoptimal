@@ -1,4 +1,4 @@
-<div class="form">
+<div class="form users-form">
 <%= form_for @user do |f| %>
 
 <% if @user.errors.any? %>
@@ -51,7 +51,7 @@
     <%= f.collection_select(:category_id, Category.all, :id, :category_type, include_blank: "Please Select a Preference") %>
   </div>
 
-  <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
+  <%= f.submit "Submit", class: "btn btn-default btn-primary", id: "users-form-submit" %>
 
 <% end %>
 </div>

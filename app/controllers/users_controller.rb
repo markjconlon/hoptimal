@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # new, create, show, edit, update
+  before_action :ensure_logged_in, except: [:new, :create]
   before_action :show, only: %i(show)
 
   def new

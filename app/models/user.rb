@@ -11,24 +11,16 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
 
-  def only_ids(had_before)
-    beer_ids = []
-    had_before.each do |beer|
-      beer_ids << beer.beer_id
-    end
-    beer_ids
-  end
 
   def collection_to_sample_from(current_user, all_beers_of_type)
     had_before = current_user.user_beers.all
-    had_before_ids = only_ids(had_before)
+    had_before_ids = had_before.map{|beer| beer.beer_id}
     not_had_before = []
     all_beers_of_type.each do |beer|
       if !(had_before_ids.include?(beer.id))
         not_had_before << beer
       end
     end
-
     return not_had_before
   end
 
@@ -41,17 +33,26 @@ class User < ApplicationRecord
 
   def random_by_previous(current_user)
     rating_3_or_above = UserBeer.where(user_id: current_user.id, rating: [3, 4, 5])
+    if rating_3_or_above.count != 0
+      beer_id_for_category = rating_3_or_above.sample.beer_id
+      category_to_pull_from = Beer.find(beer_id_for_category).category_id
+      all_beers_of_type = Beer.where(category_id: category_to_pull_from)
+      not_had_before = collection_to_sample_from(current_user, all_beers_of_type)
+    end
     if rating_3_or_above.count == 0
       return nil
     else
-      beer_id_for_category = rating_3_or_above.sample.beer_id
-      category_to_pull_from = Beer.find(beer_id_for_category).category_id
+      # If nothing can be returned either because they havent rated anything above 3 or the category
+      # selected has been cleared, we return a random beer they haven't had
+      if not_had_before.sample == nil
+        random_selection
+      else
+        return not_had_before.sample
+      end
     end
 
-    all_beers_of_type = Beer.where(category_id: category_to_pull_from)
 
-    not_had_before = collection_to_sample_from(current_user, all_beers_of_type)
-    return not_had_before.sample
+
   end
 
   def most_recent_4(current_user)
@@ -68,7 +69,6 @@ class User < ApplicationRecord
     # random = arr1 - arr
     # random.count
     # Beer.find(random.sample)
-
     (Beer.all - beers).sample
   end
 end

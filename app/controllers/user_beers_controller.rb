@@ -1,12 +1,13 @@
 class UserBeersController < ApplicationController
+  before_action :ensure_logged_in
   def show
     @user_beers = UserBeer.where(user_id: current_user).order(created_at: :desc)
   end
 
   def create
     beer = Beer.find(params[:beer_id])
-    note = params[:note]
-    rating = params[:rating]
+    note = params[:user_beer][:note]
+    rating = params[:user_beer][:rating]
     @user_beer = UserBeer.new
     @user_beer.beer = beer
     @user_beer.user = current_user
