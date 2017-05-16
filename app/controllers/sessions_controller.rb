@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      puts "#{request.referrer}"
-      redirect_to request.referrer
+      redirect_to "#{flash[:route]}"
       # redirect_to user_path("current"), notice: "Logged in!"
     else
       flash.now[:alert] = "Invalid username or password"
