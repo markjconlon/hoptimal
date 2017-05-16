@@ -162,6 +162,10 @@ i = 0
   BarBeer.create(bar_id: bar, beer_id: @beer_id[i+19])
   BarBeer.create(bar_id: bar, beer_id: @beer_id[i+20])
   BarBeer.create(bar_id: bar, beer_id: @beer_id[i+21])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+22])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+23])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+24])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+25])
   i+=12
 end
 
