@@ -36,10 +36,12 @@ $nav-bar-grey: #d1d1d1;
   position: relative;
   float: right;
   right: 60px;
+  display: inline-block;
 }
 .nav-left {
   position: relative;
   float: left;
+  display: inline-block;
 }
 
 i.fa {
@@ -150,10 +152,6 @@ a:hover {
 
   img#hoptimal-logo {
     position: absolute;
-  }
-
-  .active {
-    display: hidden;
   }
 
   div.logged-in-nav i {
