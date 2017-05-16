@@ -1,13 +1,15 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
   def create
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
-      puts "WORKED"
       session[:user_id] = user.id
-      redirect_to user_path("current"), notice: "Logged in!"
+      puts "#{request.referrer}"
+      redirect_to request.referrer
+      # redirect_to user_path("current"), notice: "Logged in!"
     else
       flash.now[:alert] = "Invalid username or password"
       render "new"
