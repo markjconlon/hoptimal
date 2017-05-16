@@ -1,15 +1,19 @@
-<%= render 'trophy' %>
+<div class="edituser">
+  <%= link_to "EDIT MY PROFILE", edit_user_path("current") %>
+</div>
+
+<div class="random">
 <%= render 'random' %>
+</div>
+
+<div class="preferences">
 <%= render 'preferences' %>
+</div>
+
+<div class="suggestions">
 <%= render 'suggestions' %>
+</div>
 
-
-<div class="">
-  <h2>Most Recent Beers</h2>
-  <% @user_recent_4.each do |ub| %>
-  <p><%= ub.beer.name %></p>
-  <p><%= ub.beer.category.category_type %></p>
-  <p><%= ub.beer.varietal %></p>
-  <img src="<%= ub.beer.image_thumb_url %>"></br>
-  <% end %>
+<div class="recent_beer">
+<%= render 'recent' %>
 </div>
