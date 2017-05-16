@@ -15,6 +15,21 @@ $(document).ready(function(){
     })
   });
 
+  $('#q_category_id').on('change', function(e){
+    $.ajax({
+      url: "/beers/search",
+      method: "POST",
+      data: {
+        "q": {
+          "category_id_eq": $("#q_category_id").val()
+        }
+      },
+      dataType: 'html'
+    }).done(function(data) {
+      $("#search-beers").html(data);
+    })
+  });
+
 // displays beer name text when mouse moves over the specific div
   $('.all-beers-list').mouseover(function() {
     $(this).find('div.beers-list-text').animate({
