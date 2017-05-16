@@ -145,5 +145,32 @@ i = 0
   BarBeer.create(bar_id: bar, beer_id: @beer_id[i+2])
   BarBeer.create(bar_id: bar, beer_id: @beer_id[i+3])
   BarBeer.create(bar_id: bar, beer_id: @beer_id[i+4])
-  i+=6
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+5])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+6])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+7])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+8])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+9])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+10])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+11])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+12])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+13])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+14])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+15])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+16])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+17])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+18])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+19])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+20])
+  BarBeer.create(bar_id: bar, beer_id: @beer_id[i+21])
+  i+=12
+end
+
+array_first = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+array_last = [305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320]
+
+array_first.each do |num|
+  BarBeer.create(bar_id: 13, beer_id: num)
+end
+array_last.each do |num|
+  BarBeer.create(bar_id: 16, beer_id: num)
 end
