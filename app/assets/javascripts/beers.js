@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+// Filters beers index page based on user input typed within the search field 
   $("#search-field").on('keyup', function(e){
     $.ajax({
       url: "/beers/search",
@@ -15,6 +16,7 @@ $(document).ready(function(){
     })
   });
 
+// Filters beers index page based on selected category from drop-down menu
   $('#q_category_id').on('change', function(e){
     $.ajax({
       url: "/beers/search",
