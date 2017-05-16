@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-// Filters beers index page based on user input typed within the search field 
+// Filters beers index page based on user input typed within the search field
   $("#search-field").on('keyup', function(e){
     $.ajax({
       url: "/beers/search",
@@ -29,6 +29,15 @@ $(document).ready(function(){
       dataType: 'html'
     }).done(function(data) {
       $("#search-beers").html(data);
+      $('.all-beers-list').mouseover(function() {
+        $(this).find('div.beers-list-text').animate({
+          opacity: 1,
+        });
+      }).mouseleave(function() {
+        $(this).find('div.beers-list-text').animate({
+          opacity: 0,
+        });
+      });
     })
   });
 
