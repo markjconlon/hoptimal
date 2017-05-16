@@ -36,7 +36,7 @@
   'Taster Pack',
   'Traditional Cider',
   'Wheat & Rye',
-  'none' ]
+  'Undefined' ]
 
   @all_beer_types.each do |category|
     Category.create(category_type: category)
