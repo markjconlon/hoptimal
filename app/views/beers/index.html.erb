@@ -1,10 +1,9 @@
-<%= form_tag('/beers') do  %>
-  <div class="categories">
-      <%= select("beer", "category_id", Category.all.collect {|c| [ c.category_type, c.id ] }, { prompt: "Select a Category" }) %>
-  </div>
-<% end %>
-
 <%= search_form_for @q do |f| %>
+
+
+  <%= f.label :category_type, "Categories" %>
+  <%= f.collection_select(:category_id, Category.all, :id, :category_type, include_blank: "Pick a Category") %>
+
 
   <%= f.label :name_cont %>
   <%= f.search_field :name_cont, id:"search-field" %>
