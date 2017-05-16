@@ -16,20 +16,84 @@
  *
  */
 
-div.users-form {
-  position: absolute;
-  left: 8%;
-  top: 80px;
+
+
+@media (min-width: 640px) {
+
 }
 
-.users-form input, .users-form select, .users-form input[type="submit"] {
-  float: right;
-  margin-left: 90px;
-  padding-right: 62px;
-  text-align: left;
+@media (min-width: 760px) {
+
 }
 
-#users-form-submit {
-  padding-left: 60px;
-  text-align: center;
+@media (min-width: 1360px) {
+
+}
+
+
+.back-to-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: yellow;
+}
+
+.suggestions, .random {
+    border-style: solid;
+    border-color: gray;
+    display: inline-block;
+    width: 85%;
+    margin-left: 7%;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 5%;
+    border-width: thin;
+    padding-bottom: 2%;
+    border-style: solid;
+    box-shadow: 10px 5px 5px grey;
+    height: 500px;
+}
+
+.preferences{
+    border-style: solid;
+    border-color: gray;
+    display: inline-block;
+    width: 85%;
+    margin-left: 7%;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 5%;
+    border-width: thin;
+    padding-bottom: 2%;
+    border-style: solid;
+    box-shadow: 10px 5px 5px grey;
+    height: 600px;
+}
+
+.recent_beer{
+    border-style: solid;
+    border-color: gray;
+    display: inline-block;
+    width: 85%;
+    margin-left: 7%;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 5%;
+    border-width: thin;
+    padding-bottom: 2%;
+    border-style: solid;
+    box-shadow: 10px 5px 5px grey;
+    height: auto;
+}
+.beer_consumed {
+    width: 25%;
+    padding: 3%;
+    margin-right: 4%;
+    margin-left: 4%;
+    float: left;
+    text-align: center;
+}
+#randomize_button, #preference_button {
+    margin-top: 1%;
 }
