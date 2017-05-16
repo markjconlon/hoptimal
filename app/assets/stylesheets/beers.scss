@@ -109,6 +109,8 @@ div.all-beers-list img {
   display: none;
 }
 
+
+
 a {
   text-decoration: none;
 }
@@ -121,12 +123,17 @@ a:active {
   text-decoration: none;
 }
 
-@media only screen and (max-device-width: 640px) {
+a:hover {
+  text-decoration: none;
+}
+
+
+@media only screen and (max-device-width: 769px) {
   a.toggle-nav {
     display: inline-block;
     font-size: 5em;
     padding-left: 10px;
-    line-height: 140px;
+    line-height: 100px;
     color: black;
     position: absolute;
     right: 40px;
@@ -153,7 +160,7 @@ a:active {
   .logged-in-nav {
     background-color: $nav-bar-grey;
     text-align: right;
-    top: 139px;
+    top: 99px;
     padding-bottom:30px;
   }
 
@@ -170,7 +177,7 @@ a:active {
   .logged-out-nav {
     background-color: $nav-bar-grey;
     text-align: right;
-    top: 139px;
+    top: 99px;
     padding-bottom:30px;
   }
 
@@ -197,6 +204,14 @@ a:active {
 
 
 @media only screen and (max-device-width: 480px) {
+  a.toggle-nav {
+    line-height: 140px;
+  }
+
+  .logged-in-nav, .logged-out-nav {
+    top: 139px;
+  }
+
   .display-none {
     opacity: 0.9;
   }

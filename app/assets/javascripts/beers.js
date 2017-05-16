@@ -47,9 +47,9 @@ $(document).ready(function(){
   $('.toggle-nav').on("click", function(e) {
     $(this).toggleClass('active');
     if ($('.logged-in-nav').attr('class') === 'logged-in-nav active') {
-      $('.logged-in-nav').slideDown(600).toggleClass('active')
+      $('.logged-in-nav').slideDown(600).toggleClass('active');
     } else {
-      $('.logged-in-nav').slideUp(600).toggleClass('active')
+      $('.logged-in-nav').slideUp(600).toggleClass('active');
     }
 
     if ($('.logged-out-nav').attr('class') === 'logged-out-nav active') {
