@@ -3,7 +3,6 @@ class BeersController < ApplicationController
   def index
     @q = Beer.ransack(params[:q])
     @beers = @q.result(distinct: true).page params[:page]
-    # @beers_all = @beers.order(:name).page params[:page]
     respond_to do |format|
       format.html
       format.json do
