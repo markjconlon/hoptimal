@@ -1,4 +1,9 @@
 <div class="users-form">
+
+<%if flash[:alert] != nil %>
+  <p><%= flash[:alert]%></p>
+<% end %>
+
 <%= form_tag sessions_path do %>
 
   <div class="form-group">

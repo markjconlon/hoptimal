@@ -1,4 +1,5 @@
 class BarsController < ApplicationController
+  before_action :ensure_logged_in
   def new
     @bar = Bar.new
   end

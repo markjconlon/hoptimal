@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-
+  before_action :ensure_logged_in, except: [:index, :search]
   def index
     @q = Beer.ransack(params[:q])
     @beers = @q.result(distinct: true).page params[:page]

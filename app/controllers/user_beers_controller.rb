@@ -1,4 +1,5 @@
 class UserBeersController < ApplicationController
+  before_action :ensure_logged_in
   def show
     @user_beers = UserBeer.where(user_id: current_user).order(created_at: :desc)
   end
