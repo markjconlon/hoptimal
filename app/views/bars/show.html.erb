@@ -1,4 +1,4 @@
-
+<%= link_to "Back", :back %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,6 +40,5 @@
     <button id="directions" class="btn btn-default btn-primary">GET DIRECTIONS </button>
   </body>
 </html>
-
 <%= content_tag :div, class: "temp_information", data: {lat: (@bar.latitude), lng: (@bar.longitude)} do %>
 <% end %>
