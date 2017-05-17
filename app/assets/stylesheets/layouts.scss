@@ -1,0 +1,44 @@
+$light-grey: rgb(233, 231, 231);
+$light-blue: rgba(216, 229, 231, 0.9);
+$nav-bar-grey: #d1d1d1;
+
+// background for modal login/signup window
+.modal-signup, .modal-login {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.8);
+  z-index: 100;
+}
+
+// both login and signup forms
+div.users-form {
+  background: $light-grey;
+  padding: 50px;
+  padding-top: 30px;
+  border-radius: 10px;
+  border: 6px double white;
+  position: absolute;
+  left: 33%;
+  top: 200px;
+}
+
+// title for the modal users form (signup vs login)
+.users-form h3 {
+  line-height: 1.7em;
+}
+
+// styling for submit button
+input.btn.btn-default.btn-primary {
+    text-align: center;
+    padding: 6px 20px;
+}
+
+// selection drop down for choosing preference
+select#_users_new_category_id {
+  padding-right: 0;
+  text-align: center;
+}
