@@ -53,7 +53,7 @@ class UserBeersController < ApplicationController
 
 private
 
- def user_beer_param
+ def user_beer_params
    params.require(:user_beer).permit(:note, :rating)
  end
 
