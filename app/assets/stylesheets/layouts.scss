@@ -1,6 +1,112 @@
 $light-grey: rgb(233, 231, 231);
 $light-blue: rgba(216, 229, 231, 0.9);
-$nav-bar-grey: #d1d1d1;
+$nav-bar-grey: rgba(209, 209, 209, 0.9);
+$off-white: #f1f4f6;
+$dark-blue: rgb(33, 171, 191);
+$star-hover: rgb(157, 218, 207);
+
+* { font-family: 'gilroy-light'; }
+
+#hoptimal-logo {
+  width: 40px;
+  margin: 5px 20px;
+}
+
+.nav-item {
+  padding: 0 25px;
+}
+
+.navbar {
+  box-sizing: content-box;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  background-color: $nav-bar-grey;
+  width: 100%;
+  height: 100px;
+  text-transform: uppercase;
+}
+
+.logged-in-nav, .logged-out-nav {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+//within logged in nav, navigation that appears on the right of the page
+.nav-right {
+  position: relative;
+  float: right;
+  right: 60px;
+  display: inline-block;
+}
+
+//within logged in nav, navigation that appears on the left of the page
+.nav-left {
+  position: relative;
+  float: left;
+  display: inline-block;
+}
+
+//font awesome icons (within the navigation menu)
+.logged-in-nav i.fa, .logged-out-nav i.fa {
+  font-size: 1.2em;
+  line-height: 120px;
+  bottom: 2px;
+  position: relative;
+  color: black;
+}
+
+//change hover color of links within the navbar
+div.logged-in-nav a:hover, div.logged-out-nav a:hover {
+  color: $off-white;
+}
+
+//links within the navigation menu
+a.nav-item {
+  line-height: 100px;
+  position: relative;
+  top: 14px;
+  right: 15px;
+  color: black;
+}
+
+//div wrapping the content of the page (not including the navbar)
+.main-content {
+  position: relative;
+  top: 110px;
+}
+
+//navigation button on smaller screens
+.toggle-nav {
+  display: none;
+}
+
+// remove all tect decoration from links
+  a {
+    text-decoration: none;
+  }
+
+  a:visited {
+    text-decoration: none;
+  }
+
+  a:active {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+//styling for the pagination links at the bottom of the page
+.pagination {
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+}
+
 
 // background for modal login/signup window
 .modal-signup, .modal-login {
@@ -41,4 +147,122 @@ input.btn.btn-default.btn-primary {
 select#_users_new_category_id {
   padding-right: 0;
   text-align: center;
+}
+
+@media only screen and (max-device-width: 769px) {
+  //class used to display/hide the mobile navigation menu
+  .active {
+    display: none;
+  }
+
+  //styling for the toggle navigation button
+  a.toggle-nav {
+    display: inline-block;
+    font-size: 5em;
+    padding-left: 10px;
+    line-height: 100px;
+    color: black;
+    position: absolute;
+    right: 40px;
+  }
+
+  img#hoptimal-logo {
+    position: absolute;
+  }
+
+  //=== styling for the logged in nav ===
+    //hide the fontawesome icons for the mobile navigation menu
+    div.logged-in-nav i {
+      display: none;
+    }
+
+    //
+    div.logged-in-nav a {
+      color: black;
+      display: inline-block;
+      line-height: 50px;
+      width: 100%;
+      border-top: 2px solid $off-white;
+      margin-right: 0;
+    }
+
+    .logged-in-nav {
+      box-sizing: border-box;
+      width: 100%;
+      background-color: $nav-bar-grey;
+      text-align: right;
+      top: 99px;
+      // padding-bottom:30px;
+    }
+
+  //=== styling for the logged out nav ===
+    //hide fontawesome icons for mobile nav
+    div.logged-out-nav i {
+      display: none;
+    }
+
+    //
+    div.logged-out-nav a {
+      color: black;
+      display: inline-block;
+      line-height: 50px;
+      width: 100%;
+      border-top: 2px solid $off-white;
+      margin-right: 0;
+    }
+
+    .logged-out-nav {
+      box-sizing: border-box;
+      background-color: $nav-bar-grey;
+      text-align: right;
+      top: 99px;
+      // padding-bottom:30px;
+    }
+
+  div.nav-left {
+    float: right;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  div.nav-right {
+    padding: 0 20px;
+    top: 0;
+    right: 0;
+    float: right;
+    clear: both;
+    width: 100%;
+  }
+
+  a.nav-item {
+    top: 0;
+    right: 0;
+    position:static;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  a.toggle-nav {
+    line-height: 140px;
+  }
+
+  .logged-in-nav, .logged-out-nav {
+    top: 139px;
+  }
+
+  .display-none {
+    opacity: 0.9;
+  }
+
+  #hoptimal-logo {
+    width: 60px;
+  }
+
+  .navbar {
+    height: 140px;
+  }
+
+  .main-content {
+    top: 150px;
+  }
 }
