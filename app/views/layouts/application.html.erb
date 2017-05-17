@@ -42,10 +42,12 @@
         <a class="toggle-nav" href="#">&#9776</a>
       </nav>
 
+
+<!-- =======SIGNUP FORM======= -->
     <div class="modal-signup">
       <div class="form users-form">
       <%= form_for new_user_path do |f| %>
-
+        <h3>Sign Up</h3>
         <div class="form-group">
           <%= f.label :first_name %>
           <%= f.text_field :first_name %>
@@ -88,6 +90,7 @@
       </div>
     </div>
 
+<!-- =======LOGIN FORM======= -->
     <div class="modal-login">
       <div class="users-form">
 
@@ -96,7 +99,7 @@
       <% end %>
 
       <%= form_tag sessions_path do %>
-
+        <h3>Login</h3>
         <div class="form-group">
           <%= label_tag :username %>
           <%= text_field_tag :username, params[:username] %>

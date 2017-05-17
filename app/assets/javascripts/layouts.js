@@ -10,5 +10,13 @@ $(document).ready(function() {
     $('.modal-login').fadeIn();
   });
 
+  $('.users-form').on('click', function(e) {
+    e.stopPropagation();
+  })
+
+  $('.modal-login').on('click', function(e) {
+    $(this).fadeOut();
+  });
+
 
 });
