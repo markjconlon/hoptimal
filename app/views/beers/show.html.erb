@@ -6,6 +6,8 @@
 <img src="<%= @beer.image_thumb_url %>" alt="<%= @beer.name %> Photo">
 
 <div id="foundBars">
+<h5><%= @beer.style %></h5>
+<h5><%= @beer.tasting_note %></h5>
 <p>You can find this at:</p>
 <% @bars.each do |bar| %>
 <%= link_to "#{bar.name}", bar_path("#{bar.id}") %></br>
