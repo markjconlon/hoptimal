@@ -70,6 +70,7 @@ $(document).ready(function(){
   //   })
   // })
 
+// mobile navigation menu drop down 
   $('.toggle-nav').on("click", function(e) {
     if ($('.logged-in-nav').attr('class') === 'logged-in-nav active') {
       $('.logged-in-nav').slideDown(600).toggleClass('active');

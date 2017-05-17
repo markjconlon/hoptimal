@@ -1,7 +1,10 @@
 // Place all the styles related to the beers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$light-grey: rgb(233, 231, 231);
+$light-blue: rgba(216, 229, 231, 0.9);
 $nav-bar-grey: #d1d1d1;
+$off-white: #f1f4f6;
 
 * { font-family: 'gilroy-light'; }
 
@@ -32,32 +35,45 @@ $nav-bar-grey: #d1d1d1;
   font-size: 1.5em;
 }
 
+//within logged in nav, navigation that appears on the right of the page
 .nav-right {
   position: relative;
   float: right;
   right: 60px;
   display: inline-block;
 }
+
+//within logged in nav, navigation that appears on the left of the page
 .nav-left {
   position: relative;
   float: left;
   display: inline-block;
 }
 
-i.fa {
-  font-size: 2.5em;
-  line-height: 100px;
+//font awesome icons (within the navigation menu)
+.logged-in-nav i.fa, .logged-out-nav i.fa {
+  font-size: 1.2em;
+  line-height: 120px;
+  bottom: 2px;
   position: relative;
-  top: 17px;
+  color: black;
 }
 
+//change hover color of links within the navbar
+div.logged-in-nav a:hover, div.logged-out-nav a:hover {
+  color: $off-white;
+}
+
+//links within the navigation menu
 a.nav-item {
   line-height: 100px;
   position: relative;
-  top: 17px;
+  top: 14px;
   right: 15px;
+  color: black;
 }
 
+//div wrapping the content of the page (not including the navbar)
 .main-content {
   position: relative;
   top: 110px;
@@ -66,15 +82,17 @@ a.nav-item {
 div.all-beers-list img {
   width: 100%;
 }
+//
+// .display-show {
+//   display:inline;
+// }
 
-.display-show {
-  display:inline;
-}
-
+//class used to hide the overlay text of the beer names
 .display-none {
   opacity: 0;
 }
 
+//div used to display search results
 #search-beers {
   box-sizing: border-box;
   display: inline-block;
@@ -82,18 +100,18 @@ div.all-beers-list img {
   text-align: center;
 }
 
+//beers displaying on the index page
 .all-beers-list {
     display: inline-block;
     min-width: 240px;
-    width: calc(25%);
+    width: calc(24% - 10px);
     text-align: center;
-    // border: 2px solid black;
     margin: 2px;
-    // margin-left: 5%;
     position: relative;
     min-height: 400px;
 }
 
+//text that overlays the beers with the beer name
 .beers-list-text > h2 {
   display: inline;
   background-color: rgba(130, 130, 130, 0.9);
@@ -108,26 +126,29 @@ div.all-beers-list img {
   border-radius: 8px;
 }
 
+//navigation button on smaller screens
 .toggle-nav {
   display: none;
 }
 
-a {
-  text-decoration: none;
-}
+// remove all tect decoration from links
+  a {
+    text-decoration: none;
+  }
 
-a:visited {
-  text-decoration: none;
-}
+  a:visited {
+    text-decoration: none;
+  }
 
-a:active {
-  text-decoration: none;
-}
+  a:active {
+    text-decoration: none;
+  }
 
-a:hover {
-  text-decoration: none;
-}
+  a:hover {
+    text-decoration: none;
+  }
 
+//styling for the pagination links at the bottom of the page
 .pagination {
   width: 100%;
   font-size: 1.5em;
@@ -136,10 +157,12 @@ a:hover {
 
 
 @media only screen and (max-device-width: 769px) {
+  //class used to display/hide the mobile navigation menu
   .active {
     display: none;
   }
 
+  //styling for the toggle navigation button
   a.toggle-nav {
     display: inline-block;
     font-size: 5em;
@@ -154,49 +177,54 @@ a:hover {
     position: absolute;
   }
 
-  div.logged-in-nav i {
-    display: none;
-  }
+  //=== styling for the logged in nav ===
+    //hide the fontawesome icons for the mobile navigation menu
+    div.logged-in-nav i {
+      display: none;
+    }
 
-  div.logged-in-nav a {
+    //
+    div.logged-in-nav a {
+      color: black;
+      display: inline-block;
+      line-height: 50px;
+      width: 100%;
+      border-top: 2px solid $off-white;
+      margin-right: 0;
+    }
 
-    color: black;
-    display: inline-block;
-    line-height: 50px;
-    width: 100%;
-    border-top: 2px solid white;
-    margin-right: 0;
-  }
+    .logged-in-nav {
+      box-sizing: border-box;
+      width: 100%;
+      background-color: $nav-bar-grey;
+      text-align: right;
+      top: 99px;
+      // padding-bottom:30px;
+    }
 
-  .logged-in-nav {
-    box-sizing: border-box;
-    width: 100%;
-    background-color: $nav-bar-grey;
-    text-align: right;
-    top: 99px;
-    // padding-bottom:30px;
-  }
+  //=== styling for the logged out nav ===
+    //hide fontawesome icons for mobile nav
+    div.logged-out-nav i {
+      display: none;
+    }
 
-  div.logged-out-nav i {
-    display: none;
-  }
+    //
+    div.logged-out-nav a {
+      color: black;
+      display: inline-block;
+      line-height: 50px;
+      width: 100%;
+      border-top: 2px solid $off-white;
+      margin-right: 0;
+    }
 
-  div.logged-out-nav a {
-    color: black;
-    display: inline-block;
-    line-height: 50px;
-    width: 100%;
-    border-top: 2px solid white;
-    margin-right: 0;
-  }
-
-  .logged-out-nav {
-    box-sizing: border-box;
-    background-color: $nav-bar-grey;
-    text-align: right;
-    top: 99px;
-    // padding-bottom:30px;
-  }
+    .logged-out-nav {
+      box-sizing: border-box;
+      background-color: $nav-bar-grey;
+      text-align: right;
+      top: 99px;
+      // padding-bottom:30px;
+    }
 
   div.nav-left {
     float: right;
