@@ -1,3 +1,5 @@
+$light-grey: rgb(233, 231, 231);
+$light-blue: rgba(216, 229, 231, 0.9);
 $nav-bar-grey: #d1d1d1;
 
 .modal-signup, .modal-login {
@@ -12,7 +14,7 @@ $nav-bar-grey: #d1d1d1;
 }
 
 .users-form {
-  background: $nav-bar-grey;
+  background: $light-grey;
   padding: 50px;
   padding-top: 30px;
   border-radius: 10px;
@@ -26,4 +28,15 @@ $nav-bar-grey: #d1d1d1;
 input.btn.btn-default.btn-primary {
     text-align: center;
     padding: 6px 20px;
+}
+
+div.users-form {
+  position: absolute;
+  left: 33%;
+  top: 200px;
+}
+
+select#_users_new_category_id {
+  padding-right: 0;
+  text-align: center;
 }

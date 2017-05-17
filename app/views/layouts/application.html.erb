@@ -46,7 +46,7 @@
 <!-- =======SIGNUP FORM======= -->
     <div class="modal-signup">
       <div class="form users-form">
-      <%= form_for new_user_path do |f| %>
+      <%= form_for new_user_path, html: {id: "signup-form"} do |f| %>
         <h3>Sign Up</h3>
         <div class="form-group">
           <%= f.label :first_name %>

@@ -16,20 +16,9 @@
  *
  */
 
-div.users-form {
-  position: absolute;
-  left: 8%;
-  top: 80px;
-}
-
 .users-form input, .users-form select, .users-form input[type="submit"] {
   float: right;
   margin-left: 90px;
   padding-right: 62px;
   text-align: left;
-}
-
-#users-form-submit {
-  padding-left: 60px;
-  text-align: center;
 }
