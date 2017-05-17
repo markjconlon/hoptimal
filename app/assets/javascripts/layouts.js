@@ -21,16 +21,16 @@ $(document).ready(function() {
   });
 
   // =====MODAL WINDOW FOR SIGNUP====
-  $(signup).on('click', function(e) {
-    // e.stopPropogation();
-    e.preventDefault();
-    console.log('click signup');
-    modalSignup.fadeIn();
-  });
-
-  modalSignup.on('click', function(e) {
-    $(this).fadeOut();
-  });
+  // $(signup).on('click', function(e) {
+  //   // e.stopPropogation();
+  //   e.preventDefault();
+  //   console.log('click signup');
+  //   modalSignup.fadeIn();
+  // });
+  //
+  // modalSignup.on('click', function(e) {
+  //   $(this).fadeOut();
+  // });
 
 // ====MODAL WINDOW FADES WHEN HITTING THE ESC KEY====
   $(document).keyup(function(event){
