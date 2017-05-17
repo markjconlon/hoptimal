@@ -89,6 +89,7 @@ $(document).ready(function(){
   // displaying map on bottom of page
   $('#foundBars > a').on("click", function(e){
     e.preventDefault();
+    $("#barMap").html("")
     $.ajax({
       url: $(this).attr("href"),
       method: "GET",
