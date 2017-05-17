@@ -5,6 +5,7 @@ $(document).ready(function() {
   modalLogin = $('.modal-login')
   modalSignup = $('.modal-signup')
 
+// =====MODAL WINDOW FOR LOGIN====
   $(login).on('click', function(e) {
     // e.stopPropogation();
     e.preventDefault();
@@ -19,6 +20,7 @@ $(document).ready(function() {
     $(this).fadeOut();
   });
 
+  // =====MODAL WINDOW FOR SIGNUP====
   $(signup).on('click', function(e) {
     // e.stopPropogation();
     e.preventDefault();
@@ -26,14 +28,11 @@ $(document).ready(function() {
     modalSignup.fadeIn();
   });
 
-  $('.users-form').on('click', function(e) {
-    e.stopPropagation();
-  })
-
   modalSignup.on('click', function(e) {
     $(this).fadeOut();
   });
 
+// ====MODAL WINDOW FADES WHEN HITTING THE ESC KEY====
   $(document).keyup(function(event){
       if(event.which=='27'){
         modalLogin.fadeOut();
@@ -41,7 +40,16 @@ $(document).ready(function() {
       }
     });
 
-
-    })
+// ====SUBMIT SIGN UP FORM THROUGH AJAX====
+    // $('#signup-form').on('submit', function() {
+    //   $.ajax({
+    //     url: '/users'
+    //     method: $(this).attr('action');
+    //     data: {params[:user]}
+    //     dataType: 'html'
+    //   }).done(function(data) {
+    //
+    //   })
+    // })
 
 });
