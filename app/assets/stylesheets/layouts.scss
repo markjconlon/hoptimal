@@ -180,10 +180,11 @@ select#_users_new_category_id {
     div.logged-in-nav a {
       color: black;
       display: inline-block;
-      line-height: 50px;
+      line-height: 60px;
       width: 100%;
       border-top: 2px solid $off-white;
       margin-right: 0;
+      font-size: 1em;
     }
 
     .logged-in-nav {
@@ -193,6 +194,10 @@ select#_users_new_category_id {
       text-align: right;
       top: 99px;
       // padding-bottom:30px;
+    }
+
+    div.logged-in-nav a:hover {
+      color: $off-white;
     }
 
   //=== styling for the logged out nav ===
@@ -205,10 +210,11 @@ select#_users_new_category_id {
     div.logged-out-nav a {
       color: black;
       display: inline-block;
-      line-height: 50px;
+      line-height: 60px;
       width: 100%;
       border-top: 2px solid $off-white;
       margin-right: 0;
+      font-size: 1em;
     }
 
     .logged-out-nav {
@@ -217,6 +223,10 @@ select#_users_new_category_id {
       text-align: right;
       top: 99px;
       // padding-bottom:30px;
+    }
+
+    div.logged-out-nav a:hover {
+      color: $off-white;
     }
 
   div.nav-left {
@@ -243,11 +253,18 @@ select#_users_new_category_id {
 
 @media only screen and (max-device-width: 480px) {
   a.toggle-nav {
-    line-height: 140px;
+    line-height: 60px;
+    font-size: 3em;
+  }
+
+  div.logged-in-nav a, div.logged-out-nav a  {
+    line-height: 30px;
+    border-top: 2px solid $off-white;
+    font-size: 0.7em;
   }
 
   .logged-in-nav, .logged-out-nav {
-    top: 139px;
+    top: 59px;
   }
 
   .display-none {
@@ -255,14 +272,11 @@ select#_users_new_category_id {
   }
 
   #hoptimal-logo {
-    width: 60px;
+    width: 23px;
   }
 
   .navbar {
-    height: 140px;
+    height: 60px;
   }
 
-  .main-content {
-    top: 150px;
-  }
 }
