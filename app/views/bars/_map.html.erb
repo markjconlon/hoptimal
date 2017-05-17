@@ -25,7 +25,7 @@
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_MAPS_API"]%>&callback=initMap">
 </script>
-    <button id="directions" class="btn btn-default btn-primary">GET DIRECTIONS </button>
+<button id="directions" class="btn btn-default btn-primary">GET DIRECTIONS </button>
 
 <%= content_tag :div, class: "temp_information", data: {lat: (@bar.latitude), lng: (@bar.longitude)} do %>
 <% end %>
