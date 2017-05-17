@@ -13,6 +13,13 @@ class BarsController < ApplicationController
 
   def show
     @bar = Bar.find(params[:id])
+    if request.xhr?
+      respond_to do |format|
+        format.html do
+          render partial: 'map'
+        end
+      end
+    end
   end
 
   private

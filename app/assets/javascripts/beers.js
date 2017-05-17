@@ -70,7 +70,7 @@ $(document).ready(function(){
   //   })
   // })
 
-// mobile navigation menu drop down 
+// mobile navigation menu drop down
   $('.toggle-nav').on("click", function(e) {
     if ($('.logged-in-nav').attr('class') === 'logged-in-nav active') {
       $('.logged-in-nav').slideDown(600).toggleClass('active');
@@ -86,4 +86,20 @@ $(document).ready(function(){
     e.preventDefault();
   });
 
+  // displaying map on bottom of page
+  $('#foundBars > a').on("click", function(e){
+    e.preventDefault();
+    $("#barMap").html("")
+    $.ajax({
+      url: $(this).attr("href"),
+      method: "GET",
+      dataType: "html",
+    }).done(function(data){
+      $("#barMap").append(data);
+      console.log("SUCCESS");
+      console.log($('.foundBars', this).attr("href"));
+    }).fail(function(data){
+      console.log("FAIL");
+    });
+  });
 })

@@ -1,0 +1,31 @@
+<div id="map"></div>
+<script>
+  function initMap() {
+    var image = {
+      url: "<%= image_path('hoptimalMapMarker.png') %>",
+      scaledSize : new google.maps.Size(42, 62)
+    };
+
+    var uluru = {lat: <%= @bar.latitude  %>, lng: <%= @bar.longitude %> };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 16,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      icon: image
+    });
+  }
+</script>
+<div class="bar">
+  <h3> <%= @bar.name %> </h3>
+  <h5>Address: <%= @bar.address %></h5>
+</div>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_MAPS_API"]%>&callback=initMap">
+</script>
+    <button id="directions" class="btn btn-default btn-primary">GET DIRECTIONS </button>
+
+<%= content_tag :div, class: "temp_information", data: {lat: (@bar.latitude), lng: (@bar.longitude)} do %>
+<% end %>
