@@ -181,17 +181,28 @@ div.all-beers-list img {
 #foundBars{
   display: inline-block;
   vertical-align: middle;
+  margin-left: 4%;
 }
-.beer_note{
-  display: block;
-  clear: both;
-}
-
 #barMap{
   width: 45%;
   display: inline-block;
   position: absolute;
   top: 8%;
+}
+.beer_note{
+  display: block;
+  clear: both;
+  margin-bottom: 2%;
+}
+
+textarea#user_beer_note{
+  width: 220px;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 1023px) {
+  #foundBars{
+    margin-left: 0%;
+  }
 }
 @media only screen and (max-device-width: 768px) {
   .beer_show {
