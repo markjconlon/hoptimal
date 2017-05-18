@@ -6,7 +6,7 @@ $light-blue: rgba(216, 229, 231, 0.9);
 $nav-bar-grey: rgba(209, 209, 209, 0.9);
 $off-white: #f1f4f6;
 $dark-blue: rgb(33, 171, 191);
-$star-hover: rgb(157, 218, 207);
+$light-blue: rgb(157, 218, 207);
 
 * { font-family: 'gilroy-light'; }
 
@@ -153,7 +153,7 @@ div.all-beers-list img {
 
 .star-rating:not(:checked) > label:hover,
 .star-rating:not(:checked) > label:hover ~ label {
-    color: $star-hover;
+    color: $light-blue;
 }
 
 .star-rating > input:checked + label:hover,
@@ -161,7 +161,7 @@ div.all-beers-list img {
 .star-rating > input:checked ~ label:hover,
 .star-rating > input:checked ~ label:hover ~ label,
 .star-rating > label:hover ~ input:checked ~ label {
-    color: $star-hover;
+    color: $light-blue;
 }
 
 @media only screen and (max-width: 785px) {
