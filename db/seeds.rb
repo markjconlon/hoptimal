@@ -170,7 +170,8 @@ i = 0
 end
 
 array_first = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-array_last = [305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320]
+object_array_last = Beer.last(15)
+array_last = object_array_last.map{ |beer| beer.id }
 
 array_first.each do |num|
   BarBeer.create(bar_id: 13, beer_id: num)
