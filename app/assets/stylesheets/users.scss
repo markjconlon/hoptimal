@@ -47,12 +47,20 @@
   margin-left: 9%;
   margin-right: 9%;
 }
-.box2{
+
+.box4{
+  width: 80%;
+  height: 400px;
+  position: inherit;
+  margin-left: 9%;
+  margin-right: 9%;
+}
+.box2, .box5{
   width: 60%;
   float: left;
 }
 
-.box3{
+.box3, .box6{
   width: 40%;
   height: 400px;
   float: right;
@@ -110,7 +118,7 @@
     padding-bottom: 2%;
     border-style: solid;
     box-shadow: 10px 5px 5px grey;
-    height: 600px;
+    height: 650px;
 }
 
 .recent_beer{

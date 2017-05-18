@@ -2,13 +2,55 @@
   <h1>
     Based on your preference of "<%= @preference %>", here are some suggestions you should try:
   </h1>
+  <br>
   <% if @based_on_preference == nil %>
     <p>You have cleared this category, please try another?</p>
     <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg">
   <% else %>
 
+  <div class="box4">
+
+    <div class="box5">
+      <div id = "preference_beer_info">
+        <img src="<%= @based_on_preference.image_thumb_url %>">
+      </div>
+    </div>
+
+    <div class="box6">
+      <div id="preference_beer_title">
+        <h2 >Name:</h2>
+        <p>
+          <%= @based_on_preference.name %>
+        </p>
+      </div>
+
+      <div id="preference_beer_style">
+        <h3>Style:</h3>
+        <p>
+          <%= @based_on_preference.varietal %>
+        </p>
+      </div>
+
+      <div id="preference_beer_taste">
+        <h3>Tasting Notes:</h3>
+        <p>
+          <% if @based_on_preference.tasting_note == nil %>
+          'No Tasting Note Available... But Trust Us it's Amazing!'
+          <% else %>
+            <%= @based_on_preference.tasting_note %>
+          <% end %>
+        </p>
+      </div>
+
+      <div id="preference_beer_link">
+        <%= link_to"Add to 'My Beers'", beer_path(@based_on_preference.id) %>
+      </div>
+
+    </div>
+  </div>
+
   <div id="preference_beer_container">
-      <div id="preference_beer_info">
+      <!-- <div id="preference_beer_info">
         <img src="<%= @based_on_preference.image_thumb_url %>">
         <p>
         <%= @based_on_preference.name %>
@@ -16,7 +58,7 @@
         <p>
         <%= link_to"Add to 'My Beers'", beer_path(@based_on_preference.id) %>
       </p>
-      </div>
+      </div> -->
 
       <h2 id="preference_beer_notification">
         Dont like the choice? No problem, try another selection:
