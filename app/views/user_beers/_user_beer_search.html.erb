@@ -5,13 +5,13 @@
       </div>
 
 
-      <div class ="beer_info">
-        <p><%= ub.name %></p>
-        <p><%= ub.category.category_type %></p>
+      <div class="beer_info display-none">
+        <h3><%= ub.name %></h3>
+        <h4><%= ub.category.category_tyh4e %></p>
         <% ub_beer_id = ub.id  %>
         <p>Rating: <%= UserBeer.find_by(beer_id: ub_beer_id).rating %></p>
-        <a href="/user_beers/<%=ub.id%>/edit">EDIT MY BEER</a>
-        <p><%= link_to 'REMOVE FROM MY LIST',  { action: :destroy, id: ub.id }, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <a href="/user_beers/<%=ub.id%>/edit">EDIT MY BEER</a> </br>
+        <%= link_to 'REMOVE FROM MY LIST',  { action: :destroy, id: ub.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
   </div>
 <% end %>

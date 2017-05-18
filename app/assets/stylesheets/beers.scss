@@ -240,7 +240,7 @@ div.all-beers-list img {
 }
 // end of MARK
 
-@media only screen and (max-device-width: 769px) {
+@media only screen and (max-width: 769px) {
   //class used to display/hide the mobile navigation menu
   .active {
     display: none;

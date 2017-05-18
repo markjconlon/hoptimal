@@ -15,17 +15,17 @@ $(document).ready(function(){
       dataType: 'html'
     }).done(function(data) {
       $("#search-beers-ub").html(data);
+})
 
-      $('.all-beers-list').mouseover(function() {
-        $(this).find('div.beers-list-text').animate({
-          opacity: 1,
-        })
-      }).mouseleave(function() {
-        $(this).find('div.beers-list-text').animate({
-          opacity: 0,
-    });
+})
+
+  $('.beer_consumed').mouseover(function() {
+    $(this).find('div.beer_info').animate({
+      opacity: 1,
+    })
+  }).mouseleave(function() {
+    $(this).find('div.beer_info').animate({
+      opacity: 0,
   });
-})
-
-})
+  });
 })

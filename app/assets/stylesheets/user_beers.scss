@@ -1,3 +1,84 @@
 // Place all the styles related to the UserBeers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$light-grey: rgb(233, 231, 231);
+$light-blue: rgba(216, 229, 231, 0.9);
+$nav-bar-grey: rgba(209, 209, 209, 0.9);
+$off-white: #f1f4f6;
+$dark-blue: rgb(33, 171, 191);
+$light-blue: rgb(157, 218, 207);
+$dark-grey: rgba(130, 130, 130, 0.9);
+
+#search-beers-ub {
+  width: 100%;
+}
+
+#search-beers-ub div.beer_consumed {
+    width: calc(25% - 10px);
+    min-width: 235px;
+    padding: 0;
+    margin: 0 3px;
+    float: left;
+    text-align: center;
+}
+
+.beer_info {
+  background-color: $dark-grey;
+  border-radius: 6px;
+  padding: 3px 0;
+  float: left;
+  position: relative;
+  bottom: 220px;
+  text-align: center;
+  width: 100%;
+  margin: 0 3px;
+  color: $off-white;
+}
+
+#search-beers-ub a {
+  color: $off-white;
+}
+
+#search-beers-ub h3 {
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #search-beers-ub {
+    width: 100%;
+  }
+
+  #search-beers-ub div.beer_consumed {
+    width: calc(33% - 6px);
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #search-beers-ub {
+    width: 100%;
+  }
+
+  #search-beers-ub div.beer_consumed {
+    width: calc(45% - 6px);
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  #search-beers-ub {
+    width: 100%;
+  }
+
+  #search-beers-ub div.beer_consumed {
+    width: 100%;
+    margin: 0 3px;
+    align-items: center;
+  }
+
+  .beer_info {
+    margin: 0 45px;
+    width: 80%;
+  }
+}
