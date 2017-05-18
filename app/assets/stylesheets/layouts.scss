@@ -154,7 +154,7 @@ select#_users_new_category_id {
   text-align: center;
 }
 
-// @media only screen and (max-device-width: 985px) {
+// @media only screen and (max-width: 985px) {
 //   #hoptimal-logo {
 //     display: inline-block;
 //   }
@@ -164,7 +164,7 @@ select#_users_new_category_id {
 //   }
 // }
 
-@media only screen and (max-device-width: 785px) {
+@media only screen and (max-width: 785px) {
   //class used to display/hide the mobile navigation menu
   .active {
     display: none;
@@ -270,7 +270,7 @@ select#_users_new_category_id {
   }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
   a.toggle-nav {
     line-height: 60px;
     font-size: 3em;

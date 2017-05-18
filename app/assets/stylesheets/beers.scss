@@ -164,7 +164,7 @@ div.all-beers-list img {
     color: $star-hover;
 }
 
-@media only screen and (max-device-width: 785px) {
+@media only screen and (max-width: 785px) {
   .display-none {
     opacity: 0.9;
   }
@@ -174,7 +174,7 @@ div.all-beers-list img {
   }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
 
   .all-beers-list {
     display: inline-block;
@@ -188,7 +188,7 @@ div.all-beers-list img {
   }
 }
 
-@media only screen and (max-device-width: 321px) {
+@media only screen and (max-width: 321px) {
 
   .all-beers-list {
     display: inline-block;
