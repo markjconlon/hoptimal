@@ -56,7 +56,7 @@ class User < ApplicationRecord
   end
 
   def most_recent_4(current_user)
-    UserBeer.where(user_id: current_user).order(:created_at).last(4)
+    UserBeer.where(user_id: current_user).order(:created_at).last(3)
   end
 
 
