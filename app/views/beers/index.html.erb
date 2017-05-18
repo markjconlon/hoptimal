@@ -4,11 +4,12 @@
   <%= f.label :category_type, "Categories" %>
   <%= f.collection_select(:category_id, Category.all, :id, :category_type, include_blank: "Pick a Category") %>
 
-
+  <div id="beer_search_field">
   <%= f.label :name_cont %>
   <%= f.search_field :name_cont, id:"search-field" %>
 
   <%= f.submit %>
+  </div>
 <% end %>
 
 <div id="search-beers">
