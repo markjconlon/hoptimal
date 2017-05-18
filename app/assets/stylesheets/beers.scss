@@ -8,6 +8,81 @@ $off-white: #f1f4f6;
 $dark-blue: rgb(33, 171, 191);
 $star-hover: rgb(157, 218, 207);
 
+* { font-family: 'gilroy-light'; }
+
+#hoptimal-logo {
+  width: 40px;
+  margin: 5px 20px;
+}
+#barMap{
+}
+
+.nav-item {
+  padding: 0 25px;
+}
+
+.navbar {
+  box-sizing: content-box;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  background-color: $nav-bar-grey;
+  width: 100%;
+  height: 100px;
+  text-transform: uppercase;
+}
+
+.logged-in-nav, .logged-out-nav {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+//within logged in nav, navigation that appears on the right of the page
+.nav-right {
+  position: relative;
+  float: right;
+  right: 60px;
+  display: inline-block;
+}
+
+//within logged in nav, navigation that appears on the left of the page
+.nav-left {
+  position: relative;
+  float: left;
+  display: inline-block;
+}
+
+//font awesome icons (within the navigation menu)
+.logged-in-nav i.fa, .logged-out-nav i.fa {
+  font-size: 1.2em;
+  line-height: 120px;
+  bottom: 2px;
+  position: relative;
+  color: black;
+}
+
+//change hover color of links within the navbar
+div.logged-in-nav a:hover, div.logged-out-nav a:hover {
+  color: $off-white;
+}
+
+//links within the navigation menu
+a.nav-item {
+  line-height: 100px;
+  position: relative;
+  top: 14px;
+  right: 15px;
+  color: black;
+}
+
+//div wrapping the content of the page (not including the navbar)
+.main-content {
+  position: relative;
+  top: 110px;
+}
+
 div.all-beers-list img {
   width: 100%;
 }
