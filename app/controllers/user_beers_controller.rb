@@ -48,7 +48,7 @@ class UserBeersController < ApplicationController
   def update
     @user_beer = UserBeer.find(params[:id])
     if @user_beer.update_attributes(user_beer_params)
-      redirect_to beers_path
+      redirect_to user_beers_path
     else
       render :show
     end
@@ -57,7 +57,7 @@ class UserBeersController < ApplicationController
   def destroy
     @user_beer = UserBeer.find(params[:id])
     @user_beer.destroy
-    redirect_to user_beers_show_path
+    redirect_to user_beers_path
   end
 
   def search
