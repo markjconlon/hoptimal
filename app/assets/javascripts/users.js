@@ -31,6 +31,13 @@ $(function(){
       $('<p>').fadeIn('slow').html(data.name).appendTo("#random_beer_info");
       $('<a>').fadeIn('slow').attr("href","/beers/"+`${data.id}`).text('Add to list').appendTo("#random_beer_info");
 
+      if (!data.tasting_note) {
+        $('<p>').fadeIn('slow').html('No Tasting Note Available... But Trust Us it\'s Amazing!').appendTo("#random_beer_info");
+      }else {
+        $('<p>').fadeIn('slow').html(data.tasting_note).appendTo("#random_beer_info");
+
+      }
+
       // random button and notification header
       $("#random_beer_notification").text("Doesn't meet your tastes? Feel free to try another!")
       $("#random_beer_container")
