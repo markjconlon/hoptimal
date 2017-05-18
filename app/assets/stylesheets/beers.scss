@@ -89,12 +89,27 @@ div.all-beers-list img {
     color: $star-hover;
 }
 
+@media only screen and (max-device-width: 785px) {
+  .display-none {
+    opacity: 0.9;
+  }
+
+  .beers-list-text > h2 {
+    bottom: 225px
+  }
+}
+
 @media only screen and (max-device-width: 480px) {
 
   .all-beers-list {
     display: inline-block;
     width: calc(50% - 6px);
-    height: 600px;
+    min-height: 325px;
+    height: 325px;
+  }
+
+  .beer_search label {
+    clear: left;
   }
 }
 
