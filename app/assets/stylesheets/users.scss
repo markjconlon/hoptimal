@@ -16,6 +16,14 @@
  *
  */
 
+// ==== align text input fields on the signup/login for, to the right margin, align the text to the left
+.users-form input, .users-form select, .users-form input[type="submit"] {
+  float: right;
+  margin-left: 90px;
+  padding-right: 62px;
+  text-align: left;
+}
+
 
 
 @media (min-width: 640px) {

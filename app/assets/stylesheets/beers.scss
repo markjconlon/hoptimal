@@ -1,13 +1,20 @@
 // Place all the styles related to the beers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$nav-bar-grey: #d1d1d1;
+$light-grey: rgb(233, 231, 231);
+$light-blue: rgba(216, 229, 231, 0.9);
+$nav-bar-grey: rgba(209, 209, 209, 0.9);
+$off-white: #f1f4f6;
+$dark-blue: rgb(33, 171, 191);
+$star-hover: rgb(157, 218, 207);
 
 * { font-family: 'gilroy-light'; }
 
 #hoptimal-logo {
   width: 40px;
   margin: 5px 20px;
+}
+#barMap{
 }
 
 .nav-item {
@@ -32,32 +39,45 @@ $nav-bar-grey: #d1d1d1;
   font-size: 1.5em;
 }
 
+//within logged in nav, navigation that appears on the right of the page
 .nav-right {
   position: relative;
   float: right;
   right: 60px;
   display: inline-block;
 }
+
+//within logged in nav, navigation that appears on the left of the page
 .nav-left {
   position: relative;
   float: left;
   display: inline-block;
 }
 
-i.fa {
-  font-size: 2.5em;
-  line-height: 100px;
+//font awesome icons (within the navigation menu)
+.logged-in-nav i.fa, .logged-out-nav i.fa {
+  font-size: 1.2em;
+  line-height: 120px;
+  bottom: 2px;
   position: relative;
-  top: 17px;
+  color: black;
 }
 
+//change hover color of links within the navbar
+div.logged-in-nav a:hover, div.logged-out-nav a:hover {
+  color: $off-white;
+}
+
+//links within the navigation menu
 a.nav-item {
   line-height: 100px;
   position: relative;
-  top: 17px;
+  top: 14px;
   right: 15px;
+  color: black;
 }
 
+//div wrapping the content of the page (not including the navbar)
 .main-content {
   position: relative;
   top: 110px;
@@ -66,15 +86,17 @@ a.nav-item {
 div.all-beers-list img {
   width: 100%;
 }
+//
+// .display-show {
+//   display:inline;
+// }
 
-.display-show {
-  display:inline;
-}
-
+//class used to hide the overlay text of the beer names
 .display-none {
   opacity: 0;
 }
 
+//div used to display search results
 #search-beers {
   box-sizing: border-box;
   display: inline-block;
@@ -82,19 +104,18 @@ div.all-beers-list img {
   text-align: center;
 }
 
+//beers displaying on the index page
 .all-beers-list {
     display: inline-block;
     min-width: 240px;
-    width: calc(25%);
+    width: calc(24% - 10px);
     text-align: center;
-    // border: 2px solid black;
     margin: 2px;
-    // margin-left: 5%;
     position: relative;
-    
     min-height: 400px;
 }
 
+//text that overlays the beers with the beer name
 .beers-list-text > h2 {
   display: inline;
   background-color: rgba(130, 130, 130, 0.9);
@@ -109,150 +130,61 @@ div.all-beers-list img {
   border-radius: 8px;
 }
 
-.toggle-nav {
-  display: none;
+// ==== rating button styles ====
+.star-rating {
+  float: left;
 }
 
-a {
-  text-decoration: none;
+.star-rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px; /* positions radial buttons off the page */
+    clip:rect(0,0,0,0); /* gets rid of radial buttons */
 }
 
-a:visited {
-  text-decoration: none;
+.star-rating:not(:checked) > label {
+    float:right;
+    color: $light-grey;
+    padding: 0 .2em;
 }
 
-a:active {
-  text-decoration: none;
+.star-rating > input:checked ~ label {
+    color: $dark-blue;
 }
 
-a:hover {
-  text-decoration: none;
+.star-rating:not(:checked) > label:hover,
+.star-rating:not(:checked) > label:hover ~ label {
+    color: $star-hover;
 }
 
-.pagination {
-  width: 100%;
-  font-size: 1.5em;
-  text-align: center;
+.star-rating > input:checked + label:hover,
+.star-rating > input:checked + label:hover ~ label,
+.star-rating > input:checked ~ label:hover,
+.star-rating > input:checked ~ label:hover ~ label,
+.star-rating > label:hover ~ input:checked ~ label {
+    color: $star-hover;
 }
 
-
-@media only screen and (max-device-width: 769px) {
-  .active {
-    display: none;
-  }
-
-  a.toggle-nav {
-    display: inline-block;
-    font-size: 5em;
-    padding-left: 10px;
-    line-height: 100px;
-    color: black;
-    position: absolute;
-    right: 40px;
-  }
-
-  img#hoptimal-logo {
-    position: absolute;
-  }
-
-  div.logged-in-nav i {
-    display: none;
-  }
-
-  div.logged-in-nav a {
-
-    color: black;
-    display: inline-block;
-    line-height: 50px;
-    width: 100%;
-    border-top: 2px solid white;
-    margin-right: 0;
-  }
-
-  .logged-in-nav {
-    box-sizing: border-box;
-    width: 100%;
-    background-color: $nav-bar-grey;
-    text-align: right;
-    top: 99px;
-    // padding-bottom:30px;
-  }
-
-  div.logged-out-nav i {
-    display: none;
-  }
-
-  div.logged-out-nav a {
-    color: black;
-    display: inline-block;
-    line-height: 50px;
-    width: 100%;
-    border-top: 2px solid white;
-    margin-right: 0;
-  }
-
-  .logged-out-nav {
-    box-sizing: border-box;
-    background-color: $nav-bar-grey;
-    text-align: right;
-    top: 99px;
-    // padding-bottom:30px;
-  }
-
-  div.nav-left {
-    float: right;
-    padding: 0 20px;
-    width: 100%;
-  }
-
-  div.nav-right {
-    padding: 0 20px;
-    top: 0;
-    right: 0;
-    float: right;
-    clear: both;
-    width: 100%;
-  }
-
-  a.nav-item {
-    top: 0;
-    right: 0;
-    position:static;
-  }
-
-
-}
-
-
-@media only screen and (max-device-width: 480px) {
-  a.toggle-nav {
-    line-height: 140px;
-  }
-
-  .logged-in-nav, .logged-out-nav {
-    top: 139px;
-  }
-
+@media only screen and (max-device-width: 785px) {
   .display-none {
     opacity: 0.9;
   }
 
+  .beers-list-text > h2 {
+    bottom: 225px
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+
   .all-beers-list {
     display: inline-block;
     width: calc(50% - 6px);
-    height: 600px;
+    min-height: 325px;
+    height: 325px;
   }
 
-  #hoptimal-logo {
-    width: 60px;
-  }
-
-  .navbar {
-    height: 140px;
-  }
-
-  .main-content {
-    top: 150px;
+  .beer_search label {
+    clear: left;
   }
 }
 
@@ -268,18 +200,14 @@ a:hover {
   .beers-list-text {
     z-index: 5;
     position: absolute;
-    bottom: 125px;
     text-align: center;
     float: left;
     line-height: 100%;
-    font-size: 2em;
     width: 100%;
   }
 
   .toggle-nav {
     line-height: 100%;
   }
-
-
 
 }
