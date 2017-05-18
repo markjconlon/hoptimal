@@ -154,17 +154,17 @@ select#_users_new_category_id {
   text-align: center;
 }
 
-// @media only screen and (max-width: 985px) {
-//   #hoptimal-logo {
-//     display: inline-block;
-//   }
-//
-//   #hoptimal-logo-full {
-//     display: none;
-//   }
-// }
+@media only screen and (max-width: 985px) {
+  #hoptimal-logo {
+    display: inline-block;
+  }
 
-@media only screen and (max-width: 785px) {
+  #hoptimal-logo-full {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 820px) {
   //class used to display/hide the mobile navigation menu
   .active {
     display: none;
@@ -185,8 +185,19 @@ select#_users_new_category_id {
     padding: 0;
   }
 
+//hoptimal logo (full text) appears when the full text menu gets too close together
   img#hoptimal-logo {
     position: absolute;
+    display: none;
+  }
+
+  img#hoptimal-logo-full {
+    display: inline-block;
+    position: absolute;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    line-height: 100px;
   }
 
   //=== styling for the logged in nav ===
