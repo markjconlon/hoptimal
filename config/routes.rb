@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'beers#index'
   get 'user_beers/show'
-  post 'user_beers/show' => 'user_beers#show'
+  post 'user_beers' => 'user_beers#show'
 
   # random beers route added to allow for json requests for random preference
   get '/beers/random/preference' => 'beers#random_by_preference'
