@@ -1,7 +1,16 @@
 class UserBeersController < ApplicationController
   before_action :ensure_logged_in
-  def show
+  def index
+    @user = current_user.beers
+    @q = @user.ransack(params[:q])
+    @user_beers = @q.result(distinct: true).page params[:page]
     @user_beers = UserBeer.where(user_id: current_user).order(created_at: :desc)
+    # respond_to do |format|
+    #   format.html
+    #   format.json do
+    #     render json: @UserBeer, except: %i(created_at updated_at)
+    #   end
+    # end
   end
 
   def create
@@ -51,10 +60,17 @@ class UserBeersController < ApplicationController
     redirect_to user_beers_show_path
   end
 
+  def search
+    @user = current_user.beers
+    @q = @user.ransack(params[:q])
+    @user_beers = @q.result(distinct: true).page params[:page]
+    render "search", layout: false
+  end
+
 private
 
  def user_beer_params
-   params.require(:user_beer).permit(:note, :rating)
+   params.require(:user_beer).permit(:note, :rating, :q)
  end
 
 end

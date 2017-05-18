@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   def ensure_logged_in
     unless current_user
       flash[:route] = "#{request.referrer}"
+      flash.keep
       redirect_to new_session_url
     end
   end
