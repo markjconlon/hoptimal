@@ -35,13 +35,46 @@
 
 }
 
+#preference_beer_notification{
+  display: none;
+}
+
+.box1{
+  display: none;
+  width: 80%;
+  height: 400px;
+  position: inherit;
+  margin-left: 9%;
+  margin-right: 9%;
+}
+.box2{
+  width: 60%;
+  float: left;
+}
+
+.box3{
+  width: 40%;
+  height: 400px;
+  float: right;
+}
+
+#random_img{
+  margin-top: 3%;
+}
+
+#random_beer_info {
+    width: 100%;
+    float: left;
+    margin-top: 5%;
+}
 
 .back-to-top{
   position: fixed;
   bottom: 20px;
   right: 20px;
   display: none;
-  background-color: yellow;
+  background-color: #4070FF;
+  color: white;
 }
 
 .random {
@@ -61,7 +94,7 @@
     padding-bottom: 2%;
     border-style: solid;
     box-shadow: 10px 5px 5px grey;
-    height: 500px;
+    // height: 500px;
 }
 
 .preferences{

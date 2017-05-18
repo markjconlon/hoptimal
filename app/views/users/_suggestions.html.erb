@@ -1,16 +1,24 @@
 <div>
-  <h1>Based on you're previous selections, you should try:</h1>
+  <h1>
+    Based on you're previous selections, you should try:
+  </h1>
+
     <% if @based_on_previous == nil %>
-      <p> This section requires you to have added beers with a rating of 3 or above. <p>
+      <p>
+        This section requires you to have added beers with a rating of 3 or above.
+      <p>
     <% else %>
-      <p><%= @based_on_previous.name %></p>
+      <p>
+        <%= @based_on_previous.name %>
+      </p>
       <img src="<%= @based_on_previous.image_thumb_url %>">
       <div>
         <%= link_to 'Add to "My Beers"', beer_path(@based_on_previous.id)%>
       </div>
 
-      <div>
-        <%= submit_tag("Try Another") %>
-      </div>
+      <h3>
+        <%= link_to "View Beers", beers_path %>
+      </h3>
+
     <% end %>
 </div>
