@@ -2,7 +2,7 @@ class UserBeersController < ApplicationController
   before_action :ensure_logged_in
   def show
     @q = UserBeer.ransack(params[:q])
-    @user_beers = @q.result(distinct: true)
+    @user_beers = @q.result(distinct: true).page params[:page]
     @user_beers = UserBeer.where(user_id: current_user).order(created_at: :desc)
   end
 
@@ -51,6 +51,12 @@ class UserBeersController < ApplicationController
     @user_beer = UserBeer.find(params[:id])
     @user_beer.destroy
     redirect_to user_beers_show_path
+  end
+
+  def search
+    @q = UserBeer.ransack(params[:q])
+    @user_beers = @q.result(distinct: true).page params[:page]
+    render @user_beers, layout: false
   end
 
 private
