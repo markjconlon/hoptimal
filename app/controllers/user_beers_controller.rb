@@ -1,6 +1,8 @@
 class UserBeersController < ApplicationController
   before_action :ensure_logged_in
   def show
+    @q = UserBeer.ransack(params[:q])
+    @user_beers = @q.result(distinct: true)
     @user_beers = UserBeer.where(user_id: current_user).order(created_at: :desc)
   end
 
