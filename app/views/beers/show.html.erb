@@ -1,18 +1,25 @@
-<%= link_to "Back to Beers", beers_path %>
-<% if flash[:alert] %>
-  <p><%= flash[:alert] %></p>
-<% end %>
-<h1><%= @beer.name %></h1>
-<img src="<%= @beer.image_thumb_url %>" alt="<%= @beer.name %> Photo">
+<div class="beer_show">
+  <%= link_to "Back to Beers", beers_path %>
+  <% if flash[:alert] %>
+    <p><%= flash[:alert] %></p>
+  <% end %>
+  <h1><%= @beer.name %></h1>
+  <img src="<%= @beer.image_thumb_url %>" alt="<%= @beer.name %> Photo">
 
-<div id="foundBars">
-<h5><%= @beer.style %></h5>
-<h5><%= @beer.tasting_note %></h5>
-<p>You can find this at:</p>
-<% @bars.each do |bar| %>
-<%= link_to "#{bar.name}", bar_path("#{bar.id}") %></br>
-<% end %>
+  <div id="foundBars">
+  <p><%= @beer.category.category_type %></p>
+  <p><%= @beer.varietal %></p>
+  <p><%= @beer.style %></p>
+  <p><%= @beer.tasting_note %></p>
+  <p><%= @beer.brewery %></p>
+  <p><%= @beer.origin %></p>
+  <p>You can find this at:</p>
+  <% @bars.each do |bar| %>
+  <%= link_to "#{bar.name}", bar_path("#{bar.id}") %></br>
+  <% end %>
+  </div>
+
+  <%= render 'form' %>
 </div>
 
-<%= render 'form' %>
 <div id="barMap"></div>

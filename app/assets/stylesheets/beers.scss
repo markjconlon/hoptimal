@@ -159,6 +159,60 @@ div.all-beers-list img {
   text-align: center;
 }
 
+//styling beers show page ---MARK----
+.beer_show {
+  width: 45%;
+  margin: 40px;
+  display: inline-block;
+  font-size: 1.2em;
+}
+.beer_show > img{
+  display: inline-block;
+}
+
+#foundBars{
+  display: inline-block;
+  vertical-align: middle;
+}
+.beer_note{
+  display: block;
+  clear: both;
+}
+
+#barMap{
+  width: 45%;
+  display: inline-block;
+  position: absolute;
+  top: 8%;
+}
+@media only screen and (max-device-width: 768px) {
+  .beer_show {
+    width: 90%;
+    margin-left: 5%;
+    display: block;
+    font-size: 1.2em;
+  }
+  .form {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10%;
+  }
+  #barMap{
+    width: 90%;
+    margin: 5%;
+    position: relative;
+  }
+  #foundBars{
+    vertical-align: middle;
+  }
+}
+@media only screen and (max-device-width: 414px) {
+  .form{
+    display: block;
+    margin: auto;
+  }
+}
+// end of MARK
 
 @media only screen and (max-device-width: 769px) {
   //class used to display/hide the mobile navigation menu
