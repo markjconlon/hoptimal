@@ -117,7 +117,7 @@ $(function(){
       $('<a>').fadeIn('slow').attr("href","/beers/"+`${data.id}`).text('Add to list').appendTo("#preference_beer_link");
 
       // Preference Beer Notification
-      $('#preference_beer_notification').show()
+      $('#preference_beer_notification').fadeIn('slow').show()
 
     }).fail(function(){
       console.log(".ajax request failed");
