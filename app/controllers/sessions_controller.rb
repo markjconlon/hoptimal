@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    flash.keep
   end
 
   def create
