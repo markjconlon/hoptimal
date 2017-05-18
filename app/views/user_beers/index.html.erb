@@ -1,0 +1,20 @@
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name_cont, "Search" %>
+  <%= f.search_field :name_cont, id:"search-field-ub" %>
+
+  <%= f.submit %>
+<% end %>
+
+<div class="recent_beer">
+
+  <h2>
+    My Beers
+  </h2>
+
+  <div id="search-beers-ub">
+    <%= render 'user_beer' %>
+  </div>
+
+
+</div>

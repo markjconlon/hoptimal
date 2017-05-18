@@ -1,0 +1,16 @@
+<% @user_beers.each do |ub| %>
+  <div class="beer_consumed">
+      <div class="beer_img">
+        <img src="<%= ub.beer.image_thumb_url %>"></br>
+      </div>
+
+
+      <div class ="beer_info">
+        <p><%= ub.beer.name %></p>
+        <p><%= ub.beer.category.category_type %></p>
+        <p>Rating: <%= ub.rating %></p>
+        <a href="/user_beers/<%=ub.id%>/edit">EDIT MY BEER</a>
+        <p><%= link_to 'REMOVE FROM MY LIST',  { action: :destroy, id: ub.id }, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+  </div>
+<% end %>
