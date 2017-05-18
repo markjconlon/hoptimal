@@ -1,4 +1,9 @@
-<div id="map"></div>
+<div class="bar">
+  <h3> <%= @bar.name %> </h3>
+  <h5>Address: <%= @bar.address %></h5>
+</div>
+
+<div id="map">
 <script>
   function initMap() {
     var image = {
@@ -18,13 +23,11 @@
     });
   }
 </script>
-<div class="bar">
-  <h3> <%= @bar.name %> </h3>
-  <h5>Address: <%= @bar.address %></h5>
 </div>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_MAPS_API"]%>&callback=initMap">
 </script>
+</br>
 <button id="directions" class="btn btn-default btn-primary">GET DIRECTIONS </button>
 
 <%= content_tag :div, class: "temp_information", data: {lat: (@bar.latitude), lng: (@bar.longitude)} do %>

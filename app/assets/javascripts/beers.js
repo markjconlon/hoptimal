@@ -89,6 +89,8 @@ $(document).ready(function(){
   // displaying map on bottom of page
   $('#foundBars > a').on("click", function(e){
     e.preventDefault();
+    $("#beer_show_content").removeClass("beer_show_centered")
+    $("#beer_show_content").addClass("beer_show")
     $("#barMap").html("")
     $.ajax({
       url: $(this).attr("href"),
