@@ -9,13 +9,11 @@ $(document).ready(function(){
       method: "POST",
       data: {
         "q": {
-          "name_cont": $("#search-field").val()
+          "user_beer_name_cont": $("#search-field").val()
         }
       },
       dataType: 'html'
     }).done(function(data) {
-        });
-      });
-    })
+    });
   });
 })
