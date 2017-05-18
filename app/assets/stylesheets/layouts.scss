@@ -68,12 +68,17 @@ div.logged-in-nav a:hover, div.logged-out-nav a:hover {
   color: $off-white;
 }
 
+div.logged-out-nav a.nav-item {
+  float: right;
+  right: 90px;
+}
+
 //links within the navigation menu
 a.nav-item {
   line-height: 100px;
   position: relative;
   top: 14px;
-  right: 15px;
+  right: 25px;
   color: black;
 }
 
@@ -154,13 +159,34 @@ select#_users_new_category_id {
   text-align: center;
 }
 
-@media only screen and (max-width: 985px) {
+@media only screen and (min-width: 1150px) {
   #hoptimal-logo {
-    display: inline-block;
+    display: none;
   }
 
   #hoptimal-logo-full {
-    display: none;
+    display: inline-block;
+    position: absolute;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    line-height: 100px;
+  }
+
+  //within logged in nav, navigation that appears on the right of the page
+  .nav-right {
+    position: relative;
+    float: right;
+    right: 0px;
+    display: inline-block;
+  }
+
+  //within logged in nav, navigation that appears on the left of the page
+  .nav-left {
+    position: absolute;
+    // float: right;
+    right: 385px;
+    display: inline-block;
   }
 }
 
@@ -281,7 +307,7 @@ select#_users_new_category_id {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
   a.toggle-nav {
     line-height: 60px;
     font-size: 3em;
@@ -303,6 +329,13 @@ select#_users_new_category_id {
 
   #hoptimal-logo {
     width: 23px;
+    display: none;
+  }
+
+  img#hoptimal-logo-full {
+    height: 40px;
+    top: 10px;
+    left: 10px;
   }
 
   .navbar {
