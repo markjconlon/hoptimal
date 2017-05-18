@@ -3,13 +3,18 @@ $light-blue: rgba(216, 229, 231, 0.9);
 $nav-bar-grey: rgba(209, 209, 209, 0.9);
 $off-white: #f1f4f6;
 $dark-blue: rgb(33, 171, 191);
-$star-hover: rgb(157, 218, 207);
+$light-blue: rgb(157, 218, 207);
 
 * { font-family: 'gilroy-light'; }
 
 #hoptimal-logo {
   width: 40px;
   margin: 5px 20px;
+}
+
+#hoptimal-logo-full {
+  display: none;
+  height: 80px;
 }
 
 .nav-item {
@@ -63,12 +68,17 @@ div.logged-in-nav a:hover, div.logged-out-nav a:hover {
   color: $off-white;
 }
 
+div.logged-out-nav a.nav-item {
+  float: right;
+  right: 90px;
+}
+
 //links within the navigation menu
 a.nav-item {
   line-height: 100px;
   position: relative;
   top: 14px;
-  right: 15px;
+  right: 25px;
   color: black;
 }
 
@@ -149,7 +159,38 @@ select#_users_new_category_id {
   text-align: center;
 }
 
-@media only screen and (max-device-width: 785px) {
+@media only screen and (min-width: 1150px) {
+  #hoptimal-logo {
+    display: none;
+  }
+
+  #hoptimal-logo-full {
+    display: inline-block;
+    position: absolute;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    line-height: 100px;
+  }
+
+  //within logged in nav, navigation that appears on the right of the page
+  .nav-right {
+    position: relative;
+    float: right;
+    right: 0px;
+    display: inline-block;
+  }
+
+  //within logged in nav, navigation that appears on the left of the page
+  .nav-left {
+    position: absolute;
+    // float: right;
+    right: 385px;
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 820px) {
   //class used to display/hide the mobile navigation menu
   .active {
     display: none;
@@ -170,8 +211,19 @@ select#_users_new_category_id {
     padding: 0;
   }
 
+//hoptimal logo (full text) appears when the full text menu gets too close together
   img#hoptimal-logo {
     position: absolute;
+    display: none;
+  }
+
+  img#hoptimal-logo-full {
+    display: inline-block;
+    position: absolute;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    line-height: 100px;
   }
 
   //=== styling for the logged in nav ===
@@ -255,7 +307,7 @@ select#_users_new_category_id {
   }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 500px) {
   a.toggle-nav {
     line-height: 60px;
     font-size: 3em;
@@ -277,6 +329,13 @@ select#_users_new_category_id {
 
   #hoptimal-logo {
     width: 23px;
+    display: none;
+  }
+
+  img#hoptimal-logo-full {
+    height: 40px;
+    top: 10px;
+    left: 10px;
   }
 
   .navbar {

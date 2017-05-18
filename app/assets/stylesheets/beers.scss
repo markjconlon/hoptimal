@@ -6,7 +6,7 @@ $light-blue: rgba(216, 229, 231, 0.9);
 $nav-bar-grey: rgba(209, 209, 209, 0.9);
 $off-white: #f1f4f6;
 $dark-blue: rgb(33, 171, 191);
-$star-hover: rgb(157, 218, 207);
+$light-blue: rgb(157, 218, 207);
 
 * { font-family: 'gilroy-light'; }
 
@@ -358,7 +358,7 @@ div.all-beers-list img {
 
 .star-rating:not(:checked) > label:hover,
 .star-rating:not(:checked) > label:hover ~ label {
-    color: $star-hover;
+    color: $light-blue;
 }
 
 .star-rating > input:checked + label:hover,
@@ -366,10 +366,10 @@ div.all-beers-list img {
 .star-rating > input:checked ~ label:hover,
 .star-rating > input:checked ~ label:hover ~ label,
 .star-rating > label:hover ~ input:checked ~ label {
-    color: $star-hover;
+    color: $light-blue;
 }
 
-@media only screen and (max-device-width: 785px) {
+@media only screen and (max-width: 785px) {
   .display-none {
     opacity: 0.9;
   }
@@ -379,7 +379,7 @@ div.all-beers-list img {
   }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
 
   .all-beers-list {
     display: inline-block;
@@ -393,7 +393,7 @@ div.all-beers-list img {
   }
 }
 
-@media only screen and (max-device-width: 321px) {
+@media only screen and (max-width: 321px) {
 
   .all-beers-list {
     display: inline-block;
