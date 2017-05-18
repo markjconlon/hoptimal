@@ -12,6 +12,11 @@ $star-hover: rgb(157, 218, 207);
   margin: 5px 20px;
 }
 
+#hoptimal-logo-full {
+  display: none;
+  height: 80px;
+}
+
 .nav-item {
   padding: 0 25px;
 }
@@ -148,6 +153,16 @@ select#_users_new_category_id {
   padding-right: 0;
   text-align: center;
 }
+
+// @media only screen and (max-device-width: 985px) {
+//   #hoptimal-logo {
+//     display: inline-block;
+//   }
+//
+//   #hoptimal-logo-full {
+//     display: none;
+//   }
+// }
 
 @media only screen and (max-device-width: 785px) {
   //class used to display/hide the mobile navigation menu
