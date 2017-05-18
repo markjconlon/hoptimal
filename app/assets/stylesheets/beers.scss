@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $light-grey: rgb(233, 231, 231);
 $light-blue: rgba(216, 229, 231, 0.9);
-$nav-bar-grey: #d1d1d1;
+$nav-bar-grey: rgba(209, 209, 209, 0.9);
 $off-white: #f1f4f6;
 $dark-blue: rgb(33, 171, 191);
 $star-hover: rgb(157, 218, 207);
@@ -129,6 +129,7 @@ div.all-beers-list img {
   padding: 25px 0;
   border-radius: 8px;
 }
+
 
 //navigation button on smaller screens
 .toggle-nav {
@@ -333,6 +334,7 @@ div.all-beers-list img {
 
 }
 
+
 // ==== rating button styles ====
 .star-rating {
   float: left;
@@ -367,35 +369,27 @@ div.all-beers-list img {
     color: $star-hover;
 }
 
-@media only screen and (max-device-width: 480px) {
-  a.toggle-nav {
-    line-height: 140px;
-  }
-
-  .logged-in-nav, .logged-out-nav {
-    top: 139px;
-  }
-
+@media only screen and (max-device-width: 785px) {
   .display-none {
     opacity: 0.9;
   }
 
+  .beers-list-text > h2 {
+    bottom: 225px
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+
   .all-beers-list {
     display: inline-block;
     width: calc(50% - 6px);
-    height: 600px;
+    min-height: 325px;
+    height: 325px;
   }
 
-  #hoptimal-logo {
-    width: 60px;
-  }
-
-  .navbar {
-    height: 140px;
-  }
-
-  .main-content {
-    top: 150px;
+  .beer_search label {
+    clear: left;
   }
 }
 
@@ -411,18 +405,14 @@ div.all-beers-list img {
   .beers-list-text {
     z-index: 5;
     position: absolute;
-    bottom: 125px;
     text-align: center;
     float: left;
     line-height: 100%;
-    font-size: 2em;
     width: 100%;
   }
 
   .toggle-nav {
     line-height: 100%;
   }
-
-
 
 }
