@@ -124,7 +124,6 @@ end
   {name: "The Only Cafe", address: "972 Danforth Ave, Toronto, ON M4J 1M1", latitude: 43.6804685, longitude: -79.337862},
   {name: "Stout Irish Pub ", address: "221 Carlton St, Toronto, ON M5A 2L2", latitude: 43.6637964, longitude: -79.3689038}]
 
-
 @bar_list.each do |bar|
   Bar.create(name: bar[:name], address: bar[:address], latitude: bar[:latitude], longitude: bar[:longitude])
 end
@@ -181,3 +180,6 @@ end
 array_last.each do |num|
   BarBeer.create(bar_id: 16, beer_id: num)
 end
+
+Bar.create(name: "Bitmaker Fridge", address: "220 King St W, Suite 200, Toronto, ON M5H 1K4", latitude: 43.6472849, longitude: -79.3870757)
+BarBeer.create(bar_id: 27, beer_id: 310)
