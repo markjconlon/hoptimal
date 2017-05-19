@@ -39,6 +39,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Complete Ruby geocoding solution. http://www.rubygeocoder.com
 gem 'geocoder'
+gem 'kaminari'
 
 
 group :development, :test do
@@ -55,7 +56,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   #  A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps https://github.com/amatsuda/kaminari/…
-  gem 'kaminari'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
