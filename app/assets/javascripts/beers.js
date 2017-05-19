@@ -149,4 +149,14 @@ $(document).ready(function(){
       console.log("FAIL");
     });
   });
+
+  // On window resize, make sure the full nav bar reappaears, as well as the mobile navbar dissapears 
+  $(window).resize(function() {
+    if ($(window).width() < 820) {
+      $('.logged-in-nav').css("display", "none");
+    } else {
+        $('.logged-in-nav').css("display", "inline-block");
+    }
+  });
+
 })
