@@ -53,7 +53,7 @@ $(function(){
       }
 
       // Link to Beer
-      $('<a>').fadeIn('slow').attr("href","/beers/"+`${data.id}`).text('Add to list').appendTo("#random_beer_link");
+      $('<a>').fadeIn('slow').attr("href","/beers/"+ data.id ).text('Add to My Beers list').appendTo("#random_beer_link");
 
 
       // Random Button and Notification Header
@@ -114,7 +114,7 @@ $(function(){
       }
 
       // Preference Beer Link
-      $('<a>').fadeIn('slow').attr("href","/beers/"+`${data.id}`).text('Add to list').appendTo("#preference_beer_link");
+      $('<a>').fadeIn('slow').attr("href","/beers/"+ data.id).text('Add to list').appendTo("#preference_beer_link");
 
       // Preference Beer Notification
       $('#preference_beer_notification').fadeIn('slow').show()

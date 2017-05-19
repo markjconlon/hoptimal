@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 })
 
-  $('.beer_consumed').mouseover(function() {
+  $('.beer_consumed.user-beers-list').mouseover(function() {
     $(this).find('div.beer_info').animate({
       opacity: 1,
     })
