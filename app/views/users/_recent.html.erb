@@ -4,11 +4,11 @@
 
 <h3>
 
-  <%= link_to "My Beers", user_beer_path %>
+  <%= link_to "View My Beers List", user_beer_path %>
 </h3>
 
 <% @user_recent_4.each do |ub| %>
-<div class="beer_consumed">
+<div class="beer_consumed recent_beer_list">
   <a href="#" id="beer_image">
     <div class="beer_img">
       <img src="<%= ub.beer.image_thumb_url %>"></br>
