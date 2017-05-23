@@ -3,8 +3,8 @@
   <% if flash[:alert] %>
     <p><%= flash[:alert] %></p>
   <% end %>
-  <h1><%= @beer.name %></h1>
-  <img src="<%= @beer.image_thumb_url %>" alt="<%= @beer.name %> Photo">
+  <h1 class="beerName"><%= @beer.name %></h1>
+  <img class="beerImage" src="<%= @beer.image_thumb_url %>" alt="<%= @beer.name %> Photo">
 
   <div id="foundBars">
   <p><%= @beer.category.category_type %></p>

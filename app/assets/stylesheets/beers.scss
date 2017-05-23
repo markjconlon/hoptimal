@@ -207,9 +207,10 @@ textarea#user_beer_note{
   width: 220px;
   vertical-align: middle;
 }
-@media only screen and (max-width: 1023px) {
+@media only screen and (min-width: 1023px) {
   #foundBars{
     margin-left: 0%;
+    max-width: 240px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -254,6 +255,25 @@ textarea#user_beer_note{
   }
   .star-rating .fa.fa-star {
     font-size: 0.8em;
+  }
+  .beerName{
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: double 4px black;
+  }
+  .beerImage{
+    text-align: center;
+    width: 100%;
+  }
+  #foundBars{
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+  }
+  #foundBars a{
+    text-align: left;
+    left: 20%;
+    position: absolute;
   }
   #barMap{
     margin-top: 0;
@@ -365,9 +385,7 @@ textarea#user_beer_note{
 }
 
 .star-rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px; /* positions radial buttons off the page */
-    clip:rect(0,0,0,0); /* gets rid of radial buttons */
+    display: none;
 }
 
 .star-rating:not(:checked) > label {
