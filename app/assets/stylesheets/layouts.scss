@@ -168,6 +168,10 @@ select#_users_new_category_id {
   text-align: center;
 }
 
+input.btn.btn-default.btn-primary.smaller {
+  padding: 2px 8px;
+}
+
 @media only screen and (min-width: 1150px) {
   #hoptimal-logo {
     display: none;
