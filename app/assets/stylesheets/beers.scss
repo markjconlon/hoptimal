@@ -183,6 +183,14 @@ div.all-beers-list img {
   vertical-align: middle;
   margin-left: 4%;
 }
+#foundBars > a{
+  // text-decoration: underline;
+  font-weight: 900;
+  font-size: 1.2em;
+}
+#foundBars > a:before {
+  content: '•  '
+}
 #barMap{
   width: 45%;
   display: inline-block;
@@ -209,13 +217,13 @@ textarea#user_beer_note{
     width: 90%;
     margin-left: 5%;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .beer_show_centered{
     width: 45%;
     margin-left: 27.5%;
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .form {
     display: inline-block;
@@ -231,7 +239,7 @@ textarea#user_beer_note{
     vertical-align: middle;
   }
 }
-@media only screen and (max-device-width: 414px) {
+@media only screen and (max-width: 414px) {
   .form{
     display: block;
     margin: auto;
@@ -247,6 +255,9 @@ textarea#user_beer_note{
     margin-left: 27.5%;
     display: block;
     font-size: 1.5em;
+  }
+  .star-rating .fa.fa-star {
+    font-size: 0.8em;
   }
 }
 // end of MARK
@@ -378,6 +389,10 @@ textarea#user_beer_note{
 .star-rating > input:checked ~ label:hover ~ label,
 .star-rating > label:hover ~ input:checked ~ label {
     color: $light-blue;
+}
+
+.star-rating .fa.fa-star {
+  font-size: 2em;
 }
 
 @media only screen and (max-width: 785px) {
