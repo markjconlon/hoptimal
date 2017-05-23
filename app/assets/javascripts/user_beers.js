@@ -15,9 +15,8 @@ $(document).ready(function(){
       dataType: 'html'
     }).done(function(data) {
       $("#search-beers-ub").html(data);
-})
-
-})
+    });
+  })
 
   $('.beer_consumed.user-beers-list').mouseover(function() {
     $(this).find('div.beer_info').animate({
@@ -33,7 +32,7 @@ $(document).ready(function(){
   var allStarRatings = $('.star-rating-user-beers');
   for (var i = 0; i < allStarRatings.length; i++) {
     rating = allStarRatings[i].innerText;
-    allStarRatings[i].innerHTML = '' 
+    allStarRatings[i].innerHTML = ''
     for (var x = 0; x < rating; x++) {
       $('<i>').attr("class", "fa fa-star").appendTo(allStarRatings[i])
     }
