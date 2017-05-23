@@ -10,6 +10,7 @@
         <h4><%= ub.beer.category.category_type %></h4>
         <p class="star-rating-user-beers"><%= ub.rating %></p>
         <a href="/user_beers/<%=ub.id%>/edit">EDIT MY BEER</a> </br>
+        <a href="/beers/<%= ub.beer_id %>" class="user-beer-show-beer">SHOW ME MORE</a></br>
         <%= link_to 'REMOVE FROM MY LIST',  { action: :destroy, id: ub.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
   </div>

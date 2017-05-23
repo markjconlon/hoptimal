@@ -33,7 +33,7 @@ $(document).ready(function(){
   var allStarRatings = $('.star-rating-user-beers');
   for (var i = 0; i < allStarRatings.length; i++) {
     rating = allStarRatings[i].innerText;
-    allStarRatings[i].innerHTML = '' 
+    allStarRatings[i].innerHTML = ''
     for (var x = 0; x < rating; x++) {
       $('<i>').attr("class", "fa fa-star").appendTo(allStarRatings[i])
     }

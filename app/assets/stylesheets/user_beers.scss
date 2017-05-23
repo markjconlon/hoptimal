@@ -15,11 +15,11 @@ $dark-grey: rgba(130, 130, 130, 0.9);
 }
 
 #search-beers-ub div.beer_consumed.user-beers-list {
-    width: calc(25% - 10px);
+    width: calc(23%);
+    display: inline-block;
     min-width: 235px;
     padding: 0;
     margin: 0 3px;
-    float: left;
     text-align: center;
 }
 
