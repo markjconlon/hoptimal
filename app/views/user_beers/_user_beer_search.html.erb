@@ -1,5 +1,5 @@
 <% @user_beers.each do |ub| %>
-  <div class="beer_consumed">
+  <div class="beer_consumed user-beers-list">
       <div class="beer_img">
         <img src="<%= ub.image_thumb_url %>"></br>
       </div>
@@ -7,7 +7,7 @@
 
       <div class="beer_info display-none">
         <h3><%= ub.name %></h3>
-        <h4><%= ub.category.category_tyh4e %></p>
+        <h4><%= ub.category.category_type %></p>
         <% ub_beer_id = ub.id  %>
         <p><%= UserBeer.find_by(beer_id: ub_beer_id).rating %></p>
         <a href="/user_beers/<%=ub.id%>/edit">EDIT MY BEER</a> </br>
