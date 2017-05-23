@@ -15,9 +15,8 @@ $(document).ready(function(){
       dataType: 'html'
     }).done(function(data) {
       $("#search-beers-ub").html(data);
-})
-
-})
+    });
+  })
 
   $('.beer_consumed.user-beers-list').mouseover(function() {
     $(this).find('div.beer_info').animate({
