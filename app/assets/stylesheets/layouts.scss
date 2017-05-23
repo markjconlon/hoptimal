@@ -143,8 +143,12 @@ div.users-form {
   border-radius: 10px;
   border: 6px double white;
   position: absolute;
-  left: 33%;
+  left: 27%;
   top: 200px;
+}
+
+.modal-login .users-form {
+  left: 33%;
 }
 
 // title for the modal users form (signup vs login)
