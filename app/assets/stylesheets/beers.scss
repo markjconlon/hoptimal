@@ -212,10 +212,10 @@ textarea#user_beer_note{
     margin-left: 0%;
   }
 }
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 768px) {
   .beer_show {
-    width: 90%;
-    margin-left: 5%;
+    width: 45%;
+    margin-left: 27.5%;
     display: block;
     font-size: 1.2em;
   }
@@ -224,11 +224,6 @@ textarea#user_beer_note{
     margin-left: 27.5%;
     display: inline-block;
     font-size: 1.2em;
-  }
-  .form {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10%;
   }
   #barMap{
     width: 90%;
@@ -239,25 +234,32 @@ textarea#user_beer_note{
     vertical-align: middle;
   }
 }
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 425px) {
   .form{
     display: block;
     margin: auto;
+    margin-top: 5%;
   }
   .beer_show {
-    width: 45%;
-    margin-left: 27.5%;
+    width: 90%;
+    margin-left: 5%;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .beer_show_centered{
-    width: 45%;
-    margin-left: 27.5%;
+    width: 90%;
+    margin-left: 5%;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .star-rating .fa.fa-star {
     font-size: 0.8em;
+  }
+  #barMap{
+    margin-top: 0;
+  }
+  #barMap > h3{
+    margin-top: 0;
   }
 }
 // end of MARK
