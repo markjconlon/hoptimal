@@ -170,6 +170,12 @@ div.all-beers-list img {
 .beer_show > img{
   display: inline-block;
 }
+.beer_show_image{
+  max-width: 400px;
+}
+.beerImage{
+  width: 100%;
+}
 
 .beer_show_centered{
   width: 45%;
