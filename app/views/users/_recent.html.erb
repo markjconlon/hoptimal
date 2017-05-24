@@ -14,36 +14,23 @@
     </div>
   </a>
 
-    <div class="beer_info">
-
-      <div class="">
-        <h2>
+    <div class="beer_info display-none">
+        <h4>
           Name:
-        </h2>
-        <p>
           <%= ub.beer.name %>
-        </p>
-      </div>
+        </h4>
 
-      <div class="">
-        <h2>
+        <h4>
           Style:
-        </h2>
-        <p>
           <%= ub.beer.category.category_type %>
-        </p>
-      </div>
+        </h4>
 
-      <div class="">
-        <h2>
+        <h4>
           Rating:
-        </h2>
-        <p>
+        <span class="star-rating-user-beers">
           <%= ub.rating %>
-        </p>
-      </div>
-
-
+        </span>
+      </h4>
 
       <a href="/user_beers/<%=ub.id%>/edit">
         EDIT MY BEER

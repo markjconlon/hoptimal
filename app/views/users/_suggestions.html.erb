@@ -12,9 +12,14 @@
       <div class="box7">
       </div>
 
+      <!-- rails is not reading the full sized url, thumb_url placed for now  -->
       <div class="box8">
-        <img src="<%= @based_on_previous.image_url %>" class="beer_img">
-      </div>
+      <% if @based_on_previous.image_url = nil %>
+        <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg">
+      <% else %>
+      <img src="<%= @based_on_previous.image_thumb_url %>" class="beer_img">
+      <% end %>
+    </div>
 
       <div class="box9">
         <h2>Name:</h2>
