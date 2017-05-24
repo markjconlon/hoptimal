@@ -167,8 +167,18 @@ div.all-beers-list img {
   display: inline-block;
   font-size: 1.2em;
 }
+.form {
+  margin-top: 20px;
+}
 .beer_show > img{
   display: inline-block;
+}
+.beer_show_image{
+  max-width: 375px;
+  display: inline-block;
+}
+.beerImage{
+  width: 100%;
 }
 
 .beer_show_centered{
@@ -256,7 +266,7 @@ form.beer_search_form {
     vertical-align: middle;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 445px) {
   .form{
     display: block;
     margin: auto;
