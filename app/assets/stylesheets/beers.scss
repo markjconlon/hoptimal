@@ -183,6 +183,14 @@ div.all-beers-list img {
   vertical-align: middle;
   margin-left: 4%;
 }
+#foundBars > a{
+  // text-decoration: underline;
+  font-weight: 900;
+  font-size: 1.2em;
+}
+#foundBars > a:before {
+  content: '•  '
+}
 #barMap{
   width: 45%;
   display: inline-block;
@@ -218,28 +226,26 @@ form.beer_search_form {
   margin: 0 20px;
   color: black;
 }
+
 @media only screen and (max-width: 1023px) {
+
   #foundBars{
     margin-left: 0%;
+    max-width: 240px;
   }
 }
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 768px) {
   .beer_show {
-    width: 90%;
-    margin-left: 5%;
+    width: 45%;
+    margin-left: 27.5%;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .beer_show_centered{
     width: 45%;
     margin-left: 27.5%;
     display: inline-block;
-    font-size: 1.5em;
-  }
-  .form {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10%;
+    font-size: 1.2em;
   }
   #barMap{
     width: 90%;
@@ -250,22 +256,51 @@ form.beer_search_form {
     vertical-align: middle;
   }
 }
-@media only screen and (max-device-width: 414px) {
+@media only screen and (max-width: 425px) {
   .form{
     display: block;
     margin: auto;
+    margin-top: 5%;
   }
   .beer_show {
-    width: 45%;
-    margin-left: 27.5%;
+    width: 90%;
+    margin-left: 5%;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .beer_show_centered{
-    width: 45%;
-    margin-left: 27.5%;
+    width: 90%;
+    margin-left: 5%;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
+  }
+  .star-rating .fa.fa-star {
+    font-size: 0.8em;
+  }
+  .beerName{
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: double 4px black;
+  }
+  .beerImage{
+    text-align: center;
+    width: 100%;
+  }
+  #foundBars{
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+  }
+  #foundBars a{
+    text-align: left;
+    left: 20%;
+    position: absolute;
+  }
+  #barMap{
+    margin-top: 0;
+  }
+  #barMap > h3{
+    margin-top: 0;
   }
 }
 // end of MARK
@@ -371,9 +406,7 @@ form.beer_search_form {
 }
 
 .star-rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px; /* positions radial buttons off the page */
-    clip:rect(0,0,0,0); /* gets rid of radial buttons */
+    display: none;
 }
 
 .star-rating:not(:checked) > label {
@@ -397,6 +430,10 @@ form.beer_search_form {
 .star-rating > input:checked ~ label:hover ~ label,
 .star-rating > label:hover ~ input:checked ~ label {
     color: $light-blue-star;
+}
+
+.star-rating .fa.fa-star {
+  font-size: 2em;
 }
 
 @media only screen and (max-width: 785px) {
