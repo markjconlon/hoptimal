@@ -4,7 +4,7 @@
     <p><%= flash[:alert] %></p>
   <% end %>
   <h1 class="beerName"><%= @beer.name %></h1>
-  <img class="beerImage" src="<%= @beer.image_thumb_url %>" alt="<%= @beer.name %> Photo">
+  <img class="beerImage" src="<%= @beer.image_url %>" alt="<%= @beer.name %> Photo">
 
   <div id="foundBars">
   <p><%= @beer.category.category_type %></p>
