@@ -1,5 +1,5 @@
 <h2><%= @beer.name %></h2>
-<img src="<%=@beer.image_thumb_url%>" >
+<img src="<%=@beer.image_url%>" >
 
 <%= form_for @user_beer do |f| %>
   <%= hidden_field_tag(:user_id, current_user.id) %>
@@ -34,7 +34,7 @@
     <%= f.text_area :note %>
   </div>
   <div>
-    <%= submit_tag("Update in 'My List'") %>
+    <%= submit_tag("Update in 'My List'", class: 'btn btn-default btn-primary' ) %>
   </div>
 
 <% end %>

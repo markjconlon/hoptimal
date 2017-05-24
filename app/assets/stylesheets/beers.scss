@@ -167,8 +167,18 @@ div.all-beers-list img {
   display: inline-block;
   font-size: 1.2em;
 }
+.form {
+  margin-top: 20px;
+}
 .beer_show > img{
   display: inline-block;
+}
+.beer_show_image{
+  max-width: 375px;
+  display: inline-block;
+}
+.beerImage{
+  width: 100%;
 }
 
 .beer_show_centered{
@@ -207,7 +217,28 @@ textarea#user_beer_note{
   width: 220px;
   vertical-align: middle;
 }
-@media only screen and (min-width: 1023px) {
+
+// search bar styling
+form.beer_search_form {
+  margin: 10px;
+}
+#beer_category_field {
+  float: left;
+  visibility: hidden;
+}
+#beer_search_field {
+  float: right;
+  visibility: hidden;
+}
+.fa.fa-search, .fa.fa-filter, .fa.fa-search-minus {
+  font-size: 1.5em;
+  visibility: visible;
+  margin: 0 20px;
+  color: black;
+}
+
+@media only screen and (max-width: 1023px) {
+
   #foundBars{
     margin-left: 0%;
     max-width: 240px;
@@ -235,7 +266,7 @@ textarea#user_beer_note{
     vertical-align: middle;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 445px) {
   .form{
     display: block;
     margin: auto;

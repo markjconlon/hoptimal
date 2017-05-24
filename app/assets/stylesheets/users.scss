@@ -41,13 +41,6 @@
 
 }
 
-a {
-  color: black;
-}
-
-a:hover {
-  color: $dark-blue;
-}
 
 #preference_beer_notification{
   display: none;
@@ -57,19 +50,7 @@ div.edituser {
   float: left;
   display: block;
   position: relative;
-  padding: 5px;
   left: 5px;
-  background-color: $dark-blue;
-  border-radius: 3px;
-}
-
-div.edituser a {
-  color: $off-white;
-}
-
-div.edituser:hover, div.edituser:hover a, div.edituser a:hover {
-  background-color: $light-blue-star;
-  color: black;
 }
 
 .box1{
@@ -109,15 +90,6 @@ div.edituser:hover, div.edituser:hover a, div.edituser a:hover {
   bottom: 20px;
   right: 20px;
   display: none;
-  padding: 5px;
-  background-color: $dark-blue;
-  color: $off-white;
-  border-radius: 3px;
-}
-
-.back-to-top:hover {
-  background-color: $light-blue-star;
-  color: black;
 }
 
 .random {
@@ -181,6 +153,7 @@ div.edituser:hover, div.edituser:hover a, div.edituser a:hover {
 }
 #randomize_button, #preference_button {
     margin-top: 1%;
+    font-size: 1.4em;
 }
 
 .recent_beer_list div.beer_info {
@@ -188,4 +161,12 @@ div.edituser:hover, div.edituser:hover a, div.edituser a:hover {
   position: static;
   bottom: 0;
   color: black;
+}
+
+#preference_beer_link.btn.btn-default.btn-primary a, #random_beer_link.btn.btn-default.btn-primary a {
+  color: white;
+}
+
+#preference_button.btn.btn-default.btn-primary {
+
 }
