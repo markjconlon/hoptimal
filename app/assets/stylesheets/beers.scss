@@ -167,11 +167,15 @@ div.all-beers-list img {
   display: inline-block;
   font-size: 1.2em;
 }
+.form {
+  margin-top: 20px;
+}
 .beer_show > img{
   display: inline-block;
 }
 .beer_show_image{
-  max-width: 400px;
+  max-width: 375px;
+  display: inline-block;
 }
 .beerImage{
   width: 100%;
