@@ -80,23 +80,19 @@
   end
 
   def give_placeholder(image_thumb_url)
-    @all_beer_types.each do |image_thumb|
       if image_thumb_url == nil
         return "https://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg"
       else
         return image_thumb_url
       end
-    end
   end
 
   def give_placeholder_full(image_url)
-    @all_beer_types.each do |image_url|
       if image_url == nil
         return "https://68.media.tumblr.com/ac0a783b6bf9b0b30383b7c78fb855b4/tumblr_oqgxo2As6z1tkwkuro1_1280.png"
       else
         return image_url
       end
-    end
   end
 
 beer_list.each do |beer|
