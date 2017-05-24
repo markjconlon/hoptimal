@@ -143,7 +143,11 @@ div.users-form {
   border-radius: 10px;
   border: 6px double white;
   position: absolute;
-  margin: 5% 20%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  left: 20%;
+  right: 20%;
 }
 
 .modal-login .users-form {
