@@ -38,8 +38,7 @@ $(document).ready(function(){
     }
   }
 
-  $('.fa.fa-search').on('click', function(e) {
-    console.log("clicked s");
+  $('.fa.fa-search').on('click', function() {
     if ( $('#user_beer_search_field').css("visibility") === "hidden" ) {
     $('#user_beer_search_field').css("visibility", "visible");
     $('#user_beer_search_field > i').attr("class", "fa fa-search-minus")}

@@ -159,8 +159,7 @@ $(document).ready(function(){
     }
   });
 
-  $('.fa.fa-search').on('click', function(e) {
-    console.log("clicked s");
+  $('.fa.fa-search').on('click', function() {
     if ( $('#beer_search_field').css("visibility") === "hidden" ) {
     $('#beer_search_field').css("visibility", "visible");
     $('#beer_search_field > i').attr("class", "fa fa-search-minus")}
@@ -168,8 +167,7 @@ $(document).ready(function(){
     $('#beer_search_field > i').attr("class", "fa fa-search")}
   });
 
-  $('.fa.fa-filter').on('click', function(e) {
-    console.log("clicked f");
+  $('.fa.fa-filter').on('click', function() {
     if ( $('#beer_category_field').css("visibility") === "hidden" ) {
     $('#beer_category_field').css("visibility", "visible")}
     else { $('#beer_category_field').css("visibility", "hidden")}
