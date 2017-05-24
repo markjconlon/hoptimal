@@ -1,24 +1,50 @@
 <div>
-  <h1>
+  <h2>
     Based on you're previous selections, you should try:
-  </h1>
+  </h2>
 
     <% if @based_on_previous == nil %>
       <p>
         This section requires you to have added beers with a rating of 3 or above.
       <p>
     <% else %>
-      <p>
-        <%= @based_on_previous.name %>
-      </p>
-      <img src="<%= @based_on_previous.image_url %>">
+
+      <div class="box7">
+      </div>
+
+      <div class="box8">
+        <img src="<%= @based_on_previous.image_url %>" class="beer_img">
+      </div>
+
+      <div class="box9">
+        <h2>Name:</h2>
+        <p>
+          <%= @based_on_previous.name %>
+        </p>
+
+        <h2>Style:</h2>
+        <p>
+          <%= @based_on_previous.style %>
+        </p>
+
+        <h2>Tasting Notes:</h2>
+        <% if @based_on_previous.tasting_note == nil %>
+          <p>
+            No Tasting Notes Available..
+          </p>
+        <% else %>
+          <p>
+            <%= @based_on_previous.tasting_note %>
+          </p>
+        <% end %>
+      </div>
+
       <div>
         <%= link_to 'Add to My Beers', beer_path(@based_on_previous.id), class: "btn btn-default btn-primary"%>
       </div>
 
-      <h3>
+      <h3 id="view_beers">
         <%= link_to "View All Beers", beers_path %>
       </h3>
-
     <% end %>
 </div>
