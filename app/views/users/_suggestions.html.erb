@@ -13,7 +13,7 @@
       </p>
       <img src="<%= @based_on_previous.image_thumb_url %>">
       <div>
-        <%= link_to 'Add to "My Beers"', beer_path(@based_on_previous.id)%>
+        <%= link_to 'Add to My Beers', beer_path(@based_on_previous.id), class: "btn btn-default btn-primary"%>
       </div>
 
       <h3>

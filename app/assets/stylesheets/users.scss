@@ -41,13 +41,6 @@
 
 }
 
-a {
-  color: black;
-}
-
-a:hover {
-  color: $dark-blue;
-}
 
 #preference_beer_notification{
   display: none;
@@ -160,6 +153,7 @@ div.edituser {
 }
 #randomize_button, #preference_button {
     margin-top: 1%;
+    font-size: 1.4em;
 }
 
 .recent_beer_list div.beer_info {
@@ -167,4 +161,12 @@ div.edituser {
   position: static;
   bottom: 0;
   color: black;
+}
+
+#preference_beer_link.btn.btn-default.btn-primary a {
+  color: white;
+}
+
+#preference_button.btn.btn-default.btn-primary {
+
 }
