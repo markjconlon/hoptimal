@@ -5,7 +5,7 @@ class Beer < ApplicationRecord
   has_many :users, through: :user_beers
 
   has_many :bars, through: :bar_beers
-  paginates_per 12
+  paginates_per 24
 
 
   accepts_nested_attributes_for :user_beers
