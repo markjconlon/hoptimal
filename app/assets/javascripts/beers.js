@@ -159,4 +159,18 @@ $(document).ready(function(){
     }
   });
 
+  $('.fa.fa-search').on('click', function(e) {
+    console.log("clicked s");
+    if ( $('#beer_search_field').css("visibility") === "hidden" ) {
+    $('#beer_search_field').css("visibility", "visible");
+    $('#beer_search_field > i').attr("class", "fa fa-search-minus")}
+    else { $('#beer_search_field').css("visibility", "hidden")
+    $('#beer_search_field > i').attr("class", "fa fa-search")}
+  });
+
+  $('.fa.fa-filter').on('click', function(e) {
+    console.log("clicked f");
+
+  });
+
 })

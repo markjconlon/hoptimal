@@ -1,14 +1,17 @@
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q, :class => "beer_search_form" do |f| %>
 
-
+  <div id="beer_category_field">
+    <i class="fa fa-filter"></i>
   <%= f.label :category_type, "Categories" %>
   <%= f.collection_select(:category_id, Category.all, :id, :category_type, include_blank: "Pick a Category") %>
+  </div>
 
   <div id="beer_search_field">
   <%= f.label :name_cont %>
   <%= f.search_field :name_cont, id:"search-field" %>
 
   <%= f.submit 'Submit', :class => 'btn btn-default btn-primary smaller'  %>
+  <i class="fa fa-search"></i>
   </div>
 <% end %>
 
