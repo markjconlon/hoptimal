@@ -60,6 +60,20 @@ div.recent_beer.all-list {
   width: 100%;
 }
 
+//search form styling
+form.user_beer_search_form {
+  margin: 10px;
+}
+#user_beer_search_field {
+  visibility: hidden;
+  float: right;
+}
+.fa.fa-search, .fa.fa-filter, .fa.fa-search-minus {
+  font-size: 1.5em;
+  visibility: visible;
+  margin: 0 20px;
+}
+
 @media only screen and (max-width: 1200px) {
   #search-beers-ub {
     width: 100%;

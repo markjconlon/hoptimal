@@ -1,9 +1,11 @@
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q, class: "user_beer_search_form" do |f| %>
+  <div id="user_beer_search_field">
+    <%= f.label :name_cont, "Search" %>
+    <%= f.search_field :name_cont, id:"search-field-ub" %>
 
-  <%= f.label :name_cont, "Search" %>
-  <%= f.search_field :name_cont, id:"search-field-ub" %>
-
-  <%= f.submit %>
+    <%= f.submit 'Submit', :class => 'btn btn-default btn-primary smaller' %>
+    <i class="fa fa-search"></i>
+  </div>
 <% end %>
 
 <div class="recent_beer all-list">
