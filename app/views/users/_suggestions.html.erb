@@ -10,7 +10,6 @@
     <% else %>
 
       <div class="box7">
-      </div>
 
       <!-- rails is not reading the full sized url, thumb_url placed for now  -->
       <div class="box8">
@@ -47,6 +46,9 @@
       <div>
         <%= link_to 'Add to My Beers', beer_path(@based_on_previous.id), class: "btn btn-default btn-primary"%>
       </div>
+
+    </div>
+
 
       <h3 id="view_beers">
         <%= link_to "View All Beers", beers_path %>

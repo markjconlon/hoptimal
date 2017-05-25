@@ -158,6 +158,6 @@ var btt = $('.back-to-top')
   })
 
   $('#random_beer_link').hide()
-  $('.box3').hide()
+  $('.box1').hide()
 
 }) // this is the end
