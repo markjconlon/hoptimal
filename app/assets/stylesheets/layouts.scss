@@ -323,6 +323,17 @@ input.btn.btn-default.btn-primary.smaller {
     right: 0;
     position:static;
   }
+
+  div.users-form {
+    font-size: 1.5em;
+    padding: 5%;
+    min-width: 510px;
+    margin: 5% auto 5% auto;
+    left: 20%;
+    right: 20%;
+  }
+
+
 }
 
 
@@ -369,11 +380,8 @@ input.btn.btn-default.btn-primary.smaller {
   div.users-form {
     font-size: 1em;
     padding: 5%;
-    max-width: 250px;
-    min-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
+    min-width: 200px;
+    margin: 5% auto 5% auto;
     left: 10%;
     right: 10%;
   }
