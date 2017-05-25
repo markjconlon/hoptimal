@@ -44,10 +44,9 @@
       margin-left: 4%;
       float: left;
       text-align: center;
-      border-bottom: lightgrey;
-      border-bottom-style: solid;
-      border-width: thin;
     }
+
+
 }
 
 @media (min-width: 425px){
@@ -69,7 +68,7 @@
   .box3 {
       height: 100%;
       padding-top: 3%;
-      width: 100%;
+      width: 95%;
   }
 
   .box4, .box7{
@@ -85,11 +84,14 @@
   }
 
   .box6, .box9{
-    width: 100%;
+    width: 95%;
     height: 100%;
     padding-top: 2%;
   }
 
+  .beer_img img {
+    width: 70%;
+ }
 
   .random_button {
     width: 100%;
@@ -101,20 +103,17 @@
   }
 
   .beer_consumed.recent_beer_list {
-      width: 55%;
+      width: 85%;
       margin-right: 4%;
       margin-left: 4%;
       float: left;
       text-align: center;
-      border-bottom: lightgrey;
-      border-bottom-style: solid;
-      border-width: thin;
     }
 
 
 }
 
-@media (max-width: 760px) {
+@media (max-width: 927px) {
 
   .beer_consumed.recent_beer_list:last-child {
       border-bottom-style: none;
@@ -126,8 +125,15 @@
       margin-left: 4%;
       float: left;
       text-align: center;
+      border-bottom: lightgrey;
+      border-bottom-style: solid;
+      border-width: thin;
   }
 
+  .recent_beer_info {
+    margin: 0px 16%;
+    width: 80%;
+  }
 
 }
 
@@ -151,9 +157,9 @@
       margin-left: 2%;
       float: left;
       text-align: center;
-      border-bottom: lightgrey;
-      border-bottom-style: solid;
-      border-width: thin;
+      // border-bottom: lightgrey;
+      // border-bottom-style: solid;
+      // border-width: thin;
     }
 
 }
