@@ -12,7 +12,11 @@
 
     <div class="box5">
       <div id = "preference_beer_info">
+      <% if @based_on_preference.image_url == nil %>
+        <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg">
+      <% else %>
         <img src="<%= @based_on_preference.image_url %>" class="beer_img">
+      <% end %>
       </div>
     </div>
 
@@ -50,16 +54,6 @@
   </div>
 
   <div id="preference_beer_container">
-      <!-- <div id="preference_beer_info">
-        <img src="<%= @based_on_preference.image_thumb_url %>">
-        <p>
-        <%= @based_on_preference.name %>
-        </p>
-        <p>
-        <%= link_to"Add to 'My Beers'", beer_path(@based_on_preference.id) %>
-      </p>
-      </div> -->
-
       <h3 id="preference_beer_notification">
         Dont like the choice? No problem, try another selection:
       </h3>
