@@ -25,14 +25,15 @@ $(function(){
 
       $('#random_beer_default').hide()
       $('.box1').fadeIn('slow').show()
+      $('.box3').fadeIn('slow').show()
+      $('#random_beer_link').fadeIn('slow').show()
 
       // beer image
       // validates the presence of a photo. (if image is empty string "== null" will not work). use of ! instead. place holder image added for null value beers
-      if (!data.image_thumb_url) {
-          $('<img>').fadeIn('slow').attr('src',"https://www.spreadshirt.com/image-server/v1/designs/1007234840,width=178,height=178/404-beer-not-found-hoodie.png" ).prependTo("#random_beer_info")
-          $('<img>').fadeIn('slow').attr('src',"https://www.spreadshirt.com/image-server/v1/designs/1007234840,width=178,height=178/404-beer-not-found-hoodie.png" ).prependTo("#random_beer_img")
+      if (!data.image_url) {
+          $('<img>').fadeIn('slow').attr('src',"http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg" ).prependTo("#random_beer_info")
       } else {
-      $('<img>').fadeIn('slow').attr('src', data.image_thumb_url).prependTo("#random_beer_info");
+      $('<img>').addClass("beer_img").fadeIn('slow').attr('src', data.image_url).prependTo("#random_beer_info");
     }
 
       // beer info & add to list link
@@ -91,10 +92,10 @@ $(function(){
       $('#preference_beer_link').html('')
 
       // Preference Beer Image
-      if (!data.image_thumb_url) {
-        $('<img>').fadeIn('slow').attr('src',"https://www.spreadshirt.com/image-server/v1/designs/1007234840,width=178,height=178/404-beer-not-found-hoodie.png" ).prependTo('#preference_beer_info')
+      if (!data.image_url) {
+        $('<img>').fadeIn('slow').attr('src',"http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg" ).prependTo('#preference_beer_info')
       }else {
-      $('<img>').attr('src', data.image_thumb_url).fadeIn('slow').appendTo('#preference_beer_info')
+      $('<img>').addClass("beer_img").attr('src', data.image_url).fadeIn('slow').appendTo('#preference_beer_info')
       }
 
       // Preference Beer Name
@@ -156,6 +157,7 @@ var btt = $('.back-to-top')
     }
   })
 
-
+  $('#random_beer_link').hide()
+  $('.box3').hide()
 
 }) // this is the end

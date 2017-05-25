@@ -1,7 +1,7 @@
 <div>
-  <h1>
+  <h2>
     Based on your preference of "<%= @preference %>", here are some suggestions you should try:
-  </h1>
+  </h2>
   <br>
   <% if @based_on_preference == nil %>
     <p>You have cleared this category, please try another?</p>
@@ -12,7 +12,7 @@
 
     <div class="box5">
       <div id = "preference_beer_info">
-        <img src="<%= @based_on_preference.image_url %>">
+        <img src="<%= @based_on_preference.image_url %>" class="beer_img">
       </div>
     </div>
 
@@ -60,9 +60,9 @@
       </p>
       </div> -->
 
-      <h2 id="preference_beer_notification">
+      <h3 id="preference_beer_notification">
         Dont like the choice? No problem, try another selection:
-      </h2>
+      </h3>
       <button class="btn btn-default btn-primary" type="button" id="preference_button">Try Another?</button>
   </div>
   <% end %>
