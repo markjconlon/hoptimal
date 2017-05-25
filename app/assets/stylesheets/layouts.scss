@@ -149,7 +149,7 @@ div.users-form {
   left: 20%;
   right: 20%;
   max-width: 900px;
-  min-width: 750px;
+  min-width: 600px;
 }
 
 .modal-login .users-form {
@@ -323,8 +323,21 @@ input.btn.btn-default.btn-primary.smaller {
     right: 0;
     position:static;
   }
+
+  div.users-form {
+    font-size: 1.5em;
+    padding: 5%;
+    min-width: 510px;
+    margin: 5% auto 5% auto;
+    left: 20%;
+    right: 20%;
+  }
+
+
 }
 
+
+//Mobile
 @media only screen and (max-width: 500px) {
   a.toggle-nav {
     line-height: 60px;
@@ -363,5 +376,20 @@ input.btn.btn-default.btn-primary.smaller {
   .main-content {
     top: 65px;
   }
+
+  div.users-form {
+    font-size: 1em;
+    padding: 5%;
+    min-width: 200px;
+    margin: 5% auto 5% auto;
+    left: 10%;
+    right: 10%;
+  }
+
+  .users-form input, .users-form select, .users-form input[type="submit"] {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+
 
 }
