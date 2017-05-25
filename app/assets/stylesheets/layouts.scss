@@ -378,6 +378,10 @@ input.btn.btn-default.btn-primary.smaller {
     right: 10%;
   }
 
+  .users-form input, .users-form select, .users-form input[type="submit"] {
+    width: 100%;
+    margin-bottom: 2%;
+  }
 
 
 }
