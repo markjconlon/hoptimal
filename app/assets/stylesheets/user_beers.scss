@@ -92,6 +92,7 @@ form.user_beer_search_form {
   margin-top: 5%;
   left: 20%;
   right: 20%;
+  min-width: 400px;
 }
 
 h2{
@@ -156,4 +157,11 @@ label[for="user_beer_note"]{
     margin: 0 28px;
     width: 80%;
   }
+
+  .user_beer_edit_view{
+    left: 5%;
+    right: 10%;
+    min-width: 400px;
+  }
+
 }
