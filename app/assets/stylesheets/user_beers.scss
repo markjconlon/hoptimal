@@ -74,6 +74,8 @@ form.user_beer_search_form {
   margin: 0 20px;
 }
 
+
+//UserBeer Edit View
 .ub_edit_image{
   max-width: 375px;
 }
@@ -81,6 +83,14 @@ form.user_beer_search_form {
 .beer_edit_image{
   width: 100%;
 }
+
+.user_beer_note{
+  display: block;
+  clear: both;
+  margin-bottom: 2%;
+}
+
+
 
 @media only screen and (max-width: 1200px) {
   #search-beers-ub {
