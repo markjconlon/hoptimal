@@ -122,7 +122,7 @@
   }
 
   .beer_img{
-    max-width: 250px;
+    max-width: 200px;
     margin: auto;
   }
 
@@ -178,9 +178,6 @@
       margin-left: 2%;
       float: left;
       text-align: center;
-      // border-bottom: lightgrey;
-      // border-bottom-style: solid;
-      // border-width: thin;
     }
 
 }
@@ -275,10 +272,6 @@ div.edituser {
   position: static;
   bottom: 0;
   color: black;
-}
-
-img.beer_img {
-  height: 390px;
 }
 
 #view_beers{
