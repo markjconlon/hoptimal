@@ -80,10 +80,6 @@
     padding-top: 2%;
   }
 
-  .beer_img img {
-    width: 70%;
- }
-
   .random_button {
     width: 100%;
     padding: 15px;
@@ -126,10 +122,14 @@
     margin: auto;
   }
 
-  #preference_beer_link, #randomize_button, #preference_button{
-    font-size: 1.2em;
+  #preference_beer_container, .random_button{
+    padding-bottom: 4%;
   }
 
+  .user_recent_beer_img{
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 }
 
@@ -149,11 +149,6 @@
       border-bottom: lightgrey;
       border-bottom-style: solid;
       border-width: thin;
-  }
-
-  .recent_beer_info {
-    margin: 0px 16%;
-    width: 80%;
   }
 
 }
