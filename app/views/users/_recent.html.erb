@@ -1,11 +1,14 @@
 <div class="user_profile">
+  <div class="recent_partial_header">
+
     <h2>
       Most Recent Beers
     </h2>
 
-  <h3 id="recent_beer_notification">
-    <%= link_to "View My Beers List", user_beer_path, class: "btn btn-default btn-primary" %>
-  </h3>
+    <h3 id="recent_beer_notification">
+      <%= link_to "View My Beers List", user_beer_path, class: "btn btn-default btn-primary" %>
+    </h3>
+  </div>
 
   <% @user_recent_4.each do |ub| %>
   <div class="beer_consumed recent_beer_list">
