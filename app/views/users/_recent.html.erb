@@ -1,40 +1,44 @@
-<h2 id="recent_beer_notification">
-  Most Recent Beers
-</h2>
+<div class="user_profile">
+    <h2>
+      Most Recent Beers
+    </h2>
 
-<h3 id="recent_beer_notification">
-  <%= link_to "View My Beers List", user_beer_path, class: "btn btn-default btn-primary" %>
-</h3>
+  <h3 id="recent_beer_notification">
+    <%= link_to "View My Beers List", user_beer_path, class: "btn btn-default btn-primary" %>
+  </h3>
 
-<% @user_recent_4.each do |ub| %>
-<div class="beer_consumed recent_beer_list">
-    <div class="beer_img">
-      <img src="<%= ub.beer.image_url %>" id="beer_image"></br>
-    </div>
+  <% @user_recent_4.each do |ub| %>
+  <div class="beer_consumed recent_beer_list">
+      <div class="beer_img">
+        <img src="<%= ub.beer.image_url %>" id="beer_image"></br>
+      </div>
 
-    <div class="recent_beer_info ">
-        <h4>
-          Name:
-          <%= ub.beer.name %>
-        </h4>
+      <div class="recent_beer_info ">
+          <h3>
+            Name:
+            <p><%= ub.beer.name %></p>
+          </h3>
 
-        <h4>
-          Style:
-          <%= ub.beer.category.category_type %>
-        </h4>
+          <h3>
+            Style:
+            <p><%= ub.beer.category.category_type %></p>
+          </h3>
 
-        <h4>
-          Rating:
-        <span class="star-rating-user-beers">
-          <%= ub.rating %>
-        </span>
-      </h4>
+          <h3>
+            Rating:
+          <span class="star-rating-user-beers">
+            <p><%= ub.rating %></p>
+          </span>
+        </h3>
 
-      <a href="/user_beers/<%=ub.id%>/edit">
-        EDIT MY BEER
-      </a>
+        <a href="/user_beers/<%=ub.id%>/edit">
+          EDIT MY BEER
+        </a>
 
-    </p>
-    </div>
+      </p>
+      </div>
+  </div>
+  <% end %>
+
+
 </div>
-<% end %>

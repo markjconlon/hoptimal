@@ -1,7 +1,9 @@
-<div>
-  <h2>
-    Based on you're previous selections, you should try:
-  </h2>
+<div class="user_profile">
+
+  <div>
+      <h2>
+        Based on you're previous selections, you should try:
+      </h2>
 
     <% if @based_on_previous == nil %>
       <p>
@@ -21,17 +23,17 @@
     </div>
 
       <div class="box9">
-        <h2>Name:</h2>
+        <h3>Name:</h3>
         <p>
           <%= @based_on_previous.name %>
         </p>
 
-        <h2>Style:</h2>
+        <h3>Style:</h3>
         <p>
           <%= @based_on_previous.style %>
         </p>
 
-        <h2>Tasting Notes:</h2>
+        <h3>Tasting Notes:</h3>
         <% if @based_on_previous.tasting_note == nil %>
           <p>
             No Tasting Notes Available..
@@ -54,4 +56,6 @@
         <%= link_to "View All Beers", beers_path %>
       </h3>
     <% end %>
+</div>
+
 </div>
