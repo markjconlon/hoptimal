@@ -6,15 +6,12 @@
 $(function(){
   $("#randomize_button").click(function(e){
     e.preventDefault();
-    console.log("hello")
     $.ajax({
       url: "/beers/random",
       method: "GET",
       // data: {},
       dataType: 'json'
     }).done(function(data){
-      console.log("request successful");
-      console.log(data);
       $("#randomize_button").text("Try Another?")
       // clears the beers before reloading
       $('#random_beer_info').html('')
@@ -62,12 +59,9 @@ $(function(){
       $("#random_beer_container")
 
     }).fail(function(){
-      console.log("request not completed");
       $('<img>').attr('src',"https://cdn.dribbble.com/users/221092/screenshots/2331669/beer_dribbble.jpg").prependTo("#random_beer_photo")
       $('<div>').html('Failed').prependTo("#random_beer_container");
     }).always(function(){
-      console.log(".ajax request completed");
-
     })
   });
 
@@ -82,8 +76,6 @@ $(function(){
       method: "GET",
       dataType: "json"
     }).done(function(data){
-      console.log('.ajax request successful');
-      console.log(data);
       //
       $('#preference_beer_info').html('')
       $('#preference_beer_title').html('')
@@ -121,12 +113,10 @@ $(function(){
       $('#preference_beer_notification').fadeIn('slow').show()
 
     }).fail(function(){
-      console.log(".ajax request failed");
       $('<img>').attr('src',"https://cdn.dribbble.com/users/221092/screenshots/2331669/beer_dribbble.jpg").prependTo("#random_beer_photo")
       $('<div>').html('Failed').prependTo("#random_beer_container");
 
     }).always(function(){
-      console.log('request completed');
 
     })
   });
@@ -145,8 +135,6 @@ var btt = $('.back-to-top')
     var self = $(this),
     height = self.height(),
     top = self.scrollTop();
-    // console.log(height);
-    // console.log(top);
     if (top > height) {
       if (!btt.is(':visible')) {
         btt.fadeIn();
