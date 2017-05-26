@@ -46,7 +46,6 @@
       text-align: center;
     }
 
-
 }
 
 
@@ -96,6 +95,11 @@
       float: left;
       text-align: center;
     }
+
+  .beer_img{
+    max-width: 200px;
+    margin: auto;
+  }
 
 
 }
@@ -151,6 +155,7 @@
       border-width: thin;
   }
 
+
 }
 
 @media only screen and (min-width: 928px) {
@@ -174,6 +179,7 @@
       float: left;
       text-align: center;
     }
+
 
 }
 

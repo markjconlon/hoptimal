@@ -16,7 +16,7 @@
       <div class="box8">
         <div id = "suggestion_beer_image">
         <% if @based_on_previous.image_url == nil %>
-          <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg">
+          <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg" class="beer_img">
         <% else %>
           <img src="<%= @based_on_previous.image_url %>" class="beer_img">
         <% end %>
