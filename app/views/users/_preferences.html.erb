@@ -23,36 +23,38 @@
       </div>
 
       <div class="box6">
-        <div id="preference_beer_title">
-          <h3>Name:</h3>
-          <p>
-            <%= @based_on_preference.name %>
-          </p>
-        </div>
+        <div class="user_profile_beer_info">
+          <div id="preference_beer_title">
+            <h3>Name:</h3>
+            <p>
+              <%= @based_on_preference.name %>
+            </p>
+          </div>
 
-        <div id="preference_beer_style">
-          <h3>Style:</h3>
-          <p>
-            <%= @based_on_preference.varietal %>
-          </p>
-        </div>
+          <div id="preference_beer_style">
+            <h3>Style:</h3>
+            <p>
+              <%= @based_on_preference.varietal %>
+            </p>
+          </div>
 
-        <div id="preference_beer_taste">
-          <h3>Tasting Notes:</h3>
-          <p>
-            <% if @based_on_preference.tasting_note == nil %>
-            'No Tasting Note Available... But it's worth a try!!'
-            <% else %>
+          <div id="preference_beer_taste">
+            <h3>Tasting Notes:</h3>
+            <p>
+              <% if @based_on_preference.tasting_note == nil %>
+              'No Tasting Note Available... <br>But it's worth a try!'
+              <% else %>
               <%= @based_on_preference.tasting_note %>
-            <% end %>
-          </p>
-        </div>
-
-        <div id="preference_beer_link" class="btn btn-default btn-primary">
-          <%= link_to"Add to My Beers", beer_path(@based_on_preference.id) %>
+              <% end %>
+            </p>
+          </div>
         </div>
 
       </div>
+    </div>
+
+    <div id="preference_beer_link" class="btn btn-default btn-primary">
+      <%= link_to"Add to My Beers", beer_path(@based_on_preference.id) %>
     </div>
 
     <div id="preference_beer_container">

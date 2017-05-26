@@ -24,26 +24,28 @@
       </div>
 
       <div class="box9">
-        <h3>Name:</h3>
-        <p>
-          <%= @based_on_previous.name %>
-        </p>
-
-        <h3>Style:</h3>
-        <p>
-          <%= @based_on_previous.style %>
-        </p>
-
-        <h3>Tasting Notes:</h3>
-        <% if @based_on_previous.tasting_note == nil %>
+        <div class="user_profile_beer_info">
+          <h3>Name:</h3>
           <p>
-            No Tasting Notes Available..
+            <%= @based_on_previous.name %>
           </p>
-        <% else %>
+
+          <h3>Style:</h3>
+          <p>
+            <%= @based_on_previous.style %>
+          </p>
+
+          <h3>Tasting Notes:</h3>
+          <% if @based_on_previous.tasting_note == nil %>
+          <p>
+            No Tasting Notes Available..<br>But it's worth a try!
+          </p>
+          <% else %>
           <p>
             <%= @based_on_previous.tasting_note %>
           </p>
-        <% end %>
+          <% end %>
+        </div>
       </div>
 
       <div>
