@@ -199,6 +199,11 @@ div.edituser {
     margin: auto;
   }
 
+  .user_profile_beer_info{
+    max-width: 200px;
+    display: inline-block;
+  }
+
 
 }
 
@@ -241,6 +246,14 @@ div.edituser {
   .user_profile_beer_info{
     max-width: 250px;
     display: inline-block;
+  }
+
+  #preference_button, #randomize_button{
+    font-size: 1em;
+  }
+
+  .edituser{
+    font-size: 1em;
   }
 
 }
