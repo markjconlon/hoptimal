@@ -1,5 +1,7 @@
 <h2><%= @beer.name %></h2>
-<img src="<%=@beer.image_url%>" >
+  <div class="ub_edit_image">    
+    <img class="beer_edit_image" img src="<%=@beer.image_url%>" >
+  </div>
 
 <%= form_for @user_beer do |f| %>
   <%= hidden_field_tag(:user_id, current_user.id) %>
