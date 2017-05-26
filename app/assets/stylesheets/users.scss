@@ -178,6 +178,7 @@ div.edituser {
   display: block;
   position: relative;
   left: 5px;
+  margin-bottom: 2%;
 }
 
 #random_img{
@@ -211,7 +212,6 @@ div.edituser {
 .suggestions, .random {
     border-style: solid;
     border-color: $nav-bar-grey-o;
-    display: inline-block;
     width: 85%;
     margin-left: 7%;
     margin-right: auto;
