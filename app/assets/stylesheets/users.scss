@@ -66,10 +66,6 @@
       width: 95%;
   }
 
-  .box4, .box7{
-    min-height: 420px;
-  }
-
   .box5, .box8{
     float: left;
     width: 50%;
@@ -225,13 +221,8 @@ div.edituser {
 }
 
 .random {
-    margin-top: 30px;
+    margin-top: 10%;
     clear: both;
-    min-height: 600px;
-}
-
-.suggestions{
-  min-height: 450px;
 }
 
 .suggestions, .random {
@@ -261,7 +252,6 @@ div.edituser {
     padding-bottom: 2%;
     border-style: solid;
     box-shadow: 10px 5px 5px $nav-bar-grey-o;
-    min-height: 650px;
 }
 
 .recent_beer{
