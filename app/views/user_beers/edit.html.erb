@@ -1,5 +1,5 @@
 <div class="user_beer_edit_view">
-  
+
   <h2><%= @beer.name %></h2>
     <div class="ub_edit_image">
       <img class="beer_edit_image" img src="<%=@beer.image_url%>" >
@@ -10,35 +10,38 @@
     <%= hidden_field_tag(:beer_id, @user_beer.beer_id) %>
 
     <div class="user_beer_info">
-      <div class="star-rating">
-        <p>Rating:</p>
-        <%= f.radio_button :rating, 5 %>
-        <%= f.label :rating, value: 5 do  %>
-        <i class="fa fa-star fa-3x"></i>
-        <% end %>
-        <%= f.radio_button :rating, 4 %>
-        <%= f.label :rating, value: 4 do  %>
-        <i class="fa fa-star fa-3x"></i>
-        <% end %>
-        <%= f.radio_button :rating, 3 %>
-        <%= f.label :rating, value: 3 do  %>
-        <i class="fa fa-star fa-3x"></i>
-        <% end %>
-        <%= f.radio_button :rating, 2 %>
-        <%= f.label :rating, value: 2 do  %>
-        <i class="fa fa-star fa-3x"></i>
-        <% end %>
-        <%= f.radio_button :rating, 1 %>
-        <%= f.label :rating, value: 1 do  %>
+      <div class="ub_stars">
+        <div class="star-rating">
+          <p>Rating:</p>
+          <%= f.radio_button :rating, 5 %>
+          <%= f.label :rating, value: 5 do  %>
           <i class="fa fa-star fa-3x"></i>
-        <% end %>
+          <% end %>
+          <%= f.radio_button :rating, 4 %>
+          <%= f.label :rating, value: 4 do  %>
+          <i class="fa fa-star fa-3x"></i>
+          <% end %>
+          <%= f.radio_button :rating, 3 %>
+          <%= f.label :rating, value: 3 do  %>
+          <i class="fa fa-star fa-3x"></i>
+          <% end %>
+          <%= f.radio_button :rating, 2 %>
+          <%= f.label :rating, value: 2 do  %>
+          <i class="fa fa-star fa-3x"></i>
+          <% end %>
+          <%= f.radio_button :rating, 1 %>
+          <%= f.label :rating, value: 1 do  %>
+            <i class="fa fa-star fa-3x"></i>
+          <% end %>
+        </div>
       </div>
 
       <div class="user_beer_note">
         <%= f.label :note %>
-        <%= f.text_area :note %>
+        <%= f.text_area :note, placeholder: "Notes" %>
       </div>
-      <div>
+
+      <div class="ub_button">
         <%= submit_tag("Update in 'My List'", class: 'btn btn-default btn-primary' ) %>
       </div>
     </div>
