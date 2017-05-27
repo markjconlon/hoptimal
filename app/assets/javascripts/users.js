@@ -45,7 +45,7 @@ $(function(){
       // Beer Tasting note
       $('<h3>').fadeIn('slow').html('Tasting Note:').appendTo("#random_beer_taste");
       if (!data.tasting_note) {
-        $('<p>').fadeIn('slow').html('No Tasting Note Available... But Trust Us it\'s Amazing!').appendTo("#random_beer_taste");
+        $('<p>').fadeIn('slow').html('No Tasting Note Available... But it\'s worth a try!').appendTo("#random_beer_taste");
       }else {
         $('<p>').fadeIn('slow').html(data.tasting_note).appendTo("#random_beer_taste");
       }
@@ -101,7 +101,7 @@ $(function(){
       // Preference Beer Tasting Notes
       $('<h3>').fadeIn('slow').html('Tasting Note:').appendTo("#preference_beer_taste");
       if (!data.tasting_note) {
-        $('<p>').fadeIn('slow').html('No Tasting Note Available... But Trust Us it\'s Amazing!').appendTo("#preference_beer_taste");
+        $('<p>').fadeIn('slow').html('No Tasting Note Available... But it\'s in your comfort zone!').appendTo("#preference_beer_taste");
       }else {
         $('<p>').fadeIn('slow').html(data.tasting_note).appendTo("#preference_beer_taste");
       }
