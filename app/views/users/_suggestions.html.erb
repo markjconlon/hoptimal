@@ -1,57 +1,63 @@
-<div>
-  <h2>
-    Based on you're previous selections, you should try:
-  </h2>
+<div class="user_profile">
 
-    <% if @based_on_previous == nil %>
-      <p>
-        This section requires you to have added beers with a rating of 3 or above.
-      <p>
-    <% else %>
+  <div>
+      <h2>
+        Based on you're previous selections, you should try:
+      </h2>
 
-      <div class="box7">
-
-      <!-- rails is not reading the full sized url, thumb_url placed for now  -->
-      <div class="box8">
-      <% if @based_on_previous.image_url = nil %>
-        <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg">
+      <% if @based_on_previous == nil %>
+        <p>
+          This section requires you to have added beers with a rating of 3 or above.
+        <p>
       <% else %>
-      <img src="<%= @based_on_previous.image_thumb_url %>" class="beer_img">
+
+        <div class="user_profile_container">
+
+          <div class="box8">
+            <div id = "suggestion_beer_image">
+            <% if @based_on_previous.image_url == nil %>
+              <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg" class="beer_img">
+            <% else %>
+              <img src="<%= @based_on_previous.image_url %>" class="beer_img">
+            <% end %>
+            </div>
+          </div>
+
+          <div class="box9">
+            <div class="user_profile_beer_info">
+              <h3>Name:</h3>
+              <p>
+                <%= @based_on_previous.name %>
+              </p>
+
+              <h3>Style:</h3>
+              <p>
+                <%= @based_on_previous.style %>
+              </p>
+
+              <h3>Tasting Notes:</h3>
+              <% if @based_on_previous.tasting_note == nil %>
+              <p>
+                No Tasting Notes Available..<br>But it's worth a try!
+              </p>
+              <% else %>
+              <p>
+                <%= @based_on_previous.tasting_note %>
+              </p>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <%= link_to 'Add to My Beers', beer_path(@based_on_previous.id), class: "btn btn-default btn-primary"%>
+        </div>
+
+        <h3 id="view_beers">
+          <%= link_to "View All Beers", beers_path %>
+        </h3>
       <% end %>
-    </div>
+  </div>
 
-      <div class="box9">
-        <h2>Name:</h2>
-        <p>
-          <%= @based_on_previous.name %>
-        </p>
-
-        <h2>Style:</h2>
-        <p>
-          <%= @based_on_previous.style %>
-        </p>
-
-        <h2>Tasting Notes:</h2>
-        <% if @based_on_previous.tasting_note == nil %>
-          <p>
-            No Tasting Notes Available..
-          </p>
-        <% else %>
-          <p>
-            <%= @based_on_previous.tasting_note %>
-          </p>
-        <% end %>
-      </div>
-
-      <div>
-        <%= link_to 'Add to My Beers', beer_path(@based_on_previous.id), class: "btn btn-default btn-primary"%>
-      </div>
-
-    </div>
-
-
-      <h3 id="view_beers">
-        <%= link_to "View All Beers", beers_path %>
-      </h3>
-    <% end %>
 </div>

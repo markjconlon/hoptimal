@@ -1,63 +1,69 @@
-<div>
-  <h2>
-    Based on your preference of "<%= @preference %>", here are some suggestions you should try:
-  </h2>
-  <br>
-  <% if @based_on_preference == nil %>
-    <p>You have cleared this category, please try another?</p>
-    <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg">
-  <% else %>
+<div class="user_profile">
 
-  <div class="box4">
+  <div>
+    <h2>
+      Based on your preference of "<%= @preference %>", here are some suggestions you should try:
+    </h2>
+    <br>
+    <% if @based_on_preference == nil %>
+      <p>You have cleared this category, please try another?</p>
+      <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg" class="beer_img">
+    <% else %>
 
-    <div class="box5">
-      <div id = "preference_beer_info">
-      <% if @based_on_preference.image_url == nil %>
-        <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg">
-      <% else %>
-        <img src="<%= @based_on_preference.image_url %>" class="beer_img">
-      <% end %>
+    <div class="user_profile_container">
+
+      <div class="box5">
+        <div id = "preference_beer_info">
+        <% if @based_on_preference.image_url == nil %>
+          <img src="http://68.media.tumblr.com/acf0658d2bb2e1414c474fd21f06f53f/tumblr_opugo1GTpi1tkwkuro1_250.jpg" class="beer_img">
+        <% else %>
+          <img src="<%= @based_on_preference.image_url %>" class="beer_img">
+        <% end %>
+        </div>
+      </div>
+
+      <div class="box6">
+        <div class="user_profile_beer_info">
+          <div id="preference_beer_title">
+            <h3>Name:</h3>
+            <p>
+              <%= @based_on_preference.name %>
+            </p>
+          </div>
+
+          <div id="preference_beer_style">
+            <h3>Style:</h3>
+            <p>
+              <%= @based_on_preference.varietal %>
+            </p>
+          </div>
+
+          <div id="preference_beer_taste">
+            <h3>Tasting Notes:</h3>
+            <p>
+              <% if @based_on_preference.tasting_note == nil %>
+              'No Tasting Note Available... <br>But it's in your comfort zone!'
+              <% else %>
+              <%= @based_on_preference.tasting_note %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="box6">
-      <div id="preference_beer_title">
-        <h2 >Name:</h2>
-        <p>
-          <%= @based_on_preference.name %>
-        </p>
-      </div>
-
-      <div id="preference_beer_style">
-        <h3>Style:</h3>
-        <p>
-          <%= @based_on_preference.varietal %>
-        </p>
-      </div>
-
-      <div id="preference_beer_taste">
-        <h3>Tasting Notes:</h3>
-        <p>
-          <% if @based_on_preference.tasting_note == nil %>
-          'No Tasting Note Available... But Trust Us it's Amazing!'
-          <% else %>
-            <%= @based_on_preference.tasting_note %>
-          <% end %>
-        </p>
-      </div>
-
-      <div id="preference_beer_link" class="btn btn-default btn-primary">
-        <%= link_to"Add to My Beers", beer_path(@based_on_preference.id) %>
-      </div>
-
+    <div id="preference_beer_link" class="btn btn-default btn-primary">
+      <%= link_to"Add to My Beers", beer_path(@based_on_preference.id) %>
     </div>
+
+    <div id="preference_beer_container">
+        <h3 id="preference_beer_notification">
+          Dont like the choice? No problem, try another selection:
+        </h3>
+        <button class="btn btn-default btn-primary" type="button" id="preference_button">Try Another?</button>
+    </div>
+    <% end %>
   </div>
 
-  <div id="preference_beer_container">
-      <h3 id="preference_beer_notification">
-        Dont like the choice? No problem, try another selection:
-      </h3>
-      <button class="btn btn-default btn-primary" type="button" id="preference_button">Try Another?</button>
-  </div>
-  <% end %>
 </div>

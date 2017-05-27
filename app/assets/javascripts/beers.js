@@ -98,7 +98,6 @@ $(document).ready(function(){
       dataType: "html",
     }).done(function(data){
       $("#barMap").append(data);
-      console.log("SUCCESS");
       var barLat = $('.temp_information').data('lat');
       var barLng = $('.temp_information').data('lng');
       $("#directions").on('click', function(e){
@@ -146,7 +145,6 @@ $(document).ready(function(){
       });
 
     }).fail(function(data){
-      console.log("FAIL");
     });
   });
 

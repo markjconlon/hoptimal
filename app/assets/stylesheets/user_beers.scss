@@ -74,6 +74,52 @@ form.user_beer_search_form {
   margin: 0 20px;
 }
 
+
+//UserBeer Edit View
+.ub_edit_image{
+  width: 375px;
+  margin: auto;
+}
+
+.beer_edit_image{
+  width: 100%;
+}
+
+.user_beer_edit_view{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  left: 20%;
+  right: 20%;
+  min-width: 400px;
+}
+
+h2{
+  text-align: center;
+}
+
+.ub_stars{
+  display: flex;
+  justify-content: center;
+}
+
+.user_beer_note{
+  clear: both;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+label[for="user_beer_note"]{
+    display:none;
+}
+
+.ub_button{
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 1200px) {
   #search-beers-ub {
     width: 100%;
@@ -110,5 +156,19 @@ form.user_beer_search_form {
   .beer_info {
     margin: 0 28px;
     width: 80%;
+  }
+
+  .user_beer_edit_view{
+    left: 5%;
+    right: 10%;
+    min-width: 400px;
+  }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .ub_edit_image{
+    width: 250px;
   }
 }
