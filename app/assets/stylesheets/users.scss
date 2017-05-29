@@ -96,6 +96,7 @@ div.edituser {
 }
 
 .recent_beer{
+    overflow: hidden;
     border-style: solid;
     border-color: $nav-bar-grey-o;
     display: inline-block;
@@ -329,8 +330,10 @@ div.edituser {
     }
 
   .beer_img {
-    max-width: 375px;
+    max-width: 250px;
   }
+
+  
 
   .user_profile_beer_info{
     font-size: 1.3em;
