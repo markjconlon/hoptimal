@@ -170,7 +170,7 @@ div.edituser {
 
   .box5, .box8{
     float: left;
-    width: 50%;
+    width: 100%;
     height: 100%;
     margin-right: 0%;
     clear: right;
@@ -188,17 +188,13 @@ div.edituser {
   }
 
   .beer_consumed.recent_beer_list {
-      width: 85%;
-      margin-right: 4%;
-      margin-left: 4%;
+      width: 100%;
       float: left;
       text-align: center;
     }
 
   .recent_partial_header{
-    width: 85%;
-    margin-right: 4%;
-    margin-left: 4%;
+    width: 100%;
     float: left;
     text-align: center;
   }
@@ -206,6 +202,8 @@ div.edituser {
   .beer_img{
     max-width: 280px;
     margin: auto;
+    width: 100%;
+    text-align: center;
   }
 
   .user_profile_beer_info{
@@ -272,6 +270,10 @@ div.edituser {
     max-width: 250px;
     display: inline-block;
   }
+
+  .box5, .box8{
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 787px) {
@@ -295,14 +297,10 @@ div.edituser {
   }
 
   .beer_consumed.recent_beer_list {
-      width: 85%;
-      margin-right: 4%;
-      margin-left: 4%;
+      width: 100%;
       float: left;
       text-align: center;
-      border-bottom: lightgrey;
-      border-bottom-style: solid;
-      border-width: thin;
+      border-bottom: $nav-bar-grey-o solid 1px;
   }
 
 }
